@@ -1,0 +1,135 @@
+{
+  "implantlar": {
+    "straumann": {
+      "isim": "Straumann",
+      "fiyat": 750,
+      "enFazla": 12
+    },
+    "bego": {
+      "isim": "Bego",
+      "fiyat": 600,
+      "enFazla": 12
+    },
+    "megagen": {
+      "isim": "Megagen",
+      "fiyat": 440,
+      "enFazla": 12
+    },
+    "evoss": {
+      "isim": "Evoss",
+      "fiyat": 320,
+      "enFazla": 12
+    }
+  },
+  "kaplamalar": {
+    "kurarayPorcelain": {
+      "isim": "BEWELL Kuraray Porcelain Crown/Veneer",
+      "fiyat": 110,
+      "enFazla": 28
+    },
+    "vitaPorcelain": {
+      "isim": "BEWELL Vita Porcelain Crown/Veneer",
+      "fiyat": 95,
+      "enFazla": 28
+    },
+    "localPorcelain": {
+      "isim": "BEWELL Local Porcelain Crown/Veneer",
+      "fiyat": 85,
+      "enFazla": 28
+    },
+    "katanaZirconium": {
+      "isim": "BEWELL Katana Zirconium Crown/Veneer",
+      "fiyat": 195,
+      "enFazla": 28
+    },
+    "vitaZirconium": {
+      "isim": "BEWELL Vita Zirconium Crown/Veneer",
+      "fiyat": 170,
+      "enFazla": 28
+    },
+    "localZirconium": {
+      "isim": "BEWELL Local Zirconium Crown/Veneer",
+      "fiyat": 150,
+      "enFazla": 28
+    },
+    "monolithicZirconium": {
+      "isim": "BEWELL Monolithic Zirconium Crown/Veneer",
+      "fiyat": 200,
+      "enFazla": 28
+    },
+    "emax": {
+      "isim": "BEWELL E-Max Veneer",
+      "fiyat": 210,
+      "enFazla": 28
+    },
+    "laminat": {
+      "isim": "BEWELL Laminat Veneer",
+      "fiyat": 210,
+      "enFazla": 28
+    }
+  },
+  "dis": {
+    "disCekimi": {
+      "isim": "Diş Çekimi",
+      "fiyat": 35,
+      "enFazla": 28
+    },
+    "dolgu": {
+      "isim": "Dolgu",
+      "fiyat": 35,
+      "enFazla": 10
+    },
+    "kanalTedavisi": {
+      "isim": "Kanal Tedavisi",
+      "fiyat": 95,
+      "enFazla": 10
+    },
+    "beyazlatma": {
+      "isim": "Beyazlatma",
+      "fiyat": 250,
+      "enFazla": 1
+    },
+    "rekonstruksiyon": {
+      "isim": "Diş Eti Cerrahi Rekonstrüksiyon",
+      "fiyat": 250,
+      "enFazla": 1
+    },
+    "acikSinus": {
+      "isim": "Tek Taraflı Açık Sinüs Lifting (Cerrah Yapar)",
+      "fiyat": 500,
+      "enFazla": 2
+    },
+    "kapaliSinus": {
+      "isim": "Tek Taraflı Kapalı Sinüs Lifting (Cerraha Gerek Yok)",
+      "fiyat": 300,
+      "enFazla": 2
+    }
+  },
+  "implantPaketi": {
+    "allOn6": {
+      "isim": "All-On-6 Evoss + Porcelain",
+      "fiyat": 3999,
+      "enFazla": 2
+    },
+    "allOn4": {
+      "isim": "All-On-4 Evoss + Porcelain",
+      "fiyat": 3799,
+      "enFazla": 2
+    },
+    "kemikTozu1cc": {
+      "isim": "Kemik Tozu (1 cc.)",
+      "fiyat": 150,
+      "enFazla": 1
+    },
+    "kemikTozu2cc": {
+      "isim": "Kemik Tozu (2 cc.)",
+      "fiyat": 280,
+      "enFazla": 1
+    },
+    "kemikTozu3cc": {
+      "isim": "Kemik Tozu (3 cc.)",
+      "fiyat": 400,
+      "enFazla": 1
+    }
+  }
+}
