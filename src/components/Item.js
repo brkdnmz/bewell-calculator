@@ -1,5 +1,5 @@
-import React, {useContext, useState} from 'react';
-import {Card, Col, Container, Row} from "react-bootstrap";
+import React, {useContext} from 'react';
+import {Col, Container, Row} from "react-bootstrap";
 import {AppContext} from "../App.js";
 
 function Item(props) {

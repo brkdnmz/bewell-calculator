@@ -10,11 +10,10 @@ export const AppContext = createContext(null);
 
 function App() {
   const [choices, setChoices] = useState({});
-  const [summary, setSummary] = useState([]);
+  // const [summary, setSummary] = useState([]);
   useEffect(() => {
-    const choosedTedaviler = Object.keys(choices);
+    // const choosedTedaviler = Object.keys(choices);
   }, [choices]);
-
   const context = {
     tedaviler,
     setChoices,
