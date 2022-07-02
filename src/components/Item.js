@@ -1,12 +1,13 @@
 import React, {useContext} from 'react';
 import {Col, Container, Row} from "react-bootstrap";
-import {AppContext} from "../App.js";
+import {AppContext} from "../App";
+import PriceTag from "./PriceTag";
 
 function Item(props) {
   const {setChoices} = useContext(AppContext);
   const onSelect = (e) => {
     setChoices(prevChoices => {
-      const tedavi = props.tedavi?.isim;
+      const tedavi = props.tedavi?.id;
       const newCount = parseInt(e.target.value);
       const newChoices = {
         ...prevChoices,
@@ -27,7 +28,7 @@ function Item(props) {
                 {props.tedavi?.isim || "af"}
               </Row>
               <Row>
-                <i className={"p-0"}><small className={"p-0"} style={{userSelect: "none"}}>{props.tedavi?.fiyat}₤</small></i>
+                <PriceTag price={props.tedavi?.fiyat} />
               </Row>
             </Container>
           </Col>

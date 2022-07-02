@@ -5,18 +5,35 @@ import {Col, Container, Row} from "react-bootstrap";
 import TedaviListesi from "./components/TedaviListesi";
 import {createContext, useEffect, useState} from "react";
 import tedaviler from "./tedaviListesi.json";
+import Summary from "./components/Summary";
+
+const tedaviById = {}
+for(const tedaviTipiKey in tedaviler){
+  const curTedaviler = tedaviler[tedaviTipiKey];
+  for(const tedaviKey in curTedaviler){
+    const tedavi = curTedaviler[tedaviKey];
+    tedaviById[tedavi.id] = tedavi;
+  }
+}
 
 export const AppContext = createContext(null);
 
 function App() {
   const [choices, setChoices] = useState({});
-  // const [summary, setSummary] = useState([]);
+  const [sortedChoiceIds, setSortedChoiceIds] = useState([]);
+
   useEffect(() => {
-    // const choosedTedaviler = Object.keys(choices);
+    const choice_ids = Object.keys(choices);
+    choice_ids.sort();
+    console.log(choice_ids);
+    setSortedChoiceIds(() => choice_ids);
   }, [choices]);
+
   const context = {
-    tedaviler,
+    choices,
     setChoices,
+    sortedChoiceIds,
+    tedaviById,
   }
 
   return (
@@ -24,7 +41,7 @@ function App() {
       {/*{Object.keys(choices).map((choice, _) => {*/}
       {/*  <span>{choice} {choices[choice]}</span>*/}
       {/*})}*/}
-      <Container className={"pt-3"}>
+      <Container className={"p-3"}>
         <Row className={"justify-content-center"}>
           <Col className={"col-md-6"}>
             <TedaviListesi name={"İmplantlar"}>
@@ -47,6 +64,7 @@ function App() {
                 <Item key={tedavi} tedavi={tedaviler.implantPaketi[tedavi]}/>
               ))}
             </TedaviListesi>
+            <Summary />
           </Col>
         </Row>
       </Container>
