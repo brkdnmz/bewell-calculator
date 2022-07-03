@@ -2,7 +2,9 @@ import React from 'react';
 
 function PriceTag(props) {
   return (
-    <i className={"p-0"}><small className={"p-0"} style={{userSelect: "none"}}>{props.price}₤</small></i>
+    <p className={"p-0 m-0 text-secondary fst-italic fw-bold"}>
+        {props.price}₤
+    </p>
   );
 }
 

@@ -30,31 +30,25 @@ function Item(props) {
         style={{ minHeight: "50px" }}
       >
           <Col
-            s={8}
+            s={12}
             className={"text-start d-flex align-items-center ps-4"}
           >
             <Container className={"p-0"}>
-              <Row>{props.urun?.isim || "Placeholder"}</Row>
+              <Row className={"fw-bold"}>
+                {props.urun?.isim || "Placeholder"}
+              </Row>
+              <Row className={"text-secondary fst-italic"}>
+                  {props.urun.ayrinti}
+              </Row>
               <Row>
                 <PriceTag price={props.urun?.fiyat} />
               </Row>
-              {props.urun.bilgi &&
-                <Row className={"text-danger"}>
-                  <i
-                    className={"p-0"}
-                    style={{cursor: "pointer", width: "auto"}}
-                    onClick={() => {
-                      if(!props.urun.bilgi)
-                        return;
-                      setInfoBoxShow(true);
-                    }}
-                  >
-                    <small><b>
-                      {props.urun.tiklamaYazisi}
-                    </b></small>
-                  </i>
-                </Row>
-              }
+              <InfoBox
+                show={infoBoxShow}
+                onHide={() => setInfoBoxShow(false)}
+                tiklamaYazisi={props.urun.tiklamaYazisi}
+                bilgi={props.urun.bilgi}
+              />
             </Container>
           </Col>
           <Col s={"auto"} className={"col-auto d-flex align-items-center"}>
@@ -71,11 +65,6 @@ function Item(props) {
             </select>
           </Col>
       </Row>
-      <InfoBox
-        show={infoBoxShow}
-        onHide={() => setInfoBoxShow(false)}
-        info={props.urun.bilgi}
-      />
     </>
   );
 }

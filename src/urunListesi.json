@@ -4,13 +4,15 @@
     "urunler": {
       "allOn6": {
         "id": 0,
-        "isim": "All-On-6 (6 Evoss + 12-14 Local Porcelain + Otel/Transfer/Rehberlik + Geçici Protez)",
+        "isim": "All-On-6",
+        "ayrinti": "6 Evoss + 12-14 Local Porcelain + Otel/Transfer/Rehberlik + Geçici Protez",
         "fiyat": 2999,
         "enFazla": 2
       },
       "hollywoodSmile": {
         "id": 1,
-        "isim": "Hollywood Smile 24-28 BEWELL Local Zirconium Kaplama (Tüm Ağız) + Otel/Transfer/Rehberlik + Geçici Protez",
+        "isim": "Hollywood Smile",
+        "ayrinti": "24-28 Local Zirconium (Tüm Ağız) + Otel/Transfer/Rehberlik + Geçici Protez",
         "fiyat": 3999,
         "enFazla": 1
       }
@@ -182,7 +184,8 @@
       },
       "acikSinus": {
         "id": 23,
-        "isim": "Tek Taraflı Açık Sinüs Lifting (Cerrah Yapar, Cerrah Ücreti Dahil)",
+        "isim": "Tek Taraflı Açık Sinüs Lifting",
+        "ayrinti": "Cerrah Yapar, Cerrah Ücreti Dahil",
         "fiyat": 650,
         "enFazla": 2,
         "tiklamaYazisi": "[ÖNEMLİ!] Mutlaka tıklayınız.",
@@ -190,7 +193,8 @@
       },
       "kapaliSinus": {
         "id": 24,
-        "isim": "Tek Taraflı Kapalı Sinüs Lifting (Cerraha Gerek Yok)",
+        "isim": "Tek Taraflı Kapalı Sinüs Lifting",
+        "ayrinti": "Cerraha Gerek Yok",
         "fiyat": 300,
         "enFazla": 2
       },
@@ -209,37 +213,43 @@
     "urunler": {
       "allOn6": {
         "id": 26,
-        "isim": "All-On-6 Evoss + Local Porcelain",
+        "isim": "All-On-6",
+        "ayrinti": "Evoss + Local Porcelain",
         "fiyat": 3999,
         "enFazla": 2
       },
       "allOn4": {
         "id": 27,
-        "isim": "All-On-4 Evoss + Local Porcelain",
+        "isim": "All-On-4",
+        "ayrinti": "Evoss + Local Porcelain",
         "fiyat": 3799,
         "enFazla": 2
       },
       "kemikTozu1cc": {
         "id": 28,
-        "isim": "Kemik Tozu (1 cc.)",
+        "isim": "Kemik Tozu",
+        "ayrinti": "1 cc.",
         "fiyat": 150,
         "enFazla": 1
       },
       "kemikTozu2cc": {
         "id": 29,
-        "isim": "Kemik Tozu (2 cc.)",
+        "isim": "Kemik Tozu",
+        "ayrinti": "2 cc.",
         "fiyat": 280,
         "enFazla": 1
       },
       "kemikTozu3cc": {
         "id": 30,
-        "isim": "Kemik Tozu (3 cc.)",
+        "isim": "Kemik Tozu",
+        "ayrinti": "3 cc.",
         "fiyat": 400,
         "enFazla": 1
       },
       "augmentasyon": {
         "id": 31,
-        "isim": "Augmentasyon (Çeneden Çeneye Kemik Ekleme)",
+        "isim": "Augmentasyon",
+        "ayrinti": "Çeneden Çeneye Kemik Ekleme",
         "fiyat": 500,
         "enFazla": 1
       }

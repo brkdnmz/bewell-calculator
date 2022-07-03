@@ -34,7 +34,7 @@ function App() {
     <AppContext.Provider value={context}>
       <Container className={"p-3"}>
         <Row className={"justify-content-center"}>
-          <Col className={"col-md-8"}>
+          <Col lg={8}>
             <Row className={"justify-content-center pb-2"}>
               <img src={icon} alt={"BEWELL Logo"} style={{width: "30%"}} />
               <Row
