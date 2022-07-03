@@ -45,7 +45,7 @@ function App() {
       <Container className={"p-3"}>
         <Row className={"justify-content-center"}>
           <Col className={"col-md-6"}>
-            <Row className={"text-center"}><img src={icon} width={"30%"} /></Row>
+            <Row className={"justify-content-center"}><img src={icon} style={{width: "30%"}} /></Row>
             <TedaviListesi name={"Kampanyalar"}>
               {Object.keys(tedaviler.kampanya).map((tedavi, _) => (
                 <Item key={tedavi} tedavi={tedaviler.kampanya[tedavi]} />
