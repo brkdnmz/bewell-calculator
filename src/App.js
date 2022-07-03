@@ -23,19 +23,10 @@ export const AppContext = createContext(null);
 
 function App() {
   const [choices, setChoices] = useState({});
-  const [sortedChoiceIds, setSortedChoiceIds] = useState([]);
-
-  useEffect(() => {
-    const choice_ids = Object.keys(choices);
-    const toplamFiyat = id => urunById[id].fiyat * choices[id]
-    choice_ids.sort((a, b) => toplamFiyat(a) - toplamFiyat((b)));
-    setSortedChoiceIds(() => choice_ids);
-  }, [choices]);
 
   const context = {
     choices,
     setChoices,
-    sortedChoiceIds,
     urunById,
   };
 
