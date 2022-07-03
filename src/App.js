@@ -58,7 +58,7 @@ function App() {
                 {(() => {
                   const urunler = urunListesi[kategori].urunler;
                   const urunlerId = Object.keys(urunler).map(urun => urunler[urun].id);
-                  urunlerId.sort((a, b) => urunById[a].fiyat < urunById[b].fiyat);
+                  urunlerId.sort((a, b) => urunById[a].fiyat - urunById[b].fiyat);
                   const elems = [];
                   for(const id of urunlerId){
                     elems.push(<Item key={id} urun={urunById[id]} />)
