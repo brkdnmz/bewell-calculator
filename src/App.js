@@ -11,8 +11,8 @@ import Summary from "./components/Summary";
 import icon from "./bewell.png";
 
 const urunById = {};
-for (const urunTipi in urunListesi) {
-  const curUrunler = urunListesi[urunTipi];
+for (const kategori in urunListesi) {
+  const curUrunler = urunListesi[kategori].urunler;
   for (const urunKey in curUrunler) {
     const urun = curUrunler[urunKey];
     urunById[urun.id] = urun;
@@ -27,7 +27,8 @@ function App() {
 
   useEffect(() => {
     const choice_ids = Object.keys(choices);
-    choice_ids.sort();
+    const toplamFiyat = id => urunById[id].fiyat * choices[id]
+    choice_ids.sort((a, b) => toplamFiyat(a) - toplamFiyat((b)));
     setSortedChoiceIds(() => choice_ids);
   }, [choices]);
 
@@ -35,7 +36,7 @@ function App() {
     choices,
     setChoices,
     sortedChoiceIds,
-    tedaviById: urunById,
+    urunById,
   };
 
   return (
@@ -52,90 +53,20 @@ function App() {
                 <span style={{color: "#ea1f25", padding: 0}}>BE</span><span style={{color: "#6b6b6b", padding: 0}}>WELL</span> Tutar Hesaplama Aracı
               </Row>
             </Row>
-            <UrunKategorisi name={"Kampanyalar"}>
-              {(() => {
-                const urunler = urunListesi.kampanya;
-                const urunlerId = Object.keys(urunler).map(urun => urunler[urun].id);
-                urunlerId.sort((a, b) => urunById[a].fiyat < urunById[b].fiyat);
-                const elems = [];
-                for(const id of urunlerId){
-                  elems.push(<Item key={id} tedavi={urunById[id]} />)
-                }
-                return elems;
-              })()}
-            </UrunKategorisi>
-            <UrunKategorisi name={"Otel / Transfer / Rehberlik"}>
-              {(() => {
-                const urunler = urunListesi.otel;
-                const urunlerId = Object.keys(urunler).map(urun => urunler[urun].id);
-                urunlerId.sort((a, b) => urunById[a].fiyat - urunById[b].fiyat);
-                const elems = [];
-                for(const id of urunlerId){
-                  elems.push(<Item key={id} tedavi={urunById[id]} />)
-                }
-                return elems;
-              })()}
-            </UrunKategorisi>
-            <UrunKategorisi name={"İmplantlar"}>
-              {(() => {
-                const urunler = urunListesi.implantlar;
-                const urunlerId = Object.keys(urunler).map(urun => urunler[urun].id);
-                urunlerId.sort((a, b) => urunById[a].fiyat - urunById[b].fiyat);
-                const elems = [];
-                for(const id of urunlerId){
-                  elems.push(<Item key={id} tedavi={urunById[id]} />)
-                }
-                return elems;
-              })()}
-            </UrunKategorisi>
-            <UrunKategorisi name={"Kaplamalar"}>
-              {(() => {
-                const urunler = urunListesi.kaplamalar;
-                const urunlerId = Object.keys(urunler).map(urun => urunler[urun].id);
-                urunlerId.sort((a, b) => urunById[a].fiyat - urunById[b].fiyat);
-                const elems = [];
-                for(const id of urunlerId){
-                  elems.push(<Item key={id} tedavi={urunById[id]} />)
-                }
-                return elems;
-              })()}
-            </UrunKategorisi>
-            <UrunKategorisi name={"Diş Tedavileri"}>
-              {(() => {
-                const urunler = urunListesi.dis;
-                const urunlerId = Object.keys(urunler).map(urun => urunler[urun].id);
-                urunlerId.sort((a, b) => urunById[a].fiyat - urunById[b].fiyat);
-                const elems = [];
-                for(const id of urunlerId){
-                  elems.push(<Item key={id} tedavi={urunById[id]} />)
-                }
-                return elems;
-              })()}
-            </UrunKategorisi>
-            <UrunKategorisi name={"İmplant Paketleri"}>
-              {(() => {
-                const urunler = urunListesi.implantPaketi;
-                const urunlerId = Object.keys(urunler).map(urun => urunler[urun].id);
-                urunlerId.sort((a, b) => urunById[a].fiyat - urunById[b].fiyat);
-                const elems = [];
-                for(const id of urunlerId){
-                  elems.push(<Item key={id} tedavi={urunById[id]} />)
-                }
-                return elems;
-              })()}
-            </UrunKategorisi>
-            <UrunKategorisi name={"Protezler"}>
-              {(() => {
-                const urunler = urunListesi.protezler;
-                const urunlerId = Object.keys(urunler).map(urun => urunler[urun].id);
-                urunlerId.sort((a, b) => urunById[a].fiyat - urunById[b].fiyat);
-                const elems = [];
-                for(const id of urunlerId){
-                  elems.push(<Item key={id} tedavi={urunById[id]} />)
-                }
-                return elems;
-              })()}
-            </UrunKategorisi>
+            {Object.keys(urunListesi).map(kategori => (
+              <UrunKategorisi name={urunListesi[kategori].baslik} key={kategori}>
+                {(() => {
+                  const urunler = urunListesi[kategori].urunler;
+                  const urunlerId = Object.keys(urunler).map(urun => urunler[urun].id);
+                  urunlerId.sort((a, b) => urunById[a].fiyat < urunById[b].fiyat);
+                  const elems = [];
+                  for(const id of urunlerId){
+                    elems.push(<Item key={id} urun={urunById[id]} />)
+                  }
+                  return elems;
+                })()}
+              </UrunKategorisi>
+            ))}
             <Summary />
           </Col>
         </Row>

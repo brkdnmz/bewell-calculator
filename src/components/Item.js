@@ -11,14 +11,14 @@ function Item(props) {
   const [infoBoxShow, setInfoBoxShow] = React.useState(false);
   const onSelect = (e) => {
     setChoices((prevChoices) => {
-      const tedavi = props.tedavi?.id;
+      const urun = props.urun?.id;
       const newCount = parseInt(e.target.value);
       const newChoices = {
         ...prevChoices,
-        [tedavi]: newCount,
+        [urun]: newCount,
       };
       if (newCount === 0) {
-        delete newChoices[tedavi];
+        delete newChoices[urun];
       }
       return newChoices;
     });
@@ -34,23 +34,23 @@ function Item(props) {
             className={"text-start d-flex align-items-center ps-4"}
           >
             <Container className={"p-0"}>
-              <Row>{props.tedavi?.isim || "Placeholder"}</Row>
+              <Row>{props.urun?.isim || "Placeholder"}</Row>
               <Row>
-                <PriceTag price={props.tedavi?.fiyat} />
+                <PriceTag price={props.urun?.fiyat} />
               </Row>
-              {props.tedavi.bilgi &&
+              {props.urun.bilgi &&
                 <Row className={"text-danger"}>
                   <i
                     className={"p-0"}
                     style={{cursor: "pointer", width: "auto"}}
                     onClick={() => {
-                      if(!props.tedavi.bilgi)
+                      if(!props.urun.bilgi)
                         return;
                       setInfoBoxShow(true);
                     }}
                   >
                     <small><b>
-                      {props.tedavi.tiklamaYazisi}
+                      {props.urun.tiklamaYazisi}
                     </b></small>
                   </i>
                 </Row>
@@ -63,7 +63,7 @@ function Item(props) {
               onChange={onSelect}
             >
               <option value={0}>Seçiniz (0)</option>
-              {[...Array(props.tedavi?.enFazla || 0).keys()].map((count) => (
+              {[...Array(props.urun?.enFazla || 0).keys()].map((count) => (
                 <option key={count + 1} value={count + 1}>
                   {count + 1}
                 </option>
@@ -74,7 +74,7 @@ function Item(props) {
       <InfoBox
         show={infoBoxShow}
         onHide={() => setInfoBoxShow(false)}
-        info={props.tedavi.bilgi}
+        info={props.urun.bilgi}
       />
     </>
   );

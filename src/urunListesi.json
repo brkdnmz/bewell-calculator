@@ -1,236 +1,263 @@
 {
   "kampanya": {
-    "allOn6": {
-      "id": 0,
-      "isim": "All-On-6 (6 Evoss + 12-14 Local Porcelain + Otel/Transfer/Rehberlik + Geçici Protez)",
-      "fiyat": 2999,
-      "enFazla": 2
-    },
-    "hollywoodSmile": {
-      "id": 1,
-      "isim": "Hollywood Smile 24-28 BEWELL Local Zirconium Kaplama (Tüm Ağız) + Otel/Transfer/Rehberlik + Geçici Protez",
-      "fiyat": 3999,
-      "enFazla": 1
+    "baslik": "Kampanyalar",
+    "urunler": {
+      "allOn6": {
+        "id": 0,
+        "isim": "All-On-6 (6 Evoss + 12-14 Local Porcelain + Otel/Transfer/Rehberlik + Geçici Protez)",
+        "fiyat": 2999,
+        "enFazla": 2
+      },
+      "hollywoodSmile": {
+        "id": 1,
+        "isim": "Hollywood Smile 24-28 BEWELL Local Zirconium Kaplama (Tüm Ağız) + Otel/Transfer/Rehberlik + Geçici Protez",
+        "fiyat": 3999,
+        "enFazla": 1
+      }
     }
   },
   "otel": {
-    "tekKisi": {
-      "id": 2,
-      "isim": "Tek Kişi Günlük",
-      "fiyat": 70,
-      "enFazla": 18
-    },
-    "ikiKisi": {
-      "id": 3,
-      "isim": "2 Kişi Günlük",
-      "fiyat": 95,
-      "enFazla": 18
-    },
-    "ikiBuyukBirCocuk": {
-      "id": 4,
-      "isim": "2 + 1 (6-12 Yaş Arası) Günlük",
-      "fiyat": 105,
-      "enFazla": 18
+    "baslik": "Otel (Oda + Kahvaltı) / Transfer / Rehberlik",
+    "urunler": {
+      "tekKisi": {
+        "id": 2,
+        "isim": "Tek Kişi Günlük",
+        "fiyat": 70,
+        "enFazla": 18
+      },
+      "ikiKisi": {
+        "id": 3,
+        "isim": "2 Kişi Günlük",
+        "fiyat": 95,
+        "enFazla": 18
+      },
+      "ikiBuyukBirCocuk": {
+        "id": 4,
+        "isim": "2 + 1 (6-12 Yaş Arası) Günlük",
+        "fiyat": 105,
+        "enFazla": 18
+      },
+      "eslikciFarki": {
+        "id": 36,
+        "isim": "Eşlikçi Günlük Konaklama Farkı",
+        "fiyat": 25,
+        "enFazla": 18
+      }
     }
   },
   "implantlar": {
-    "straumann": {
-      "id": 5,
-      "isim": "Straumann",
-      "fiyat": 750,
-      "enFazla": 12
-    },
-    "bego": {
-      "id": 6,
-      "isim": "Bego",
-      "fiyat": 600,
-      "enFazla": 12
-    },
-    "megagen": {
-      "id": 7,
-      "isim": "Megagen",
-      "fiyat": 440,
-      "enFazla": 12
-    },
-    "evoss": {
-      "id": 8,
-      "isim": "Evoss",
-      "fiyat": 320,
-      "enFazla": 12
+    "baslik": "İmplantlar",
+    "urunler": {
+      "straumann": {
+        "id": 5,
+        "isim": "Straumann",
+        "fiyat": 750,
+        "enFazla": 12
+      },
+      "bego": {
+        "id": 6,
+        "isim": "Bego",
+        "fiyat": 600,
+        "enFazla": 12
+      },
+      "megagen": {
+        "id": 7,
+        "isim": "Megagen",
+        "fiyat": 440,
+        "enFazla": 12
+      },
+      "evoss": {
+        "id": 8,
+        "isim": "Evoss",
+        "fiyat": 320,
+        "enFazla": 12
+      }
     }
   },
   "kaplamalar": {
-    "kurarayPorcelain": {
-      "id": 9,
-      "isim": "BEWELL Kuraray Porcelain Crown/Veneer",
-      "fiyat": 110,
-      "enFazla": 28
-    },
-    "vitaPorcelain": {
-      "id": 10,
-      "isim": "BEWELL Vita Porcelain Crown/Veneer",
-      "fiyat": 95,
-      "enFazla": 28
-    },
-    "localPorcelain": {
-      "id": 11,
-      "isim": "BEWELL Local Porcelain Crown/Veneer",
-      "fiyat": 85,
-      "enFazla": 28
-    },
-    "katanaZirconium": {
-      "id": 12,
-      "isim": "BEWELL Katana Zirconium Crown/Veneer",
-      "fiyat": 195,
-      "enFazla": 28
-    },
-    "vitaZirconium": {
-      "id": 13,
-      "isim": "BEWELL Vita Zirconium Crown/Veneer",
-      "fiyat": 170,
-      "enFazla": 28
-    },
-    "localZirconium": {
-      "id": 14,
-      "isim": "BEWELL Local Zirconium Crown/Veneer",
-      "fiyat": 150,
-      "enFazla": 28
-    },
-    "monolithicZirconium": {
-      "id": 15,
-      "isim": "BEWELL Monolithic Zirconium Crown/Veneer",
-      "fiyat": 200,
-      "enFazla": 28
-    },
-    "emax": {
-      "id": 16,
-      "isim": "BEWELL E-Max Veneer",
-      "fiyat": 210,
-      "enFazla": 28
-    },
-    "laminat": {
-      "id": 17,
-      "isim": "BEWELL Laminat Veneer",
-      "fiyat": 210,
-      "enFazla": 28
+    "baslik": "Kaplamalar",
+    "urunler": {
+      "kurarayPorcelain": {
+        "id": 9,
+        "isim": "BEWELL Kuraray Porcelain Crown/Veneer",
+        "fiyat": 110,
+        "enFazla": 28
+      },
+      "vitaPorcelain": {
+        "id": 10,
+        "isim": "BEWELL Vita Porcelain Crown/Veneer",
+        "fiyat": 95,
+        "enFazla": 28
+      },
+      "localPorcelain": {
+        "id": 11,
+        "isim": "BEWELL Local Porcelain Crown/Veneer",
+        "fiyat": 85,
+        "enFazla": 28
+      },
+      "katanaZirconium": {
+        "id": 12,
+        "isim": "BEWELL Katana Zirconium Crown/Veneer",
+        "fiyat": 195,
+        "enFazla": 28
+      },
+      "vitaZirconium": {
+        "id": 13,
+        "isim": "BEWELL Vita Zirconium Crown/Veneer",
+        "fiyat": 170,
+        "enFazla": 28
+      },
+      "localZirconium": {
+        "id": 14,
+        "isim": "BEWELL Local Zirconium Crown/Veneer",
+        "fiyat": 150,
+        "enFazla": 28
+      },
+      "monolithicZirconium": {
+        "id": 15,
+        "isim": "BEWELL Monolithic Zirconium Crown/Veneer",
+        "fiyat": 200,
+        "enFazla": 28
+      },
+      "emax": {
+        "id": 16,
+        "isim": "BEWELL E-Max Veneer",
+        "fiyat": 210,
+        "enFazla": 28
+      },
+      "laminat": {
+        "id": 17,
+        "isim": "BEWELL Laminat Veneer",
+        "fiyat": 210,
+        "enFazla": 28
+      }
     }
   },
   "dis": {
-    "disCekimi": {
-      "id": 18,
-      "isim": "Diş Çekimi",
-      "fiyat": 35,
-      "enFazla": 28
-    },
-    "disCekimiGomulu": {
-      "id": 35,
-      "isim": "Diş Çekimi (Gömülü)",
-      "fiyat": 120,
-      "enFazla": 28
-    },
-    "dolgu": {
-      "id": 19,
-      "isim": "Dolgu",
-      "fiyat": 35,
-      "enFazla": 10
-    },
-    "kanalTedavisi": {
-      "id": 20,
-      "isim": "Kanal Tedavisi",
-      "fiyat": 95,
-      "enFazla": 10
-    },
-    "beyazlatma": {
-      "id": 21,
-      "isim": "Beyazlatma",
-      "fiyat": 250,
-      "enFazla": 1
-    },
-    "rekonstruksiyon": {
-      "id": 22,
-      "isim": "Diş Eti Cerrahi Rekonstrüksiyon",
-      "fiyat": 250,
-      "enFazla": 1
-    },
-    "acikSinus": {
-      "id": 23,
-      "isim": "Tek Taraflı Açık Sinüs Lifting (Cerrah Yapar, Cerrah Ücreti Dahil)",
-      "fiyat": 650,
-      "enFazla": 2,
-      "tiklamaYazisi": "[ÖNEMLİ!] Mutlaka tıklayınız.",
-      "bilgi": "Açık sinüs lifting sadece üst çene ile ilgili bir durumdur.\n\nX-Ray'i olmayan ve üst çenesine implant takılacak her hasta için açık sinüs lifting durumuna açık kapı bırakılmalıdır.\n\nBir hastada açık sinüs lifting yapılacaksa mutlaka bunu ve devamındaki tüm implantların takılmasını cerrah yapar.\n\nAçık sinüs lifting yapılacaksa kesinlikle kemik tozu gereksinimi olacaktır.\n\nKemik tozu kullanıldığı zaman hastanın 2. ziyareti en az 6 ay sonradır.\n\nAçık sinüs lifting yoksa implant takılmasını diş doktoru yapar."
-    },
-    "kapaliSinus": {
-      "id": 24,
-      "isim": "Tek Taraflı Kapalı Sinüs Lifting (Cerraha Gerek Yok)",
-      "fiyat": 300,
-      "enFazla": 2
-    },
-    "xRaysizPaket": {
-      "id": 25,
-      "isim": "X-Ray'i Olmayan Müşteriye Çıkabilecek En Pahalı Ek Tedavi Paketi",
-      "fiyat": 1999,
-      "enFazla": 1,
-      "tiklamaYazisi": "Paket içeriği için tıklayınız.",
-      "bilgi": "Açık Sinüs Lifting (2 taraflı)\n\nKemik Tozu (3 cc.)\n\nDiş Eti Cerrahi Rekonstrüksiyon\n\nAugmentasyon"
+    "baslik": "Diş Tedavileri",
+    "urunler": {
+      "disCekimi": {
+        "id": 18,
+        "isim": "Diş Çekimi",
+        "fiyat": 35,
+        "enFazla": 28
+      },
+      "disCekimiGomulu": {
+        "id": 35,
+        "isim": "Diş Çekimi (Gömülü)",
+        "fiyat": 120,
+        "enFazla": 28
+      },
+      "dolgu": {
+        "id": 19,
+        "isim": "Dolgu",
+        "fiyat": 35,
+        "enFazla": 10
+      },
+      "kanalTedavisi": {
+        "id": 20,
+        "isim": "Kanal Tedavisi",
+        "fiyat": 95,
+        "enFazla": 10
+      },
+      "beyazlatma": {
+        "id": 21,
+        "isim": "Beyazlatma",
+        "fiyat": 250,
+        "enFazla": 1
+      },
+      "rekonstruksiyon": {
+        "id": 22,
+        "isim": "Diş Eti Cerrahi Rekonstrüksiyon",
+        "fiyat": 250,
+        "enFazla": 1
+      },
+      "acikSinus": {
+        "id": 23,
+        "isim": "Tek Taraflı Açık Sinüs Lifting (Cerrah Yapar, Cerrah Ücreti Dahil)",
+        "fiyat": 650,
+        "enFazla": 2,
+        "tiklamaYazisi": "[ÖNEMLİ!] Mutlaka tıklayınız.",
+        "bilgi": "Açık sinüs lifting sadece üst çene ile ilgili bir durumdur.\n\nX-Ray'i olmayan ve üst çenesine implant takılacak her hasta için açık sinüs lifting durumuna açık kapı bırakılmalıdır.\n\nBir hastada açık sinüs lifting yapılacaksa mutlaka bunu ve devamındaki tüm implantların takılmasını cerrah yapar.\n\nAçık sinüs lifting yapılacaksa kesinlikle kemik tozu gereksinimi olacaktır.\n\nKemik tozu kullanıldığı zaman hastanın 2. ziyareti en az 6 ay sonradır.\n\nAçık sinüs lifting yoksa implant takılmasını diş doktoru yapar."
+      },
+      "kapaliSinus": {
+        "id": 24,
+        "isim": "Tek Taraflı Kapalı Sinüs Lifting (Cerraha Gerek Yok)",
+        "fiyat": 300,
+        "enFazla": 2
+      },
+      "xRaysizPaket": {
+        "id": 25,
+        "isim": "X-Ray'i Olmayan Müşteriye Çıkabilecek En Pahalı Ek Tedavi Paketi",
+        "fiyat": 1999,
+        "enFazla": 1,
+        "tiklamaYazisi": "Paket içeriği için tıklayınız.",
+        "bilgi": "Açık Sinüs Lifting (2 taraflı)\n\nKemik Tozu (3 cc.)\n\nDiş Eti Cerrahi Rekonstrüksiyon\n\nAugmentasyon"
+      }
     }
   },
   "implantPaketi": {
-    "allOn6": {
-      "id": 26,
-      "isim": "All-On-6 Evoss + Local Porcelain",
-      "fiyat": 3999,
-      "enFazla": 2
-    },
-    "allOn4": {
-      "id": 27,
-      "isim": "All-On-4 Evoss + Local Porcelain",
-      "fiyat": 3799,
-      "enFazla": 2
-    },
-    "kemikTozu1cc": {
-      "id": 28,
-      "isim": "Kemik Tozu (1 cc.)",
-      "fiyat": 150,
-      "enFazla": 1
-    },
-    "kemikTozu2cc": {
-      "id": 29,
-      "isim": "Kemik Tozu (2 cc.)",
-      "fiyat": 280,
-      "enFazla": 1
-    },
-    "kemikTozu3cc": {
-      "id": 30,
-      "isim": "Kemik Tozu (3 cc.)",
-      "fiyat": 400,
-      "enFazla": 1
-    },
-    "augmentasyon": {
-      "id": 31,
-      "isim": "Augmentasyon (Çeneden Çeneye Kemik Ekleme)",
-      "fiyat": 500, 
-      "enFazla": 1
+    "baslik": "İmplant Paketleri",
+    "urunler": {
+      "allOn6": {
+        "id": 26,
+        "isim": "All-On-6 Evoss + Local Porcelain",
+        "fiyat": 3999,
+        "enFazla": 2
+      },
+      "allOn4": {
+        "id": 27,
+        "isim": "All-On-4 Evoss + Local Porcelain",
+        "fiyat": 3799,
+        "enFazla": 2
+      },
+      "kemikTozu1cc": {
+        "id": 28,
+        "isim": "Kemik Tozu (1 cc.)",
+        "fiyat": 150,
+        "enFazla": 1
+      },
+      "kemikTozu2cc": {
+        "id": 29,
+        "isim": "Kemik Tozu (2 cc.)",
+        "fiyat": 280,
+        "enFazla": 1
+      },
+      "kemikTozu3cc": {
+        "id": 30,
+        "isim": "Kemik Tozu (3 cc.)",
+        "fiyat": 400,
+        "enFazla": 1
+      },
+      "augmentasyon": {
+        "id": 31,
+        "isim": "Augmentasyon (Çeneden Çeneye Kemik Ekleme)",
+        "fiyat": 500,
+        "enFazla": 1
+      }
     }
   },
   "protezler": {
-    "implantSonrasiGeciciProtez": {
-      "id": 32,
-      "isim": "İmplant Sonrası Geçici Protez",
-      "fiyat": 250,
-      "enFazla": 1
-    },
-    "kaplamaSonrasiGeciciProtez": {
-      "id": 33,
-      "isim": "Kaplama Sonrası Geçici Protez",
-      "fiyat": 150,
-      "enFazla": 1
-    },
-    "takCikarDamak": {
-      "id": 34,
-      "isim": "Tak-Çıkar Damak",
-      "fiyat": 950,
-      "enFazla": 1
+    "baslik": "Protezler",
+    "urunler": {
+      "implantSonrasiGeciciProtez": {
+        "id": 32,
+        "isim": "İmplant Sonrası Geçici Protez",
+        "fiyat": 250,
+        "enFazla": 1
+      },
+      "kaplamaSonrasiGeciciProtez": {
+        "id": 33,
+        "isim": "Kaplama Sonrası Geçici Protez",
+        "fiyat": 150,
+        "enFazla": 1
+      },
+      "takCikarDamak": {
+        "id": 34,
+        "isim": "Tak-Çıkar Damak",
+        "fiyat": 950,
+        "enFazla": 1
+      }
     }
   }
 }

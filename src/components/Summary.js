@@ -6,12 +6,11 @@ import { AppContext } from "../App";
 import PriceTag from "./PriceTag";
 
 function Summary(props) {
-  const { choices, sortedChoiceIds, tedaviById } = useContext(AppContext);
+  const { choices, sortedChoiceIds, urunById } = useContext(AppContext);
 
   let toplamFiyat = 0;
   for (const id of sortedChoiceIds) {
-    console.log(id, choices[id]);
-    toplamFiyat += choices[id] * parseInt(tedaviById[id].fiyat);
+    toplamFiyat += choices[id] * parseInt(urunById[id].fiyat);
   }
 
   return (
@@ -27,12 +26,12 @@ function Summary(props) {
           <Row>
             <Col xs={"9"}>
               <Row>
-                <Col xs={"12"}>{tedaviById[id].isim}</Col>
+                <Col xs={"12"}>{urunById[id].isim}</Col>
                 <Col>({choices[id]} adet)</Col>
               </Row>
             </Col>
             <Col xs={"3"} className={"text-end"}>
-              <PriceTag price={tedaviById[id].fiyat * choices[id]} />
+              <PriceTag price={urunById[id].fiyat * choices[id]} />
             </Col>
           </Row>
         </ListGroup.Item>
