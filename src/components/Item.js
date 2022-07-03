@@ -6,19 +6,17 @@ import { AppContext } from "../App";
 import PriceTag from "./PriceTag";
 import InfoBox from "./InfoBox";
 
-function Item(props) {
+function Item({urun}) {
   const { setChoices } = useContext(AppContext);
-  const [infoBoxShow, setInfoBoxShow] = React.useState(false);
   const onSelect = (e) => {
     setChoices((prevChoices) => {
-      const urun = props.urun?.id;
       const newCount = parseInt(e.target.value);
       const newChoices = {
         ...prevChoices,
-        [urun]: newCount,
+        [urun.id]: newCount,
       };
       if (newCount === 0) {
-        delete newChoices[urun];
+        delete newChoices[urun.id];
       }
       return newChoices;
     });
@@ -35,19 +33,17 @@ function Item(props) {
           >
             <Container className={"p-0"}>
               <Row className={"fw-bold"}>
-                {props.urun?.isim || "Placeholder"}
+                {urun.isim || "Placeholder"}
               </Row>
               <Row className={"text-secondary fst-italic"}>
-                  {props.urun.ayrinti}
+                  {urun.ayrinti}
               </Row>
               <Row>
-                <PriceTag price={props.urun?.fiyat} />
+                <PriceTag price={urun.fiyat} />
               </Row>
               <InfoBox
-                show={infoBoxShow}
-                onHide={() => setInfoBoxShow(false)}
-                tiklamaYazisi={props.urun.tiklamaYazisi}
-                bilgi={props.urun.bilgi}
+                tiklamaYazisi={urun.tiklamaYazisi}
+                bilgi={urun.bilgi}
               />
             </Container>
           </Col>
@@ -57,7 +53,7 @@ function Item(props) {
               onChange={onSelect}
             >
               <option value={0}>Seçiniz (0)</option>
-              {[...Array(props.urun?.enFazla || 0).keys()].map((count) => (
+              {[...Array(urun.enFazla || 0).keys()].map((count) => (
                 <option key={count + 1} value={count + 1}>
                   {count + 1}
                 </option>
