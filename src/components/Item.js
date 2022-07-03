@@ -32,11 +32,6 @@ function Item(props) {
           <Col
             s={8}
             className={"text-start d-flex align-items-center ps-4"}
-            onClick={() => {
-              if(!props.tedavi.bilgi)
-                return;
-              setInfoBoxShow(true);
-            }}
           >
             <Container className={"p-0"}>
               <Row>{props.tedavi?.isim || "Placeholder"}</Row>
@@ -45,9 +40,19 @@ function Item(props) {
               </Row>
               {props.tedavi.bilgi &&
                 <Row className={"text-danger"}>
-                  <i className={"p-0"} style={{cursor: "pointer"}}><small><b>
-                    [ÖNEMLİ!] Mutlaka tıklayınız.
-                  </b></small></i>
+                  <i
+                    className={"p-0"}
+                    style={{cursor: "pointer", width: "auto"}}
+                    onClick={() => {
+                      if(!props.tedavi.bilgi)
+                        return;
+                      setInfoBoxShow(true);
+                    }}
+                  >
+                    <small><b>
+                      {props.tedavi.tiklamaYazisi}
+                    </b></small>
+                  </i>
                 </Row>
               }
             </Container>
