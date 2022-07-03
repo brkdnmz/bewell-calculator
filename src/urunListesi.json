@@ -99,25 +99,33 @@
         "id": 12,
         "isim": "BEWELL Katana Zirconium Crown/Veneer",
         "fiyat": 195,
-        "enFazla": 28
+        "enFazla": 28,
+        "tiklamaYazisi": "Müşterilere ekonomik kaplama önerisi için tıklayınız.",
+        "bilgi": "Özellikle estetik amaçlı istenen zirkonyum kaplamalarda tüm dişlerin zirkonyumla kaplanması yerine sadece ön üst 8 diş ve ön alt 10 diş kaplaması önerilirse bu hem estetiği sağlar, hem müşterinin bütçesini rahatlatır; böylelikle toplamda 18 diş kaplanır ve geri kalan dişlere de porselen uygulanır."
       },
       "vitaZirconium": {
         "id": 13,
         "isim": "BEWELL Vita Zirconium Crown/Veneer",
         "fiyat": 170,
-        "enFazla": 28
+        "enFazla": 28,
+        "tiklamaYazisi": "Müşterilere ekonomik kaplama önerisi için tıklayınız.",
+        "bilgi": "Özellikle estetik amaçlı istenen zirkonyum kaplamalarda tüm dişlerin zirkonyumla kaplanması yerine sadece ön üst 8 diş ve ön alt 10 diş kaplaması önerilirse bu hem estetiği sağlar, hem müşterinin bütçesini rahatlatır; böylelikle toplamda 18 diş kaplanır ve geri kalan dişlere de porselen uygulanır."
       },
       "localZirconium": {
         "id": 14,
         "isim": "BEWELL Local Zirconium Crown/Veneer",
         "fiyat": 150,
-        "enFazla": 28
+        "enFazla": 28,
+        "tiklamaYazisi": "Müşterilere ekonomik kaplama önerisi için tıklayınız.",
+        "bilgi": "Özellikle estetik amaçlı istenen zirkonyum kaplamalarda tüm dişlerin zirkonyumla kaplanması yerine sadece ön üst 8 diş ve ön alt 10 diş kaplaması önerilirse bu hem estetiği sağlar, hem müşterinin bütçesini rahatlatır; böylelikle toplamda 18 diş kaplanır ve geri kalan dişlere de porselen uygulanır."
       },
       "monolithicZirconium": {
         "id": 15,
         "isim": "BEWELL Monolithic Zirconium Crown/Veneer",
         "fiyat": 200,
-        "enFazla": 28
+        "enFazla": 28,
+        "tiklamaYazisi": "Müşterilere ekonomik kaplama önerisi için tıklayınız.",
+        "bilgi": "Özellikle estetik amaçlı istenen zirkonyum kaplamalarda tüm dişlerin zirkonyumla kaplanması yerine sadece ön üst 8 diş ve ön alt 10 diş kaplaması önerilirse bu hem estetiği sağlar, hem müşterinin bütçesini rahatlatır; böylelikle toplamda 18 diş kaplanır ve geri kalan dişlere de porselen uygulanır."
       },
       "emax": {
         "id": 16,
