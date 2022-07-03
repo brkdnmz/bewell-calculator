@@ -1,7 +1,7 @@
 import React from "react";
 import { ListGroup } from "react-bootstrap";
 
-function TedaviListesi(props) {
+function UrunKategorisi(props) {
   return (
     <ListGroup className={"pb-3 text-center"}>
       <ListGroup.Item className={"bg-danger text-light"}>
@@ -14,4 +14,4 @@ function TedaviListesi(props) {
   );
 }
 
-export default TedaviListesi;
+export default UrunKategorisi;

@@ -122,6 +122,12 @@
       "fiyat": 35,
       "enFazla": 28
     },
+    "disCekimiGomulu": {
+      "id": 35,
+      "isim": "Diş Çekimi (Gömülü)",
+      "fiyat": 120,
+      "enFazla": 28
+    },
     "dolgu": {
       "id": 19,
       "isim": "Dolgu",
