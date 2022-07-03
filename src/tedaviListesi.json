@@ -8,7 +8,7 @@
     },
     "hollywoodSmile": {
       "id": 1,
-      "isim": "24-28 BEWELL Local Zirconium Kaplama (Tüm Ağız) + Otel/Transfer/Rehberlik + Geçici Protez",
+      "isim": "Hollywood Smile 24-28 BEWELL Local Zirconium Kaplama (Tüm Ağız) + Otel/Transfer/Rehberlik + Geçici Protez",
       "fiyat": 3999,
       "enFazla": 1
     }
@@ -23,13 +23,13 @@
     "ikiKisi": {
       "id": 3,
       "isim": "2 Kişi Günlük",
-      "fiyat": 90,
+      "fiyat": 95,
       "enFazla": 18
     },
     "ikiBuyukBirCocuk": {
       "id": 4,
       "isim": "2 + 1 (6-12 Yaş Arası) Günlük",
-      "fiyat": 100,
+      "fiyat": 105,
       "enFazla": 18
     }
   },
@@ -194,6 +194,20 @@
       "id": 30,
       "isim": "Augmentasyon (Çeneden Çeneye Kemik Ekleme)",
       "fiyat": 500, 
+      "enFazla": 1
+    }
+  },
+  "protezler": {
+    "implantSonrasiGeciciProtez": {
+      "id": 31,
+      "isim": "İmplant Sonrası Geçici Protez",
+      "fiyat": 250,
+      "enFazla": 1
+    },
+    "kaplamaSonrasiGeciciProtez": {
+      "id": 32,
+      "isim": "Kaplama Sonrası Geçici Protez",
+      "fiyat": 150,
       "enFazla": 1
     }
   }

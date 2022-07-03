@@ -36,7 +36,6 @@ function Item(props) {
         <Col s={"auto"} className={"col-auto d-flex align-items-center"}>
           <select
             className="form-select text-secondary"
-            aria-label="Default select example"
             onChange={onSelect}
           >
             <option value={0}>Seçiniz (0)</option>

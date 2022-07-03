@@ -26,7 +26,6 @@ function App() {
   useEffect(() => {
     const choice_ids = Object.keys(choices);
     choice_ids.sort();
-    console.log(choice_ids);
     setSortedChoiceIds(() => choice_ids);
   }, [choices]);
 
@@ -39,42 +38,95 @@ function App() {
 
   return (
     <AppContext.Provider value={context}>
-      {/*{Object.keys(choices).map((choice, _) => {*/}
-      {/*  <span>{choice} {choices[choice]}</span>*/}
-      {/*})}*/}
       <Container className={"p-3"}>
         <Row className={"justify-content-center"}>
-          <Col className={"col-md-6"}>
-            <Row className={"justify-content-center"}><img src={icon} style={{width: "30%"}} /></Row>
+          <Col className={"col-md-auto"}>
+            <Row className={"justify-content-center"}>
+              <img src={icon} alt={"BEWELL Logo"} style={{width: "30%"}} />
+            </Row>
             <TedaviListesi name={"Kampanyalar"}>
-              {Object.keys(tedaviler.kampanya).map((tedavi, _) => (
-                <Item key={tedavi} tedavi={tedaviler.kampanya[tedavi]} />
-              ))}
+              {(() => {
+                const urunler = tedaviler.kampanya;
+                const urunlerId = Object.keys(urunler).map(urun => urunler[urun].id);
+                urunlerId.sort((a, b) => tedaviById[a].fiyat < tedaviById[b].fiyat);
+                const elems = [];
+                for(const id of urunlerId){
+                  elems.push(<Item key={id} tedavi={tedaviById[id]} />)
+                }
+                return elems;
+              })()}
             </TedaviListesi>
             <TedaviListesi name={"Otel / Transfer / Rehberlik"}>
-              {Object.keys(tedaviler.otel).map((tedavi, _) => (
-                <Item key={tedavi} tedavi={tedaviler.otel[tedavi]} />
-              ))}
+              {(() => {
+                const urunler = tedaviler.otel;
+                const urunlerId = Object.keys(urunler).map(urun => urunler[urun].id);
+                urunlerId.sort((a, b) => tedaviById[a].fiyat - tedaviById[b].fiyat);
+                const elems = [];
+                for(const id of urunlerId){
+                  elems.push(<Item key={id} tedavi={tedaviById[id]} />)
+                }
+                return elems;
+              })()}
             </TedaviListesi>
             <TedaviListesi name={"İmplantlar"}>
-              {Object.keys(tedaviler.implantlar).map((tedavi, _) => (
-                <Item key={tedavi} tedavi={tedaviler.implantlar[tedavi]} />
-              ))}
+              {(() => {
+                const urunler = tedaviler.implantlar;
+                const urunlerId = Object.keys(urunler).map(urun => urunler[urun].id);
+                urunlerId.sort((a, b) => tedaviById[a].fiyat - tedaviById[b].fiyat);
+                const elems = [];
+                for(const id of urunlerId){
+                  elems.push(<Item key={id} tedavi={tedaviById[id]} />)
+                }
+                return elems;
+              })()}
             </TedaviListesi>
             <TedaviListesi name={"Kaplamalar"}>
-              {Object.keys(tedaviler.kaplamalar).map((tedavi, _) => (
-                <Item key={tedavi} tedavi={tedaviler.kaplamalar[tedavi]} />
-              ))}
+              {(() => {
+                const urunler = tedaviler.kaplamalar;
+                const urunlerId = Object.keys(urunler).map(urun => urunler[urun].id);
+                urunlerId.sort((a, b) => tedaviById[a].fiyat - tedaviById[b].fiyat);
+                const elems = [];
+                for(const id of urunlerId){
+                  elems.push(<Item key={id} tedavi={tedaviById[id]} />)
+                }
+                return elems;
+              })()}
             </TedaviListesi>
             <TedaviListesi name={"Diş Tedavileri"}>
-              {Object.keys(tedaviler.dis).map((tedavi, _) => (
-                <Item key={tedavi} tedavi={tedaviler.dis[tedavi]} />
-              ))}
+              {(() => {
+                const urunler = tedaviler.dis;
+                const urunlerId = Object.keys(urunler).map(urun => urunler[urun].id);
+                urunlerId.sort((a, b) => tedaviById[a].fiyat - tedaviById[b].fiyat);
+                const elems = [];
+                for(const id of urunlerId){
+                  elems.push(<Item key={id} tedavi={tedaviById[id]} />)
+                }
+                return elems;
+              })()}
             </TedaviListesi>
             <TedaviListesi name={"İmplant Paketleri"}>
-              {Object.keys(tedaviler.implantPaketi).map((tedavi, _) => (
-                <Item key={tedavi} tedavi={tedaviler.implantPaketi[tedavi]} />
-              ))}
+              {(() => {
+                const urunler = tedaviler.implantPaketi;
+                const urunlerId = Object.keys(urunler).map(urun => urunler[urun].id);
+                urunlerId.sort((a, b) => tedaviById[a].fiyat - tedaviById[b].fiyat);
+                const elems = [];
+                for(const id of urunlerId){
+                  elems.push(<Item key={id} tedavi={tedaviById[id]} />)
+                }
+                return elems;
+              })()}
+            </TedaviListesi>
+            <TedaviListesi name={"Protezler"}>
+              {(() => {
+                const urunler = tedaviler.protezler;
+                const urunlerId = Object.keys(urunler).map(urun => urunler[urun].id);
+                urunlerId.sort((a, b) => tedaviById[a].fiyat - tedaviById[b].fiyat);
+                const elems = [];
+                for(const id of urunlerId){
+                  elems.push(<Item key={id} tedavi={tedaviById[id]} />)
+                }
+                return elems;
+              })()}
             </TedaviListesi>
             <Summary />
           </Col>
