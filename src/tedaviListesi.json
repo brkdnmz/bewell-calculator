@@ -1,25 +1,59 @@
 {
+  "kampanya": {
+    "allOn6": {
+      "id": 0,
+      "isim": "All-On-6 (6 Evoss + 12-14 Local Porcelain + Otel/Transfer/Rehberlik + Geçici Protez)",
+      "fiyat": 2999,
+      "enFazla": 2
+    },
+    "hollywoodSmile": {
+      "id": 1,
+      "isim": "24-28 BEWELL Local Zirconium Kaplama (Tüm Ağız) + Otel/Transfer/Rehberlik + Geçici Protez",
+      "fiyat": 3999,
+      "enFazla": 1
+    }
+  },
+  "otel": {
+    "tekKisi": {
+      "id": 2,
+      "isim": "Tek Kişi Günlük",
+      "fiyat": 70,
+      "enFazla": 18
+    },
+    "ikiKisi": {
+      "id": 3,
+      "isim": "2 Kişi Günlük",
+      "fiyat": 90,
+      "enFazla": 18
+    },
+    "ikiBuyukBirCocuk": {
+      "id": 4,
+      "isim": "2 + 1 (6-12 Yaş Arası) Günlük",
+      "fiyat": 100,
+      "enFazla": 18
+    }
+  },
   "implantlar": {
     "straumann": {
-      "id": 0,
+      "id": 5,
       "isim": "Straumann",
       "fiyat": 750,
       "enFazla": 12
     },
     "bego": {
-      "id": 1,
+      "id": 6,
       "isim": "Bego",
       "fiyat": 600,
       "enFazla": 12
     },
     "megagen": {
-      "id": 2,
+      "id": 7,
       "isim": "Megagen",
       "fiyat": 440,
       "enFazla": 12
     },
     "evoss": {
-      "id": 3,
+      "id": 8,
       "isim": "Evoss",
       "fiyat": 320,
       "enFazla": 12
@@ -27,55 +61,55 @@
   },
   "kaplamalar": {
     "kurarayPorcelain": {
-      "id": 4,
+      "id": 9,
       "isim": "BEWELL Kuraray Porcelain Crown/Veneer",
       "fiyat": 110,
       "enFazla": 28
     },
     "vitaPorcelain": {
-      "id": 5,
+      "id": 10,
       "isim": "BEWELL Vita Porcelain Crown/Veneer",
       "fiyat": 95,
       "enFazla": 28
     },
     "localPorcelain": {
-      "id": 6,
+      "id": 11,
       "isim": "BEWELL Local Porcelain Crown/Veneer",
       "fiyat": 85,
       "enFazla": 28
     },
     "katanaZirconium": {
-      "id": 7,
+      "id": 12,
       "isim": "BEWELL Katana Zirconium Crown/Veneer",
       "fiyat": 195,
       "enFazla": 28
     },
     "vitaZirconium": {
-      "id": 8,
+      "id": 13,
       "isim": "BEWELL Vita Zirconium Crown/Veneer",
       "fiyat": 170,
       "enFazla": 28
     },
     "localZirconium": {
-      "id": 9,
+      "id": 14,
       "isim": "BEWELL Local Zirconium Crown/Veneer",
       "fiyat": 150,
       "enFazla": 28
     },
     "monolithicZirconium": {
-      "id": 10,
+      "id": 15,
       "isim": "BEWELL Monolithic Zirconium Crown/Veneer",
       "fiyat": 200,
       "enFazla": 28
     },
     "emax": {
-      "id": 11,
+      "id": 16,
       "isim": "BEWELL E-Max Veneer",
       "fiyat": 210,
       "enFazla": 28
     },
     "laminat": {
-      "id": 12,
+      "id": 17,
       "isim": "BEWELL Laminat Veneer",
       "fiyat": 210,
       "enFazla": 28
@@ -83,43 +117,43 @@
   },
   "dis": {
     "disCekimi": {
-      "id": 13,
+      "id": 18,
       "isim": "Diş Çekimi",
       "fiyat": 35,
       "enFazla": 28
     },
     "dolgu": {
-      "id": 14,
+      "id": 19,
       "isim": "Dolgu",
       "fiyat": 35,
       "enFazla": 10
     },
     "kanalTedavisi": {
-      "id": 15,
+      "id": 20,
       "isim": "Kanal Tedavisi",
       "fiyat": 95,
       "enFazla": 10
     },
     "beyazlatma": {
-      "id": 16,
+      "id": 21,
       "isim": "Beyazlatma",
       "fiyat": 250,
       "enFazla": 1
     },
     "rekonstruksiyon": {
-      "id": 17,
+      "id": 22,
       "isim": "Diş Eti Cerrahi Rekonstrüksiyon",
       "fiyat": 250,
       "enFazla": 1
     },
     "acikSinus": {
-      "id": 18,
-      "isim": "Tek Taraflı Açık Sinüs Lifting (Cerrah Yapar)",
-      "fiyat": 500,
+      "id": 23,
+      "isim": "Tek Taraflı Açık Sinüs Lifting (Cerrah Yapar, Cerrah Ücreti Dahil)",
+      "fiyat": 650,
       "enFazla": 2
     },
     "kapaliSinus": {
-      "id": 19,
+      "id": 24,
       "isim": "Tek Taraflı Kapalı Sinüs Lifting (Cerraha Gerek Yok)",
       "fiyat": 300,
       "enFazla": 2
@@ -127,33 +161,39 @@
   },
   "implantPaketi": {
     "allOn6": {
-      "id": 20,
-      "isim": "All-On-6 Evoss + Porcelain",
+      "id": 25,
+      "isim": "All-On-6 Evoss + Local Porcelain",
       "fiyat": 3999,
       "enFazla": 2
     },
     "allOn4": {
-      "id": 21,
-      "isim": "All-On-4 Evoss + Porcelain",
+      "id": 26,
+      "isim": "All-On-4 Evoss + Local Porcelain",
       "fiyat": 3799,
       "enFazla": 2
     },
     "kemikTozu1cc": {
-      "id": 22,
+      "id": 27,
       "isim": "Kemik Tozu (1 cc.)",
       "fiyat": 150,
       "enFazla": 1
     },
     "kemikTozu2cc": {
-      "id": 23,
+      "id": 28,
       "isim": "Kemik Tozu (2 cc.)",
       "fiyat": 280,
       "enFazla": 1
     },
     "kemikTozu3cc": {
-      "id": 24,
+      "id": 29,
       "isim": "Kemik Tozu (3 cc.)",
       "fiyat": 400,
+      "enFazla": 1
+    },
+    "augmentasyon": {
+      "id": 30,
+      "isim": "Augmentasyon (Çeneden Çeneye Kemik Ekleme)",
+      "fiyat": 500, 
       "enFazla": 1
     }
   }
