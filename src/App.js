@@ -1,7 +1,9 @@
 import "./App.css";
 import Item from "./components/Item";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Col, Container, Row } from "react-bootstrap";
+import Col from "react-bootstrap/Col";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
 import TedaviListesi from "./components/TedaviListesi";
 import { createContext, useEffect, useState } from "react";
 import tedaviler from "./tedaviListesi.json";

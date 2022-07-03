@@ -1,5 +1,7 @@
 import React, { useContext } from "react";
-import { Col, Container, ListGroup, Row } from "react-bootstrap";
+import Col from "react-bootstrap/Col";
+import ListGroup from "react-bootstrap/ListGroup";
+import Row from "react-bootstrap/Row";
 import { AppContext } from "../App";
 import PriceTag from "./PriceTag";
 
