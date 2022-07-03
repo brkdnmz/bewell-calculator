@@ -38,14 +38,11 @@ function App() {
             <Container>
             <Row className={"justify-content-center pb-2"}>
               <img src={icon} alt={"BEWELL Logo"} style={{width: "30%"}} />
-              <Container>
-                <Row
-                  className={"d-inline text-center"}
-                  style={{fontStyle: "italic", fontWeight: "bold"}}
+                <h4
+                  className={"m-0 text-center fst-italic fw-bold"}
                 >
                   <span style={{color: "#ea1f25", padding: 0}}>BE</span><span style={{color: "#6b6b6b", padding: 0}}>WELL</span> Tutar Hesaplama Aracı
-                </Row>
-              </Container>
+                </h4>
             </Row>
             </Container>
             {Object.keys(urunListesi).map(kategori => (
