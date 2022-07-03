@@ -45,10 +45,10 @@ function Item(props) {
                 <PriceTag price={props.tedavi?.fiyat} />
               </Row>
               {props.tedavi.bilgi &&
-                <Row>
-                  <i className={"p-0"}><small><u>
-                    Bilgilendirme için tıklayınız.
-                  </u></small></i>
+                <Row className={"text-danger"}>
+                  <i className={"p-0"}><small><b>
+                    [ÖNEMLİ!] Mutlaka tıklayınız.
+                  </b></small></i>
                 </Row>
               }
             </Container>

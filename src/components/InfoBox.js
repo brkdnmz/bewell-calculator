@@ -5,6 +5,7 @@ import Button from "react-bootstrap/Button";
 function InfoBox(props) {
   return (
     <Modal
+      scrollable
       backdrop={"static"}
       show={props.show}
       onHide={props.onHide}
@@ -17,7 +18,7 @@ function InfoBox(props) {
           Bilgilendirme
         </Modal.Title>
       </Modal.Header>
-      <Modal.Body>
+      <Modal.Body style={{whiteSpace: "pre-wrap"}}>
         {props.info}
       </Modal.Body>
       <Modal.Footer>
