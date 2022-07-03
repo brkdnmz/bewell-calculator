@@ -33,13 +33,13 @@ function Item({urun}) {
           >
             <Container className={"p-0"}>
               <Row className={"fw-bold"}>
-                {urun.isim || "Placeholder"}
+                {urun["isim"] || "Placeholder"}
               </Row>
               <Row className={"text-secondary fst-italic"}>
-                  {urun.ayrinti}
+                  {urun["ayrinti"]}
               </Row>
               <Row>
-                <PriceTag price={urun.fiyat} />
+                <PriceTag price={urun["fiyat"]} />
               </Row>
               <InfoBox
                 tiklamaYazisi={urun.tiklamaYazisi}
@@ -53,7 +53,7 @@ function Item({urun}) {
               onChange={onSelect}
             >
               <option value={0}>Seçiniz (0)</option>
-              {[...Array(urun.enFazla || 0).keys()].map((count) => (
+              {[...Array(urun["enFazla"] || 0).keys()].map((count) => (
                 <option key={count + 1} value={count + 1}>
                   {count + 1}
                 </option>

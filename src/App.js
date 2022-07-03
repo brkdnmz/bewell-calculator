@@ -5,14 +5,14 @@ import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import UrunKategorisi from "./components/UrunKategorisi";
-import { createContext, useEffect, useState } from "react";
+import { createContext, useState } from "react";
 import urunListesi from "./urunListesi.json";
 import Summary from "./components/Summary";
 import icon from "./bewell.png";
 
 const urunById = {};
 for (const kategori in urunListesi) {
-  const curUrunler = urunListesi[kategori].urunler;
+  const curUrunler = urunListesi[kategori]["urunler"];
   for (const urunKey in curUrunler) {
     const urun = curUrunler[urunKey];
     urunById[urun.id] = urun;
@@ -45,11 +45,11 @@ function App() {
               </Row>
             </Row>
             {Object.keys(urunListesi).map(kategori => (
-              <UrunKategorisi name={urunListesi[kategori].baslik} key={kategori}>
+              <UrunKategorisi name={urunListesi[kategori]["baslik"]} key={kategori}>
                 {(() => {
-                  const urunler = urunListesi[kategori].urunler;
+                  const urunler = urunListesi[kategori]["urunler"];
                   const urunlerId = Object.keys(urunler).map(urun => urunler[urun].id);
-                  urunlerId.sort((a, b) => urunById[a].fiyat - urunById[b].fiyat);
+                  urunlerId.sort((a, b) => urunById[a]["fiyat"] - urunById[b]["fiyat"]);
                   const elems = [];
                   for(const id of urunlerId){
                     elems.push(<Item key={id} urun={urunById[id]} />)

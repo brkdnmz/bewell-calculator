@@ -5,16 +5,16 @@ import Row from "react-bootstrap/Row";
 import { AppContext } from "../App";
 import PriceTag from "./PriceTag";
 
-function Summary(props) {
+function Summary() {
   const { choices, urunById } = useContext(AppContext);
 
   const sortedChoiceIds = Object.keys(choices);
-  const fiyat = id => urunById[id].fiyat * choices[id];
+  const fiyat = id => urunById[id]["fiyat"] * choices[id];
   sortedChoiceIds.sort((a, b) => fiyat(a) - fiyat((b)));
 
   let toplamFiyat = 0;
   for (const id of sortedChoiceIds) {
-    toplamFiyat += choices[id] * parseInt(urunById[id].fiyat);
+    toplamFiyat += choices[id] * parseInt(urunById[id]["fiyat"]);
   }
 
   return (
@@ -30,12 +30,12 @@ function Summary(props) {
           <Row>
             <Col xs={"9"}>
               <Row>
-                <Col xs={"12"}>{urunById[id].isim}</Col>
+                <Col xs={"12"}>{urunById[id]["isim"]}</Col>
                 <Col>({choices[id]} adet)</Col>
               </Row>
             </Col>
             <Col xs={"3"} className={"text-end"}>
-              <PriceTag price={urunById[id].fiyat * choices[id]} />
+              <PriceTag price={urunById[id]["fiyat"] * choices[id]} />
             </Col>
           </Row>
         </ListGroup.Item>
