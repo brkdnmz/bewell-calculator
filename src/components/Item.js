@@ -22,14 +22,14 @@ function Item({urun}) {
     });
   };
   return (
-    <>
+    <Container className={"ps-2 pe-2"}>
       <Row
         className={"justify-content-center align-items-center"}
         style={{ minHeight: "50px" }}
       >
           <Col
             s={12}
-            className={"text-start d-flex align-items-center ps-4"}
+            className={"text-start d-flex align-items-center"}
           >
             <Container className={"p-0"}>
               <Row className={"fw-bold"}>
@@ -61,7 +61,7 @@ function Item({urun}) {
             </select>
           </Col>
       </Row>
-    </>
+    </Container>
   );
 }
 

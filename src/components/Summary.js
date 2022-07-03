@@ -4,6 +4,7 @@ import ListGroup from "react-bootstrap/ListGroup";
 import Row from "react-bootstrap/Row";
 import { AppContext } from "../App";
 import PriceTag from "./PriceTag";
+import Container from "react-bootstrap/Container";
 
 function Summary() {
   const { choices, urunById } = useContext(AppContext);
@@ -19,35 +20,47 @@ function Summary() {
 
   return (
     <ListGroup style={{minHeight: "200px"}}>
-      <ListGroup.Item variant={"secondary"} className={"text-center"}>
-        <b>Seçilen Ürünler</b>
+      <ListGroup.Item variant={"secondary"} className={"text-center fst-italic fw-bold"}>
+        Seçilen Ürünler
       </ListGroup.Item>
       {Object.keys(choices).length === 0 && (
-        <ListGroup.Item>Henüz bir seçim yapmadınız.</ListGroup.Item>
+        <ListGroup.Item className={"fst-italic"}>
+          Henüz bir seçim yapmadınız.
+        </ListGroup.Item>
       )}
       {sortedChoiceIds.map(id => (
         <ListGroup.Item key={id}>
-          <Row>
-            <Col xs={"9"}>
-              <Row>
-                <Col xs={"12"}>{urunById[id]["isim"]}</Col>
-                <Col>({choices[id]} adet)</Col>
-              </Row>
-            </Col>
-            <Col xs={"3"} className={"text-end"}>
-              <PriceTag price={urunById[id]["fiyat"] * choices[id]} />
-            </Col>
-          </Row>
+          <Container className={"ps-2 pe-2"}>
+            <Row>
+              <Col s={"12"}>
+                <Container className={"p-0"}>
+                  <Row className={"fw-bold"}>
+                    {urunById[id]["isim"] || "Placeholder"}
+                  </Row>
+                  <Row className={"fst-italic"}>
+                    ({choices[id]} adet)
+                  </Row>
+                </Container>
+              </Col>
+              <Col xs={"3"} className={"text-end"}>
+                <PriceTag price={urunById[id]["fiyat"] * choices[id]} />
+              </Col>
+            </Row>
+          </Container>
         </ListGroup.Item>
       ))}
       {Object.keys(choices).length > 0 && (
         <ListGroup.Item variant={"warning"}>
-          <Row className={"justify-content-between"}>
-            <Col xs>Toplam:</Col>
-            <Col xs className={"text-end"}>
-              <PriceTag price={toplamFiyat} />
-            </Col>
-          </Row>
+          <Container className={"ps-2 pe-2"}>
+            <Row className={"justify-content-end"}>
+              <Col className={"col-10 ps-0 fst-italic text-end"}>
+                Toplam:
+              </Col>
+              <Col className={"col-auto text-end"}>
+                <PriceTag price={toplamFiyat} />
+              </Col>
+            </Row>
+          </Container>
         </ListGroup.Item>
       )}
     </ListGroup>

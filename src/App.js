@@ -35,15 +35,19 @@ function App() {
       <Container className={"p-3"}>
         <Row className={"justify-content-center"}>
           <Col lg={8}>
+            <Container>
             <Row className={"justify-content-center pb-2"}>
               <img src={icon} alt={"BEWELL Logo"} style={{width: "30%"}} />
-              <Row
-                className={"d-inline text-center"}
-                style={{fontStyle: "italic", fontWeight: "bold"}}
-              >
-                <span style={{color: "#ea1f25", padding: 0}}>BE</span><span style={{color: "#6b6b6b", padding: 0}}>WELL</span> Tutar Hesaplama Aracı
-              </Row>
+              <Container>
+                <Row
+                  className={"d-inline text-center"}
+                  style={{fontStyle: "italic", fontWeight: "bold"}}
+                >
+                  <span style={{color: "#ea1f25", padding: 0}}>BE</span><span style={{color: "#6b6b6b", padding: 0}}>WELL</span> Tutar Hesaplama Aracı
+                </Row>
+              </Container>
             </Row>
+            </Container>
             {Object.keys(urunListesi).map(kategori => (
               <UrunKategorisi name={urunListesi[kategori]["baslik"]} key={kategori}>
                 {(() => {
