@@ -37,7 +37,6 @@ function Item(props) {
                 return;
               setInfoBoxShow(true);
             }}
-            style={{cursor: props.tedavi.bilgi ? "pointer" : "default"}}
           >
             <Container className={"p-0"}>
               <Row>{props.tedavi?.isim || "Placeholder"}</Row>
@@ -46,7 +45,7 @@ function Item(props) {
               </Row>
               {props.tedavi.bilgi &&
                 <Row className={"text-danger"}>
-                  <i className={"p-0"}><small><b>
+                  <i className={"p-0"} style={{cursor: "pointer"}}><small><b>
                     [ÖNEMLİ!] Mutlaka tıklayınız.
                   </b></small></i>
                 </Row>
