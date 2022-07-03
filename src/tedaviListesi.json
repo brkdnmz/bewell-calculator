@@ -209,6 +209,12 @@
       "isim": "Kaplama Sonrası Geçici Protez",
       "fiyat": 150,
       "enFazla": 1
+    },
+    "takCikarDamak": {
+      "id": 33,
+      "isim": "Tak-Çıkar Damak",
+      "fiyat": 950,
+      "enFazla": 1
     }
   }
 }
