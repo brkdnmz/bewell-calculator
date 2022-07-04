@@ -1,9 +1,13 @@
 import React from 'react';
 
-function PriceTag(props) {
+type PriceTagProps = {
+  price: number;
+};
+
+function PriceTag({price}: PriceTagProps) {
   return (
     <p className={"p-0 m-0 text-secondary fst-italic fw-bold"}>
-        {props.price}₤
+        {price}₤
     </p>
   );
 }

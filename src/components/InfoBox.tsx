@@ -3,11 +3,16 @@ import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 
-function InfoBox(props) {
+type InfoBoxProps = {
+  tiklamaYazisi?: string;
+  bilgi?: string;
+};
+
+function InfoBox({tiklamaYazisi, bilgi}: InfoBoxProps) {
   const [infoBoxShow, setInfoBoxShow] = React.useState(false);
   return (
     <>
-      {props.bilgi &&
+      {bilgi &&
         <>
           <Row className={"text-danger"}>
             <i
@@ -18,7 +23,7 @@ function InfoBox(props) {
               }}
             >
               <small><b>
-                {props.tiklamaYazisi}
+                {tiklamaYazisi}
               </b></small>
             </i>
           </Row>
@@ -37,10 +42,12 @@ function InfoBox(props) {
               </Modal.Title>
             </Modal.Header>
             <Modal.Body style={{whiteSpace: "pre-wrap"}}>
-              {props.bilgi}
+              {bilgi}
             </Modal.Body>
             <Modal.Footer>
-              <Button onClick={() => setInfoBoxShow(false)}>Tamam</Button>
+              <Button onClick={() => setInfoBoxShow(false)}>
+                Tamam
+              </Button>
             </Modal.Footer>
           </Modal>
         </>

@@ -6,23 +6,34 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import UrunKategorisi from "./components/UrunKategorisi";
 import { createContext, useState } from "react";
-import urunListesi from "./urunListesi.json";
+import _urunListesi from "./urunListesi.json";
 import Summary from "./components/Summary";
 import icon from "./bewell.png";
+import AppContextType from "./@types/appContext";
+import {Urun, UrunListesi} from "./@types/urun";
+import Choices from "./@types/choices";
 
-const urunById = {};
+const urunListesi: UrunListesi = _urunListesi;
+
+const urunById: {[key: number] : Urun} = {};
+
 for (const kategori in urunListesi) {
   const curUrunler = urunListesi[kategori]["urunler"];
   for (const urunKey in curUrunler) {
     const urun = curUrunler[urunKey];
-    urunById[urun.id] = urun;
+    urunById[urun["id"]] = urun;
   }
 }
 
-export const AppContext = createContext(null);
+
+export const AppContext = createContext<AppContextType>({
+  choices: {},
+  setChoices: undefined,
+  urunById: {}
+});
 
 function App() {
-  const [choices, setChoices] = useState({});
+  const [choices, setChoices] = useState<Choices>({});
 
   const context = {
     choices,

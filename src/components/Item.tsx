@@ -1,16 +1,24 @@
-import React, { useContext } from "react";
+import React, {ChangeEvent, useContext} from "react";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
-import { AppContext } from "../App";
+import {AppContext} from "../App";
 import PriceTag from "./PriceTag";
 import InfoBox from "./InfoBox";
+import {Urun} from "../@types/urun";
+import AppContextType from "../@types/appContext";
+import Choices from "../@types/choices";
 
-function Item({urun}) {
-  const { setChoices } = useContext(AppContext);
-  const onSelect = (e) => {
-    setChoices((prevChoices) => {
-      const newCount = parseInt(e.target.value);
+type ItemProps = {
+    urun: Urun;
+};
+
+function Item({urun}: ItemProps) {
+  const { setChoices } = useContext(AppContext) as AppContextType;
+  const onSelect = (e: ChangeEvent) => {
+    setChoices((prevChoices: Choices) => {
+      const target = e.target as HTMLSelectElement;
+      const newCount = parseInt(target.value);
       const newChoices = {
         ...prevChoices,
         [urun.id]: newCount,
@@ -53,7 +61,7 @@ function Item({urun}) {
               onChange={onSelect}
             >
               <option value={0}>Seçiniz (0)</option>
-              {[...Array(urun["enFazla"] || 0).keys()].map((count) => (
+              {Array.from(Array(urun["enFazla"] || 0).keys()).map((count) => (
                 <option key={count + 1} value={count + 1}>
                   {count + 1}
                 </option>
