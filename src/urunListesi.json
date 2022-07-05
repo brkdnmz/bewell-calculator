@@ -1,47 +1,57 @@
 {
   "kampanya": {
     "baslik": "Kampanyalar",
+    "baslikEn": "Special Offers",
     "urunler": {
       "allOn6": {
         "id": 0,
         "isim": "All-On-6",
+        "isimEn": "All-On-6",
         "ayrinti": "6 Evoss + 12-14 Local Porcelain + Otel/Transfer/Rehberlik + Geçici Protez",
+        "ayrintiEn": "6 Evoss + 12-14 Local Porcelain + Hotel/Transfer/Guidance + Temporary Prosthesis",
         "fiyat": 2999,
         "enFazla": 2
       },
       "hollywoodSmile": {
         "id": 1,
         "isim": "Hollywood Smile",
+        "isimEn": "Hollywood Smile",
         "ayrinti": "24-28 Local Zirconium (Tüm Ağız) + Otel/Transfer/Rehberlik + Geçici Protez",
+        "ayrintiEn": "24-28 Local Zirconium (Whole Mouth) + Hotel/Transfer/Guidance + Temporary Prosthesis",
         "fiyat": 3999,
         "enFazla": 1
       }
     }
   },
   "otel": {
-    "baslik": "Otel (Oda + Kahvaltı) / Transfer / Rehberlik",
+    "baslik": "Otel (Oda & Kahvaltı) / Transfer / Rehberlik",
+    "baslikEn": "Hotel (Bed & Breakfast) / Transfer / Guidance",
     "urunler": {
       "tekKisi": {
         "id": 2,
         "isim": "Tek Kişi Günlük",
+        "isimEn": "Single Person Daily",
         "fiyat": 70,
         "enFazla": 18
       },
       "ikiKisi": {
         "id": 3,
         "isim": "2 Kişi Günlük",
+        "isimEn": "2-Person Daily",
         "fiyat": 95,
         "enFazla": 18
       },
       "ikiBuyukBirCocuk": {
         "id": 4,
         "isim": "2 + 1 (6-12 Yaş Arası) Günlük",
+        "isimEn": "2 + 1 (Ages 6-12) Daily",
         "fiyat": 105,
         "enFazla": 18
       },
       "eslikciFarki": {
         "id": 36,
         "isim": "Eşlikçi Günlük Konaklama Farkı",
+        "isimEn": "Companion Daily Accomodation Difference",
         "fiyat": 25,
         "enFazla": 18
       }
@@ -49,28 +59,33 @@
   },
   "implantlar": {
     "baslik": "İmplantlar",
+    "baslikEn": "Implants",
     "urunler": {
       "straumann": {
         "id": 5,
         "isim": "Straumann",
+        "isimEn": "Straumann",
         "fiyat": 750,
         "enFazla": 12
       },
       "bego": {
         "id": 6,
         "isim": "Bego",
+        "isimEn": "Bego",
         "fiyat": 600,
         "enFazla": 12
       },
       "megagen": {
         "id": 7,
         "isim": "Megagen",
+        "isimEn": "Megagen",
         "fiyat": 440,
         "enFazla": 12
       },
       "evoss": {
         "id": 8,
         "isim": "Evoss",
+        "isimEn": "Evoss",
         "fiyat": 320,
         "enFazla": 12
       }
@@ -78,66 +93,84 @@
   },
   "kaplamalar": {
     "baslik": "Kaplamalar",
+    "baslikEn": "Overlays",
     "urunler": {
       "kurarayPorcelain": {
         "id": 9,
         "isim": "BEWELL Kuraray Porcelain Crown/Veneer",
+        "isimEn": "BEWELL Kuraray Porcelain Crown/Veneer",
         "fiyat": 110,
         "enFazla": 28
       },
       "vitaPorcelain": {
         "id": 10,
         "isim": "BEWELL Vita Porcelain Crown/Veneer",
+        "isimEn": "BEWELL Vita Porcelain Crown/Veneer",
         "fiyat": 95,
         "enFazla": 28
       },
       "localPorcelain": {
         "id": 11,
         "isim": "BEWELL Local Porcelain Crown/Veneer",
+        "isimEn": "BEWELL Local Porcelain Crown/Veneer",
         "fiyat": 85,
         "enFazla": 28
       },
       "katanaZirconium": {
         "id": 12,
         "isim": "BEWELL Katana Zirconium Crown/Veneer",
+        "isimEn": "BEWELL Katana Zirconium Crown/Veneer",
         "fiyat": 195,
         "enFazla": 28,
         "tiklamaYazisi": "Müşterilere ekonomik kaplama önerisi için tıklayınız.",
-        "bilgi": "Özellikle estetik amaçlı istenen zirkonyum kaplamalarda tüm dişlerin zirkonyumla kaplanması yerine sadece ön üst 8 diş ve ön alt 10 diş kaplaması önerilirse bu hem estetiği sağlar, hem müşterinin bütçesini rahatlatır; böylelikle toplamda 18 diş kaplanır ve geri kalan dişlere de porselen uygulanır."
+        "tiklamaYazisiEn": "Click here for an affordable recommendation for customers.",
+        "bilgi": "Özellikle estetik amaçlı istenen zirkonyum kaplamalarda tüm dişlerin zirkonyumla kaplanması yerine sadece ön üst 8 diş ve ön alt 10 diş kaplaması önerilirse bu hem estetiği sağlar, hem müşterinin bütçesini rahatlatır; böylelikle toplamda 18 diş kaplanır ve geri kalan dişlere de porselen uygulanır.",
+        "bilgiEn": "When the customer wants zirconium overlay for aesthetic purposes, it is better for the customer to apply zirconium overlay not on all teeth but only on 8 anterior upper and 10 anterior lower teeth (18 zirconium in total) and apply porcelain to all other teeth. Because it is enough to provide good appearance. Besides, it is more affordable."
       },
       "vitaZirconium": {
         "id": 13,
         "isim": "BEWELL Vita Zirconium Crown/Veneer",
+        "isimEn": "BEWELL Vita Zirconium Crown/Veneer",
         "fiyat": 170,
         "enFazla": 28,
         "tiklamaYazisi": "Müşterilere ekonomik kaplama önerisi için tıklayınız.",
-        "bilgi": "Özellikle estetik amaçlı istenen zirkonyum kaplamalarda tüm dişlerin zirkonyumla kaplanması yerine sadece ön üst 8 diş ve ön alt 10 diş kaplaması önerilirse bu hem estetiği sağlar, hem müşterinin bütçesini rahatlatır; böylelikle toplamda 18 diş kaplanır ve geri kalan dişlere de porselen uygulanır."
+        "tiklamaYazisiEn": "Click here for an affordable recommendation for customers.",
+        "bilgi": "Özellikle estetik amaçlı istenen zirkonyum kaplamalarda tüm dişlerin zirkonyumla kaplanması yerine sadece ön üst 8 diş ve ön alt 10 diş kaplaması önerilirse bu hem estetiği sağlar, hem müşterinin bütçesini rahatlatır; böylelikle toplamda 18 diş kaplanır ve geri kalan dişlere de porselen uygulanır.",
+        "bilgiEn": "When the customer wants zirconium overlay for aesthetic purposes, it is better for the customer to apply zirconium overlay not on all teeth but only on 8 anterior upper and 10 anterior lower teeth (18 zirconium in total) and apply porcelain to all other teeth. Because it is enough to provide good appearance. Besides, it is more affordable."
       },
       "localZirconium": {
         "id": 14,
         "isim": "BEWELL Local Zirconium Crown/Veneer",
+        "isimEn": "BEWELL Local Zirconium Crown/Veneer",
         "fiyat": 150,
         "enFazla": 28,
         "tiklamaYazisi": "Müşterilere ekonomik kaplama önerisi için tıklayınız.",
-        "bilgi": "Özellikle estetik amaçlı istenen zirkonyum kaplamalarda tüm dişlerin zirkonyumla kaplanması yerine sadece ön üst 8 diş ve ön alt 10 diş kaplaması önerilirse bu hem estetiği sağlar, hem müşterinin bütçesini rahatlatır; böylelikle toplamda 18 diş kaplanır ve geri kalan dişlere de porselen uygulanır."
+        "tiklamaYazisiEn": "Click here for an affordable recommendation for customers.",
+        "bilgi": "Özellikle estetik amaçlı istenen zirkonyum kaplamalarda tüm dişlerin zirkonyumla kaplanması yerine sadece ön üst 8 diş ve ön alt 10 diş kaplaması önerilirse bu hem estetiği sağlar, hem müşterinin bütçesini rahatlatır; böylelikle toplamda 18 diş kaplanır ve geri kalan dişlere de porselen uygulanır.",
+        "bilgiEn": "When the customer wants zirconium overlay for aesthetic purposes, it is better for the customer to apply zirconium overlay not on all teeth but only on 8 anterior upper and 10 anterior lower teeth (18 zirconium in total) and apply porcelain to all other teeth. Because it is enough to provide good appearance. Besides, it is more affordable."
       },
       "monolithicZirconium": {
         "id": 15,
         "isim": "BEWELL Monolithic Zirconium Crown/Veneer",
+        "isimEn": "BEWELL Monolithic Zirconium Crown/Veneer",
         "fiyat": 200,
         "enFazla": 28,
         "tiklamaYazisi": "Müşterilere ekonomik kaplama önerisi için tıklayınız.",
-        "bilgi": "Özellikle estetik amaçlı istenen zirkonyum kaplamalarda tüm dişlerin zirkonyumla kaplanması yerine sadece ön üst 8 diş ve ön alt 10 diş kaplaması önerilirse bu hem estetiği sağlar, hem müşterinin bütçesini rahatlatır; böylelikle toplamda 18 diş kaplanır ve geri kalan dişlere de porselen uygulanır."
+        "tiklamaYazisiEn": "Click here for an affordable recommendation for customers.",
+        "bilgi": "Özellikle estetik amaçlı istenen zirkonyum kaplamalarda tüm dişlerin zirkonyumla kaplanması yerine sadece ön üst 8 diş ve ön alt 10 diş kaplaması önerilirse bu hem estetiği sağlar, hem müşterinin bütçesini rahatlatır; böylelikle toplamda 18 diş kaplanır ve geri kalan dişlere de porselen uygulanır.",
+        "bilgiEn": "When the customer wants zirconium overlay for aesthetic purposes, it is better for the customer to apply zirconium overlay not on all teeth but only on 8 anterior upper and 10 anterior lower teeth (18 zirconium in total) and apply porcelain to all other teeth. Because it is enough to provide good appearance. Besides, it is more affordable."
       },
       "emax": {
         "id": 16,
         "isim": "BEWELL E-Max Veneer",
+        "isimEn": "BEWELL E-Max Veneer",
         "fiyat": 210,
         "enFazla": 28
       },
       "laminat": {
         "id": 17,
         "isim": "BEWELL Laminat Veneer",
+        "isimEn": "BEWELL Laminate Veneer",
         "fiyat": 210,
         "enFazla": 28
       }
@@ -145,111 +178,139 @@
   },
   "dis": {
     "baslik": "Diş Tedavileri",
+    "baslikEn": "Dental Treatments",
     "urunler": {
       "disCekimi": {
         "id": 18,
         "isim": "Diş Çekimi",
+        "isimEn": "Tooth Extraction",
         "fiyat": 35,
         "enFazla": 28
       },
       "disCekimiGomulu": {
         "id": 35,
         "isim": "Diş Çekimi (Gömülü)",
+        "isimEn": "Tooth Extraction (Embedded)",
         "fiyat": 120,
         "enFazla": 28
       },
       "dolgu": {
         "id": 19,
         "isim": "Dolgu",
+        "isimEn": "Filling",
         "fiyat": 35,
         "enFazla": 10
       },
       "kanalTedavisi": {
         "id": 20,
         "isim": "Kanal Tedavisi",
+        "isimEn": "Root Canal Treatment",
         "fiyat": 95,
         "enFazla": 10
       },
       "beyazlatma": {
         "id": 21,
         "isim": "Beyazlatma",
+        "isimEn": "Whitening",
         "fiyat": 250,
         "enFazla": 1
       },
       "rekonstruksiyon": {
         "id": 22,
         "isim": "Diş Eti Cerrahi Rekonstrüksiyon",
+        "isimEn": "Gum Tissue Graft Surgery",
         "fiyat": 250,
         "enFazla": 1
       },
       "acikSinus": {
         "id": 23,
         "isim": "Tek Taraflı Açık Sinüs Lifting",
-        "ayrinti": "Cerrah Yapar, Cerrah Ücreti Dahil",
+        "isimEn": "Open Sinus Lifting (Single Side)",
+        "ayrinti": "Cerrah Yapar — Cerrah Ücreti Dahil",
+        "ayrintiEn": "Surgical — Surgeon Fee Included",
         "fiyat": 650,
         "enFazla": 2,
         "tiklamaYazisi": "[ÖNEMLİ!] Mutlaka tıklayınız.",
+        "tiklamaYazisiEn": "[IMPORTANT!] Be sure to click.",
         "bilgi": "Açık sinüs lifting sadece üst çene ile ilgili bir durumdur.\n\nX-Ray'i olmayan ve üst çenesine implant takılacak her hasta için açık sinüs lifting durumuna açık kapı bırakılmalıdır.\n\nBir hastada açık sinüs lifting yapılacaksa mutlaka bunu ve devamındaki tüm implantların takılmasını cerrah yapar.\n\nAçık sinüs lifting yapılacaksa kesinlikle kemik tozu gereksinimi olacaktır.\n\nKemik tozu kullanıldığı zaman hastanın 2. ziyareti en az 6 ay sonradır.\n\nAçık sinüs lifting yoksa implant takılmasını diş doktoru yapar."
       },
       "kapaliSinus": {
         "id": 24,
         "isim": "Tek Taraflı Kapalı Sinüs Lifting",
+        "isimEn": "Closed Sinus Lifting (Single Side)",
         "ayrinti": "Cerraha Gerek Yok",
+        "ayrintiEn": "No Surgeon Needed",
         "fiyat": 300,
         "enFazla": 2
       },
       "xRaysizPaket": {
         "id": 25,
         "isim": "X-Ray'i Olmayan Müşteriye Çıkabilecek En Pahalı Ek Tedavi Paketi",
+        "isimEn": "Most Expensive Additional Treatment Package for Customers Who Did Not Provide X-Ray",
         "fiyat": 1999,
         "enFazla": 1,
         "tiklamaYazisi": "Paket içeriği için tıklayınız.",
-        "bilgi": "Açık Sinüs Lifting (2 taraflı)\n\nKemik Tozu (3 cc.)\n\nDiş Eti Cerrahi Rekonstrüksiyon\n\nAugmentasyon"
+        "tiklamaYazisiEn": "Click here for the package contents.",
+        "bilgi": "Açık Sinüs Lifting (2 Taraflı)\n\nKemik Tozu (3 cc.)\n\nDiş Eti Cerrahi Rekonstrüksiyon\n\nAugmentasyon",
+        "bilgiEn": "Open Sinus Lifting (Both Sides)\n\nBone Meal (3 cc.)\n\nGum Tissue Graft Surgery\n\nAugmentation"
       }
     }
   },
   "implantPaketi": {
     "baslik": "İmplant Paketleri",
+    "baslikEn": "Implant Packages",
     "urunler": {
       "allOn6": {
         "id": 26,
         "isim": "All-On-6",
+        "isimEn": "All-On-6",
         "ayrinti": "Evoss + Local Porcelain",
+        "ayrintiEn": "Evoss + Local Porcelain",
         "fiyat": 3999,
         "enFazla": 2
       },
       "allOn4": {
         "id": 27,
         "isim": "All-On-4",
+        "isimEn": "All-On-4",
         "ayrinti": "Evoss + Local Porcelain",
+        "ayrintiEn": "Evoss + Local Porcelain",
         "fiyat": 3799,
         "enFazla": 2
       },
       "kemikTozu1cc": {
         "id": 28,
         "isim": "Kemik Tozu",
+        "isimEn": "Bone Meal",
         "ayrinti": "1 cc.",
+        "ayrintiEn": "1 cc.",
         "fiyat": 150,
         "enFazla": 1
       },
       "kemikTozu2cc": {
         "id": 29,
         "isim": "Kemik Tozu",
+        "isimEn": "Bone Meal",
         "ayrinti": "2 cc.",
+        "ayrintiEn": "2 cc.",
         "fiyat": 280,
         "enFazla": 1
       },
       "kemikTozu3cc": {
         "id": 30,
         "isim": "Kemik Tozu",
+        "isimEn": "Bone Meal",
         "ayrinti": "3 cc.",
+        "ayrintiEn": "3 cc.",
         "fiyat": 400,
         "enFazla": 1
       },
       "augmentasyon": {
         "id": 31,
         "isim": "Augmentasyon",
+        "isimEn": "Augmentation",
         "ayrinti": "Çeneden Çeneye Kemik Ekleme",
+        "ayrintiEn": "Bone Graft (Jaw to Jaw)",
         "fiyat": 500,
         "enFazla": 1
       }
@@ -257,22 +318,26 @@
   },
   "protezler": {
     "baslik": "Protezler",
+    "baslikEn": "Protheses",
     "urunler": {
       "implantSonrasiGeciciProtez": {
         "id": 32,
         "isim": "İmplant Sonrası Geçici Protez",
+        "isimEn": "Temporary Prothesis (Post-Implant)",
         "fiyat": 250,
         "enFazla": 1
       },
       "kaplamaSonrasiGeciciProtez": {
         "id": 33,
         "isim": "Kaplama Sonrası Geçici Protez",
+        "isimEn": "Temporary Prothesis (Post-Overlay)",
         "fiyat": 150,
         "enFazla": 1
       },
-      "takCikarDamak": {
+      "protezDamak": {
         "id": 34,
-        "isim": "Tak-Çıkar Damak",
+        "isim": "Protez Damak",
+        "isimEn": "Denture",
         "fiyat": 950,
         "enFazla": 1
       }

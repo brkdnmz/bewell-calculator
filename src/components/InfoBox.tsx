@@ -1,31 +1,44 @@
-import React from 'react';
+import React, { useContext } from "react";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import { Urun } from "../@types/urun";
+import { AppContext } from "../App";
 
 type InfoBoxProps = {
-  tiklamaYazisi?: string;
-  bilgi?: string;
+  urun: Urun;
 };
 
-function InfoBox({tiklamaYazisi, bilgi}: InfoBoxProps) {
+function InfoBox({ urun }: InfoBoxProps) {
+  const { lang } = useContext(AppContext);
+
   const [infoBoxShow, setInfoBoxShow] = React.useState(false);
+
+  const tiklamaYazisi =
+    lang === "tur" || !urun.tiklamaYazisiEn
+      ? urun.tiklamaYazisi
+      : urun.tiklamaYazisiEn;
+  const bilgi = lang === "tur" || !urun.bilgiEn ? urun.bilgi : urun.bilgiEn;
   return (
     <>
-      {bilgi &&
+      {bilgi && (
         <>
-          <Row className={"text-danger"}>
-            <i
-              className={"p-0"}
-              style={{cursor: "pointer", width: "auto"}}
-              onClick={() => {
-                setInfoBoxShow(true);
-              }}
-            >
-              <small><b>
+          <Row className={"text-danger lh-1"}>
+            <Col>
+              <span
+                className={"d-inline fst-italic fw-bold"}
+                style={{
+                  cursor: "pointer",
+                  fontSize: ".75em",
+                }}
+                onClick={() => {
+                  setInfoBoxShow(true);
+                }}
+              >
                 {tiklamaYazisi}
-              </b></small>
-            </i>
+              </span>
+            </Col>
           </Row>
           <Modal
             scrollable
@@ -41,19 +54,14 @@ function InfoBox({tiklamaYazisi, bilgi}: InfoBoxProps) {
                 Bilgilendirme
               </Modal.Title>
             </Modal.Header>
-            <Modal.Body style={{whiteSpace: "pre-wrap"}}>
-              {bilgi}
-            </Modal.Body>
+            <Modal.Body style={{ whiteSpace: "pre-wrap" }}>{bilgi}</Modal.Body>
             <Modal.Footer>
-              <Button onClick={() => setInfoBoxShow(false)}>
-                Tamam
-              </Button>
+              <Button onClick={() => setInfoBoxShow(false)}>Anladım</Button>
             </Modal.Footer>
           </Modal>
         </>
-      }
+      )}
     </>
-
   );
 }
 
