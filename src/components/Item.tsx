@@ -36,8 +36,8 @@ function Item({ urun }: ItemProps) {
     lang === "tur" || !urun.ayrintiEn ? urun.ayrinti : urun.ayrintiEn;
 
   return (
-    <Row className={"justify-content-center align-items-center"}>
-      <Col className={"text-start align-items-center"}>
+    <Row className={"justify-content-center align-items-center gy-2"}>
+      <Col className={"text-start"}>
         <Row className={"fw-bold"}>
           <Col>{isim}</Col>
         </Row>
@@ -52,7 +52,7 @@ function Item({ urun }: ItemProps) {
         <InfoBox urun={urun} />
       </Col>
       <Col
-        sm={3}
+        sm={"auto"}
         className={"d-flex justify-content-center align-items-center"}
       >
         <select

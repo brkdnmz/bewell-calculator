@@ -62,7 +62,7 @@ function App() {
       <Container fluid>
         <Row className={"justify-content-center"}>
           <NavBar />
-          <Col lg={8}>
+          <Col sm={10} xs={11}>
             <Logo />
             <Row className={"gy-3 justify-content-center"}>
               {Object.keys(urunListesi).map((kategori, i) => (

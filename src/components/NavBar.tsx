@@ -21,7 +21,7 @@ function NavBar() {
           "linear-gradient(0deg, rgba(100,100,100,0) 0%, rgba(100,100,100,0.8) 100%)",
       }}
     >
-      <Col lg={8} className={"py-3"}>
+      <Col sm={10} xs={11}>
         <Row>
           <Col className={"col-auto"}>
             <Button variant={"link"} onClick={() => window.scroll(0, 0)}>
