@@ -51,12 +51,14 @@ function InfoBox({ urun }: InfoBoxProps) {
           >
             <Modal.Header closeButton>
               <Modal.Title id="contained-modal-title-vcenter">
-                Bilgilendirme
+                {lang === "tur" ? "Bilgilendirme" : "Information"}
               </Modal.Title>
             </Modal.Header>
             <Modal.Body style={{ whiteSpace: "pre-wrap" }}>{bilgi}</Modal.Body>
             <Modal.Footer>
-              <Button onClick={() => setInfoBoxShow(false)}>Anladım</Button>
+              <Button variant={"danger"} onClick={() => setInfoBoxShow(false)}>
+                {lang === "tur" ? "Anladım" : "Got It"}
+              </Button>
             </Modal.Footer>
           </Modal>
         </>

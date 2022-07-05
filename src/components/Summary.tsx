@@ -38,7 +38,11 @@ function Summary() {
           <Row>
             <Col s={"12"}>
               <Row className={"fw-bold"}>
-                <Col>{urunById[id].isim || "Placeholder"}</Col>
+                <Col>
+                  {lang === "tur" || !urunById[id].isimEn
+                    ? urunById[id].isim
+                    : urunById[id].isimEn}
+                </Col>
               </Row>
               <Row className={"fst-italic"}>
                 <Col>
