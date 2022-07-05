@@ -75,8 +75,8 @@ function App() {
             </Row>
             <Row className={"gy-3 justify-content-center"}>
               {Object.keys(urunListesi).map((kategori, i) => (
-                <Col className={"col-12"}>
-                  <UrunKategorisi kategori={urunListesi[kategori]} key={i}>
+                <Col className={"col-12"} key={i}>
+                  <UrunKategorisi kategori={urunListesi[kategori]}>
                     {sortedKategori(kategori)}
                   </UrunKategorisi>
                 </Col>
