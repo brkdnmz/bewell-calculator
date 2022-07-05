@@ -39,7 +39,7 @@ function Item({ urun }: ItemProps) {
     <Row className={"justify-content-center align-items-center"}>
       <Col className={"text-start align-items-center"}>
         <Row className={"fw-bold"}>
-          <Col>{isim || "Placeholder"}</Col>
+          <Col>{isim}</Col>
         </Row>
         <Row className={"text-secondary fst-italic"}>
           <Col>{ayrinti}</Col>

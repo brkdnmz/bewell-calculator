@@ -8,11 +8,11 @@ import UrunKategorisi from "./components/UrunKategorisi";
 import { createContext, useState } from "react";
 import _urunListesi from "./urunListesi.json";
 import Summary from "./components/Summary";
-import icon from "./bewell.png";
 import AppContextType from "./@types/appContext";
 import { Urun, UrunListesi } from "./@types/urun";
 import Choices from "./@types/choices";
 import NavBar from "./components/NavBar";
+import Logo from "./components/Logo";
 
 const urunListesi: UrunListesi = _urunListesi;
 
@@ -59,20 +59,11 @@ function App() {
 
   return (
     <AppContext.Provider value={context}>
-      <Container className={"container-fluid"}>
+      <Container fluid>
         <Row className={"justify-content-center"}>
+          <NavBar />
           <Col lg={8}>
-            <NavBar />
-            <Row className={"d-flex justify-content-center pb-3"}>
-              <img src={icon} alt={"BEWELL Logo"} style={{ width: "30%" }} />
-              <h4 className={"m-0 text-center fst-italic fw-bold"}>
-                <span style={{ color: "#ea1f25", padding: 0 }}>BE</span>
-                <span style={{ color: "#6b6b6b", padding: 0 }}>WELL</span>
-                {lang === "tur"
-                  ? " Tutar Hesaplama Aracı"
-                  : " Fee Calculation Tool"}
-              </h4>
-            </Row>
+            <Logo />
             <Row className={"gy-3 justify-content-center"}>
               {Object.keys(urunListesi).map((kategori, i) => (
                 <Col className={"col-12"} key={i}>

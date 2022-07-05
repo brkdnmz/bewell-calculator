@@ -14,9 +14,15 @@ function UrunKategorisi({ kategori, children }: UrunKategorisiProps) {
     <ListGroup className={"text-center"}>
       <ListGroup.Item
         className={"fst-italic fw-bold"}
-        style={{ background: "rgba(234, 31, 37)", color: "white" }}
+        style={{
+          background:
+            "linear-gradient(254deg, rgba(107,107,107,1) 20%, rgba(234,31,37,1) 100%)",
+          color: "white",
+        }}
       >
-        {lang === "tur" ? kategori.baslik : kategori.baslikEn}
+        <div className={"d-inline"}>
+          {lang === "tur" ? kategori.baslik : kategori.baslikEn}
+        </div>
       </ListGroup.Item>
       {React.Children.map(children, (child, i) => (
         <ListGroup.Item key={i}>{child}</ListGroup.Item>
