@@ -29,22 +29,22 @@
     "urunler": {
       "tekKisi": {
         "id": 2,
-        "isim": "Tek Kişi Günlük",
-        "isimEn": "Single Person Daily",
+        "isim": "Tek Kişi Gecelik",
+        "isimEn": "Single Person (1 Night)",
         "fiyat": 70,
         "enFazla": 18
       },
       "ikiKisi": {
         "id": 3,
-        "isim": "2 Kişi Günlük",
-        "isimEn": "2-Person Daily",
+        "isim": "2 Kişi Gecelik",
+        "isimEn": "2-Person (1 Night)",
         "fiyat": 95,
         "enFazla": 18
       },
       "ikiBuyukBirCocuk": {
         "id": 4,
-        "isim": "2 + 1 (6-12 Yaş Arası) Günlük",
-        "isimEn": "2 + 1 (Ages 6-12) Daily",
+        "isim": "2 + 1 (6-12 Yaş Arası) Gecelik",
+        "isimEn": "2 + 1 (Ages 6-12) (1 Night)",
         "fiyat": 105,
         "enFazla": 18
       },

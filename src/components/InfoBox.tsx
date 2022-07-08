@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { Urun } from "../@types/urun";
-import { AppContext } from "../App";
+import { AppContext } from "./App";
 
 type InfoBoxProps = {
   urun: Urun;
@@ -24,10 +24,10 @@ function InfoBox({ urun }: InfoBoxProps) {
     <>
       {bilgi && (
         <>
-          <Row className={"text-danger lh-1"}>
+          <Row className="text-danger lh-1">
             <Col>
               <span
-                className={"d-inline fst-italic fw-bold"}
+                className="d-inline fst-italic fw-bold"
                 style={{
                   cursor: "pointer",
                   fontSize: ".75em",
@@ -42,7 +42,7 @@ function InfoBox({ urun }: InfoBoxProps) {
           </Row>
           <Modal
             scrollable
-            // backdrop={"static"}
+            // backdrop="static"
             show={infoBoxShow}
             onHide={() => setInfoBoxShow(false)}
             size="lg"
@@ -56,13 +56,14 @@ function InfoBox({ urun }: InfoBoxProps) {
             </Modal.Header>
             <Modal.Body style={{ whiteSpace: "pre-wrap" }}>{bilgi}</Modal.Body>
             <Modal.Footer>
-              <Button variant={"danger"} onClick={() => setInfoBoxShow(false)}>
+              <Button variant="danger" onClick={() => setInfoBoxShow(false)}>
                 {lang === "tur" ? "Anladım" : "Got It"}
               </Button>
             </Modal.Footer>
-          </Modal>
+          </Modal >
         </>
-      )}
+      )
+      }
     </>
   );
 }

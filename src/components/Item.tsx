@@ -1,7 +1,7 @@
 import React, { ChangeEvent, useContext } from "react";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import { AppContext } from "../App";
+import { AppContext } from "./App";
 import PriceTag from "./PriceTag";
 import InfoBox from "./InfoBox";
 import { Urun } from "../@types/urun";
@@ -36,12 +36,12 @@ function Item({ urun }: ItemProps) {
     lang === "tur" || !urun.ayrintiEn ? urun.ayrinti : urun.ayrintiEn;
 
   return (
-    <Row className={"justify-content-center align-items-center gy-2"}>
-      <Col className={"text-start"}>
-        <Row className={"fw-bold"}>
+    <Row className="justify-content-center align-items-center gy-2">
+      <Col className="text-start">
+        <Row className="fw-bold">
           <Col>{isim}</Col>
         </Row>
-        <Row className={"text-secondary fst-italic"}>
+        <Row className="text-secondary fst-italic">
           <Col>{ayrinti}</Col>
         </Row>
         <Row>
@@ -50,10 +50,10 @@ function Item({ urun }: ItemProps) {
           </Col>
         </Row>
         <InfoBox urun={urun} />
-      </Col>
+      </Col >
       <Col
-        sm={"auto"}
-        className={"d-flex justify-content-center align-items-center"}
+        sm="auto"
+        className="d-flex justify-content-center align-items-center"
       >
         <select
           className="form-select text-secondary w-auto"
@@ -67,7 +67,7 @@ function Item({ urun }: ItemProps) {
           ))}
         </select>
       </Col>
-    </Row>
+    </Row >
   );
 }
 

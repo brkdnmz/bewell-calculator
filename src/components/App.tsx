@@ -1,18 +1,18 @@
-import "./App.css";
-import Item from "./components/Item";
+import "../App.css";
+import Item from "./Item";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
-import UrunKategorisi from "./components/UrunKategorisi";
+import UrunKategorisi from "./UrunKategorisi";
 import { createContext, useState } from "react";
-import _urunListesi from "./urunListesi.json";
-import Summary from "./components/Summary";
-import AppContextType from "./@types/appContext";
-import { Urun, UrunListesi } from "./@types/urun";
-import Choices from "./@types/choices";
-import NavBar from "./components/NavBar";
-import Logo from "./components/Logo";
+import _urunListesi from "../urunListesi.json";
+import Summary from "./Summary";
+import AppContextType from "../@types/appContext";
+import { Urun, UrunListesi } from "../@types/urun";
+import Choices from "../@types/choices";
+import NavBar from "./NavBar";
+import Logo from "./Logo";
 
 const urunListesi: UrunListesi = _urunListesi;
 
@@ -60,13 +60,13 @@ function App() {
   return (
     <AppContext.Provider value={context}>
       <Container fluid>
-        <Row className={"justify-content-center"}>
+        <Row className="justify-content-center">
           <NavBar />
           <Col sm={10} xs={11}>
             <Logo />
-            <Row className={"gy-3 justify-content-center"}>
+            <Row className="gy-3 justify-content-center">
               {Object.keys(urunListesi).map((kategori, i) => (
-                <Col className={"col-12"} key={i}>
+                <Col className="col-12" key={i}>
                   <UrunKategorisi kategori={urunListesi[kategori]}>
                     {sortedKategori(kategori)}
                   </UrunKategorisi>
@@ -77,9 +77,9 @@ function App() {
               </Col>
             </Row>
           </Col>
-        </Row>
-      </Container>
-    </AppContext.Provider>
+        </Row >
+      </Container >
+    </AppContext.Provider >
   );
 }
 
