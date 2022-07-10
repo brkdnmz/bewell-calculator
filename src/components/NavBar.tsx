@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import Navbar from "react-bootstrap/Navbar";
-import icon from "../bewell.png";
-import turFlag from "../tr.svg";
-import enFlag from "../gb.svg";
+import icon from "../img/bewell.png";
+import turFlag from "../img/tr.svg";
+import enFlag from "../img/gb.svg";
 import Button from "react-bootstrap/Button";
 import { AppContext } from "./App";
 import Row from "react-bootstrap/Row";

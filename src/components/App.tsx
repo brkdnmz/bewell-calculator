@@ -1,4 +1,4 @@
-import "../App.css";
+import "../styles/App.css";
 import Item from "./Item";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Col from "react-bootstrap/Col";
@@ -6,7 +6,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import UrunKategorisi from "./UrunKategorisi";
 import { createContext, useState } from "react";
-import _urunListesi from "../urunListesi.json";
+import _urunListesi from "../urunListesi/urunListesi.json";
 import Summary from "./Summary";
 import AppContextType from "../@types/appContext";
 import { Urun, UrunListesi } from "../@types/urun";
@@ -46,7 +46,7 @@ function App() {
     setLang,
   };
 
-  const sortedKategori = (kategori: string) => {
+  const getSortedKategori = (kategori: string) => {
     const urunler = urunListesi[kategori].urunler;
     const urunlerId = Object.keys(urunler).map((urun) => urunler[urun].id);
     urunlerId.sort((a, b) => urunById[a].fiyat - urunById[b].fiyat);
@@ -60,7 +60,7 @@ function App() {
   return (
     <AppContext.Provider value={context}>
       <Container fluid>
-        <Row className="justify-content-center">
+        <Row className="justify-content-center mb-3">
           <NavBar />
           <Col sm={10} xs={11}>
             <Logo />
@@ -68,7 +68,7 @@ function App() {
               {Object.keys(urunListesi).map((kategori, i) => (
                 <Col className="col-12" key={i}>
                   <UrunKategorisi kategori={urunListesi[kategori]}>
-                    {sortedKategori(kategori)}
+                    {getSortedKategori(kategori)}
                   </UrunKategorisi>
                 </Col>
               ))}
@@ -77,9 +77,9 @@ function App() {
               </Col>
             </Row>
           </Col>
-        </Row >
-      </Container >
-    </AppContext.Provider >
+        </Row>
+      </Container>
+    </AppContext.Provider>
   );
 }
 

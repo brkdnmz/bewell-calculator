@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import icon from "../bewell.png";
+import icon from "../img/bewell.png";
 import Row from "react-bootstrap/Row";
 import { AppContext } from "./App";
 
@@ -14,7 +14,7 @@ function Logo() {
         <span style={{ color: "#6b6b6b", padding: 0 }}>WELL</span>
         {lang === "tur" ? " Tutar Hesaplama Aracı" : " Fee Calculation Tool"}
       </h4>
-    </Row >
+    </Row>
   );
 }
 
