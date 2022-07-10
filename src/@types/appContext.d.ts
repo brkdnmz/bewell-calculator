@@ -5,8 +5,10 @@ export type AppContextType = {
   choices: Choices;
   setChoices: any;
   urunById: { [key: number | string]: Urun };
-  lang: string;
+  lang: "en" | "tur";
   setLang: any;
+  displayDirection: "horizontal" | "vertical";
+  setDisplayDirection: any;
 };
 
 export default AppContextType;

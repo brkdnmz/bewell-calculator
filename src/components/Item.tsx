@@ -5,7 +5,6 @@ import { AppContext } from "./App";
 import PriceTag from "./PriceTag";
 import InfoBox from "./InfoBox";
 import { Urun } from "../@types/urun";
-import AppContextType from "../@types/appContext";
 import Choices from "../@types/choices";
 
 type ItemProps = {
@@ -14,12 +13,11 @@ type ItemProps = {
 
 function Item({ urun }: ItemProps) {
   const { lang } = useContext(AppContext);
-  const { setChoices } = useContext(AppContext) as AppContextType;
-
+  const { choices, setChoices } = useContext(AppContext);
   const onSelect = (e: ChangeEvent) => {
+    const target = e.target as HTMLSelectElement;
+    const newCount = parseInt(target.value);
     setChoices((prevChoices: Choices) => {
-      const target = e.target as HTMLSelectElement;
-      const newCount = parseInt(target.value);
       const newChoices = {
         ...prevChoices,
         [urun.id]: newCount,
@@ -50,7 +48,7 @@ function Item({ urun }: ItemProps) {
           </Col>
         </Row>
         <InfoBox urun={urun} />
-      </Col >
+      </Col>
       <Col
         sm="auto"
         className="d-flex justify-content-center align-items-center"
@@ -58,6 +56,7 @@ function Item({ urun }: ItemProps) {
         <select
           className="form-select text-secondary w-auto"
           onChange={onSelect}
+          value={choices[urun.id] || 0}
         >
           <option value={0}>{lang === "tur" ? "Seçiniz" : "Choose"} (0)</option>
           {Array.from(Array(urun.enFazla || 0).keys()).map((count) => (
@@ -67,7 +66,7 @@ function Item({ urun }: ItemProps) {
           ))}
         </select>
       </Col>
-    </Row >
+    </Row>
   );
 }
 

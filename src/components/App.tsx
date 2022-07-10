@@ -13,6 +13,7 @@ import { Urun, UrunListesi } from "../@types/urun";
 import Choices from "../@types/choices";
 import NavBar from "./NavBar";
 import Logo from "./Logo";
+import KategoriSlider from "./KategoriSlider";
 
 const urunListesi: UrunListesi = _urunListesi;
 
@@ -28,15 +29,20 @@ for (const kategori in urunListesi) {
 
 export const AppContext = createContext<AppContextType>({
   choices: {},
-  setChoices: undefined,
+  setChoices: null,
   urunById: {},
   lang: "tur",
-  setLang: undefined,
+  setLang: null,
+  displayDirection: "vertical",
+  setDisplayDirection: null,
 });
 
 function App() {
   const [choices, setChoices] = useState<Choices>({});
-  const [lang, setLang] = useState("tur");
+  const [lang, setLang] = useState<"en" | "tur">("tur");
+  const [displayDirection, setDisplayDirection] = useState<
+    "vertical" | "horizontal"
+  >("vertical");
 
   const context = {
     choices,
@@ -44,17 +50,29 @@ function App() {
     urunById,
     lang,
     setLang,
+    displayDirection,
+    setDisplayDirection,
   };
 
-  const getSortedKategori = (kategori: string) => {
+  const getSortedKategori = (kategori: string): Urun[] => {
     const urunler = urunListesi[kategori].urunler;
     const urunlerId = Object.keys(urunler).map((urun) => urunler[urun].id);
     urunlerId.sort((a, b) => urunById[a].fiyat - urunById[b].fiyat);
-    const elems = [];
-    for (const id of urunlerId) {
-      elems.push(<Item key={id} urun={urunById[id]} />);
-    }
-    return elems;
+    const sortedKategori: Urun[] = [];
+    urunlerId.forEach((id) => {
+      sortedKategori.push(urunById[id]);
+    });
+    return sortedKategori;
+  };
+
+  const prepareKategoriElems = (): JSX.Element[] => {
+    return Object.keys(urunListesi).map((kategori, i) => (
+      <UrunKategorisi key={i} kategori={urunListesi[kategori]}>
+        {getSortedKategori(kategori).map((urun) => (
+          <Item key={urun.id} urun={urun} />
+        ))}
+      </UrunKategorisi>
+    ));
   };
 
   return (
@@ -64,14 +82,10 @@ function App() {
           <NavBar />
           <Col sm={10} xs={11}>
             <Logo />
-            <Row className="gy-3 justify-content-center">
-              {Object.keys(urunListesi).map((kategori, i) => (
-                <Col className="col-12" key={i}>
-                  <UrunKategorisi kategori={urunListesi[kategori]}>
-                    {getSortedKategori(kategori)}
-                  </UrunKategorisi>
-                </Col>
-              ))}
+            <Row className="gy-3">
+              <Col xs={12}>
+                <KategoriSlider kategoriElems={prepareKategoriElems()} />
+              </Col>
               <Col>
                 <Summary />
               </Col>

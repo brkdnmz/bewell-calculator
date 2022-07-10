@@ -7,9 +7,12 @@ import Button from "react-bootstrap/Button";
 import { AppContext } from "./App";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import { CgArrowsHAlt, CgArrowsVAlt } from "react-icons/cg";
+import ClickableIcon from "./ClickableIcon";
 
 function NavBar() {
-  const { setLang } = useContext(AppContext);
+  const { setLang, displayDirection, setDisplayDirection } =
+    useContext(AppContext);
   return (
     <Row
       className="justify-content-center"
@@ -23,12 +26,32 @@ function NavBar() {
     >
       <Col sm={10} xs={11}>
         <Row>
-          <Col className="col-auto">
+          <Col xs="auto">
             <Button variant="link" onClick={() => window.scroll(0, 0)}>
               <img src={icon} alt="BEWELL Logo" style={{ width: "50px" }} />
             </Button>
           </Col>
-          <Col className="d-flex justify-content-end align-items-center">
+          <Col className="d-flex justify-content-center align-items-center">
+            <ClickableIcon>
+              {displayDirection === "horizontal" ? (
+                <CgArrowsHAlt
+                  color="#6B6B6B"
+                  size={40}
+                  onClick={() => setDisplayDirection("vertical")}
+                />
+              ) : (
+                <CgArrowsVAlt
+                  color="#6B6B6B"
+                  size={40}
+                  onClick={() => setDisplayDirection("horizontal")}
+                />
+              )}
+            </ClickableIcon>
+          </Col>
+          <Col
+            xs="auto"
+            className="d-flex justify-content-end align-items-center"
+          >
             <Navbar.Text>
               <div className="d-inline" style={{ userSelect: "none" }}>
                 <Button

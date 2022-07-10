@@ -6,8 +6,7 @@ import { AppContext } from "./App";
 import PriceTag from "./PriceTag";
 
 function Summary() {
-  const { lang } = useContext(AppContext);
-  const { choices, urunById } = useContext(AppContext);
+  const { lang, choices, urunById } = useContext(AppContext);
 
   const sortedChoiceIds = Object.keys(choices);
   const fiyat = (id: string) => urunById[id].fiyat * choices[id];
@@ -26,53 +25,49 @@ function Summary() {
       >
         {lang === "tur" ? "Seçilen Ürünler" : "Chosen Items"}
       </ListGroup.Item>
-      {
-        Object.keys(choices).length === 0 && (
-          <ListGroup.Item className="fst-italic">
-            {lang === "tur"
-              ? "Henüz bir seçim yapmadınız."
-              : "You have not chosen any item yet."
-            }
-          </ListGroup.Item >
-        )}
-      {
-        sortedChoiceIds.map((id) => (
-          <ListGroup.Item key={id}>
-            <Row>
-              <Col s="12">
-                <Row className="fw-bold">
-                  <Col>
-                    {lang === "tur" || !urunById[id].isimEn
-                      ? urunById[id].isim
-                      : urunById[id].isimEn}
-                  </Col>
-                </Row>
-                <Row className="fst-italic">
-                  <Col>
-                    ({lang === "tur" ? choices[id] + " adet" : "x" + choices[id]})
-                  </Col>
-                </Row>
-              </Col >
-              <Col xs="3" className="text-end">
-                <PriceTag price={urunById[id].fiyat * choices[id]} />
-              </Col >
-            </Row >
-          </ListGroup.Item >
-        ))}
-      {
-        Object.keys(choices).length > 0 && (
-          <ListGroup.Item variant="warning">
-            <Row>
-              <Col className="text-end">
-                <span className="d-inline fst-italic text-end pe-3">
-                  {lang === "tur" ? "Toplam:" : "Total:"}
-                </span>
-                <PriceTag price={toplamFiyat} />
-              </Col >
-            </Row >
-          </ListGroup.Item >
-        )}
-    </ListGroup >
+      {Object.keys(choices).length === 0 && (
+        <ListGroup.Item className="fst-italic">
+          {lang === "tur"
+            ? "Henüz bir seçim yapmadınız."
+            : "You have not chosen any item yet."}
+        </ListGroup.Item>
+      )}
+      {sortedChoiceIds.map((id) => (
+        <ListGroup.Item key={id}>
+          <Row>
+            <Col s="12">
+              <Row className="fw-bold">
+                <Col>
+                  {lang === "tur" || !urunById[id].isimEn
+                    ? urunById[id].isim
+                    : urunById[id].isimEn}
+                </Col>
+              </Row>
+              <Row className="fst-italic">
+                <Col>
+                  ({lang === "tur" ? choices[id] + " adet" : "x" + choices[id]})
+                </Col>
+              </Row>
+            </Col>
+            <Col xs="3" className="text-end">
+              <PriceTag price={urunById[id].fiyat * choices[id]} />
+            </Col>
+          </Row>
+        </ListGroup.Item>
+      ))}
+      {Object.keys(choices).length > 0 && (
+        <ListGroup.Item variant="warning">
+          <Row>
+            <Col className="text-end">
+              <span className="d-inline fst-italic text-end pe-3">
+                {lang === "tur" ? "Toplam:" : "Total:"}
+              </span>
+              <PriceTag price={toplamFiyat} />
+            </Col>
+          </Row>
+        </ListGroup.Item>
+      )}
+    </ListGroup>
   );
 }
 
