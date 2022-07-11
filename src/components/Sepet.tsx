@@ -5,7 +5,7 @@ import Row from "react-bootstrap/Row";
 import { AppContext } from "./App";
 import PriceTag from "./PriceTag";
 
-function Summary() {
+function Sepet() {
   const { lang, choices, urunById } = useContext(AppContext);
 
   const sortedChoiceIds = Object.keys(choices);
@@ -71,4 +71,4 @@ function Summary() {
   );
 }
 
-export default Summary;
+export default Sepet;

@@ -1,7 +1,7 @@
 import Choices from "./choices";
 import { Urun } from "./urun";
 
-export type AppContextType = {
+export interface AppContextType {
   choices: Choices;
   setChoices: any;
   urunById: { [key: number | string]: Urun };
@@ -9,6 +9,6 @@ export type AppContextType = {
   setLang: any;
   displayDirection: "horizontal" | "vertical";
   setDisplayDirection: any;
-};
+}
 
 export default AppContextType;

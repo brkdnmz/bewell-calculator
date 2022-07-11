@@ -6,6 +6,7 @@ import PriceTag from "./PriceTag";
 import InfoBox from "./InfoBox";
 import { Urun } from "../@types/urun";
 import Choices from "../@types/choices";
+import CenteringCol from "./CenteringCol";
 
 type ItemProps = {
   urun: Urun;
@@ -49,10 +50,7 @@ function Item({ urun }: ItemProps) {
         </Row>
         <InfoBox urun={urun} />
       </Col>
-      <Col
-        sm="auto"
-        className="d-flex justify-content-center align-items-center"
-      >
+      <CenteringCol md="auto">
         <select
           className="form-select text-secondary w-auto"
           onChange={onSelect}
@@ -65,7 +63,7 @@ function Item({ urun }: ItemProps) {
             </option>
           ))}
         </select>
-      </Col>
+      </CenteringCol>
     </Row>
   );
 }

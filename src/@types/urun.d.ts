@@ -1,4 +1,4 @@
-export type Urun = {
+export interface Urun {
   id: number;
   isim: string;
   isimEn: string;
@@ -10,14 +10,14 @@ export type Urun = {
   tiklamaYazisiEn?: string;
   bilgi?: string;
   bilgiEn?: string;
-};
+}
 
-export type Kategori = {
+export interface Kategori {
   baslik: string;
   baslikEn: string;
   urunler: { [key: string]: Urun };
-};
+}
 
-export type UrunListesi = {
+export interface UrunListesi {
   [key: string]: Kategori;
-};
+}
