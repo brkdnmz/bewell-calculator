@@ -24,7 +24,12 @@ function Sepet() {
         variant="secondary"
         className="text-center fst-italic fw-bold"
       >
-        {lang === "tur" ? "Seçilen Ürünler" : "Chosen Items"}
+        <Row>
+          <Col>{lang === "tur" ? "Seçilen Ürünler" : "Chosen Items"}</Col>
+          <Col xs="auto">
+            <UrunCopKutusu tumUrunler color={"#93151a"} size={22} />
+          </Col>
+        </Row>
       </ListGroup.Item>
 
       {Object.keys(choices).length === 0 && (
@@ -52,7 +57,7 @@ function Sepet() {
                 </Col>
               </Row>
             </Col>
-            <Col sm="3" className="text-end">
+            <Col xs="auto" className="text-end">
               <Row>
                 <Col>
                   <PriceTag price={urunById[id].fiyat * choices[id]} />

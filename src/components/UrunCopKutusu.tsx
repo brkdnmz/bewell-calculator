@@ -7,11 +7,26 @@ import { Urun } from "../@types/urun";
 import { AppContext } from "./App";
 import Choices from "../@types/choices";
 
-interface UrunCopKutusuProps {
-  urun: Urun;
-}
+type UrunCopKutusuProps =
+  | {
+      urun: Urun;
+      tumUrunler?: false;
+      size?: number;
+      color?: string;
+    }
+  | {
+      urun?: Urun;
+      tumUrunler: true;
+      size?: number;
+      color?: string;
+    };
 
-function UrunCopKutusu({ urun }: UrunCopKutusuProps) {
+function UrunCopKutusu({
+  urun,
+  tumUrunler = false,
+  size = 18,
+  color = "#EA1F25",
+}: UrunCopKutusuProps) {
   const { lang, choices, setChoices } = useContext(AppContext);
   const [deleted, setDeleted] = useState(false);
   const [uyariShow, setUyariShow] = useState(false);
@@ -21,8 +36,12 @@ function UrunCopKutusu({ urun }: UrunCopKutusuProps) {
     const timeout = setTimeout(
       () =>
         setChoices((prevChoices: Choices) => {
-          const updatedChoices = { ...prevChoices };
-          delete updatedChoices[urun.id];
+          let updatedChoices = { ...prevChoices };
+          if (!tumUrunler) {
+            delete updatedChoices[urun!.id];
+          } else {
+            updatedChoices = {};
+          }
           return updatedChoices;
         }),
       150
@@ -34,12 +53,12 @@ function UrunCopKutusu({ urun }: UrunCopKutusuProps) {
     <>
       <ClickableIcon onClick={() => setUyariShow(true)}>
         <span>
-          <FaTrash size={18} color="#EA1F25" />
+          <FaTrash size={size} color={color} />
         </span>
       </ClickableIcon>
       <Modal
         scrollable
-        // backdrop="static"
+        backdrop="static"
         show={uyariShow}
         onHide={() => setUyariShow(false)}
         size="lg"
@@ -52,15 +71,26 @@ function UrunCopKutusu({ urun }: UrunCopKutusuProps) {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body style={{ whiteSpace: "pre-wrap" }}>
-          {lang === "tur"
-            ? "Şu ürün sepetinizden silinecek:"
-            : "The following item will be deleted:"}
-          <ul>
-            <li>
-              {lang === "tur" || !urun.isimEn ? urun.isim : urun.isimEn}
-              {` (x${choices[urun.id]})`}
-            </li>
-          </ul>
+          {!tumUrunler && (
+            <>
+              {lang === "tur"
+                ? "Şu ürün sepetinizden çıkarılacak:"
+                : "The following item will be removed from the cart:"}
+              <ul>
+                <li>
+                  {lang === "tur" || !urun!.isimEn ? urun!.isim : urun!.isimEn}
+                  {` (x${choices[urun!.id]})`}
+                </li>
+              </ul>
+            </>
+          )}
+          {tumUrunler && (
+            <>
+              {lang === "tur"
+                ? "Tüm ürünler sepetinizden çıkarılacak."
+                : "All items will be removed from the cart."}
+            </>
+          )}
         </Modal.Body>
         <Modal.Footer>
           <Button
