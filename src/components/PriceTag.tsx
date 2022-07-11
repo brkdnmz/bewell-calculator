@@ -6,9 +6,7 @@ type PriceTagProps = {
 
 function PriceTag({ price }: PriceTagProps) {
   return (
-    <p className="d-inline p-0 m-0 text-secondary fst-italic fw-bold">
-      {price}₤
-    </p >
+    <span className="d-inline text-secondary fst-italic fw-bold">{price}₤</span>
   );
 }
 

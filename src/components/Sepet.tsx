@@ -4,6 +4,7 @@ import ListGroup from "react-bootstrap/ListGroup";
 import Row from "react-bootstrap/Row";
 import { AppContext } from "./App";
 import PriceTag from "./PriceTag";
+import UrunCopKutusu from "./UrunCopKutusu";
 
 function Sepet() {
   const { lang, choices, urunById } = useContext(AppContext);
@@ -25,6 +26,7 @@ function Sepet() {
       >
         {lang === "tur" ? "Seçilen Ürünler" : "Chosen Items"}
       </ListGroup.Item>
+
       {Object.keys(choices).length === 0 && (
         <ListGroup.Item className="fst-italic">
           {lang === "tur"
@@ -32,10 +34,11 @@ function Sepet() {
             : "You have not chosen any item yet."}
         </ListGroup.Item>
       )}
+
       {sortedChoiceIds.map((id) => (
         <ListGroup.Item key={id}>
           <Row>
-            <Col s="12">
+            <Col>
               <Row className="fw-bold">
                 <Col>
                   {lang === "tur" || !urunById[id].isimEn
@@ -49,12 +52,22 @@ function Sepet() {
                 </Col>
               </Row>
             </Col>
-            <Col xs="3" className="text-end">
-              <PriceTag price={urunById[id].fiyat * choices[id]} />
+            <Col sm="3" className="text-end">
+              <Row>
+                <Col>
+                  <PriceTag price={urunById[id].fiyat * choices[id]} />
+                </Col>
+              </Row>
+              <Row>
+                <Col className="d-flex justify-content-end">
+                  <UrunCopKutusu urun={urunById[id]} />
+                </Col>
+              </Row>
             </Col>
           </Row>
         </ListGroup.Item>
       ))}
+
       {Object.keys(choices).length > 0 && (
         <ListGroup.Item variant="warning">
           <Row>

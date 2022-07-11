@@ -5,7 +5,7 @@ function ClickableIcon(props: any) {
     <div
       ref={props.itemRef}
       className={props.className}
-      onClick={() => props.onClick()}
+      onClick={() => props.onClick?.()}
       style={{
         ...props.style,
         cursor: "pointer",

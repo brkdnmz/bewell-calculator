@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { AppContext } from "./App";
+
 type KategoriSliderProps = {
   kategoriElems: JSX.Element[];
 };
@@ -32,7 +33,11 @@ function KategoriSlider({ kategoriElems }: KategoriSliderProps) {
         </Col>
       )}
       {displayDirection === "vertical" &&
-        kategoriElems.map((elem) => <Col xs="12">{elem}</Col>)}
+        kategoriElems.map((elem, i) => (
+          <Col key={i} xs="12">
+            {elem}
+          </Col>
+        ))}
     </Row>
   );
 }

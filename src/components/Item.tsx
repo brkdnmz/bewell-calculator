@@ -3,7 +3,7 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import { AppContext } from "./App";
 import PriceTag from "./PriceTag";
-import InfoBox from "./InfoBox";
+import UrunBilgiKutusu from "./UrunBilgiKutusu";
 import { Urun } from "../@types/urun";
 import Choices from "../@types/choices";
 import CenteringCol from "./CenteringCol";
@@ -48,7 +48,7 @@ function Item({ urun }: ItemProps) {
             <PriceTag price={urun.fiyat} />
           </Col>
         </Row>
-        <InfoBox urun={urun} />
+        <UrunBilgiKutusu urun={urun} />
       </Col>
       <CenteringCol md="auto">
         <select

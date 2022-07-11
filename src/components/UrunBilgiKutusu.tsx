@@ -6,14 +6,14 @@ import Col from "react-bootstrap/Col";
 import { Urun } from "../@types/urun";
 import { AppContext } from "./App";
 
-type InfoBoxProps = {
+type UrunBilgiKutusuProps = {
   urun: Urun;
 };
 
-function InfoBox({ urun }: InfoBoxProps) {
+function UrunBilgiKutusu({ urun }: UrunBilgiKutusuProps) {
   const { lang } = useContext(AppContext);
 
-  const [infoBoxShow, setInfoBoxShow] = React.useState(false);
+  const [bilgiKutusuShow, setBilgiKutusuShow] = React.useState(false);
 
   const tiklamaYazisi =
     lang === "tur" || !urun.tiklamaYazisiEn
@@ -33,7 +33,7 @@ function InfoBox({ urun }: InfoBoxProps) {
                   fontSize: ".75em",
                 }}
                 onClick={() => {
-                  setInfoBoxShow(true);
+                  setBilgiKutusuShow(true);
                 }}
               >
                 {tiklamaYazisi}
@@ -43,8 +43,8 @@ function InfoBox({ urun }: InfoBoxProps) {
           <Modal
             scrollable
             // backdrop="static"
-            show={infoBoxShow}
-            onHide={() => setInfoBoxShow(false)}
+            show={bilgiKutusuShow}
+            onHide={() => setBilgiKutusuShow(false)}
             size="lg"
             aria-labelledby="contained-modal-title-vcenter"
             centered
@@ -56,16 +56,18 @@ function InfoBox({ urun }: InfoBoxProps) {
             </Modal.Header>
             <Modal.Body style={{ whiteSpace: "pre-wrap" }}>{bilgi}</Modal.Body>
             <Modal.Footer>
-              <Button variant="danger" onClick={() => setInfoBoxShow(false)}>
+              <Button
+                variant="danger"
+                onClick={() => setBilgiKutusuShow(false)}
+              >
                 {lang === "tur" ? "Anladım" : "Got It"}
               </Button>
             </Modal.Footer>
-          </Modal >
+          </Modal>
         </>
-      )
-      }
+      )}
     </>
   );
 }
 
-export default InfoBox;
+export default UrunBilgiKutusu;
