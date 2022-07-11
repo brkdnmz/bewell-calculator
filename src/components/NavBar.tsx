@@ -10,10 +10,11 @@ import { CgArrowsHAlt, CgArrowsVAlt } from "react-icons/cg";
 import ClickableIcon from "./ClickableIcon";
 import CenteringCol from "./CenteringCol";
 import { Link, useLocation } from "react-router-dom";
-import { FaHome, FaShoppingCart } from "react-icons/fa";
+import { IoCartOutline, IoHomeOutline } from "react-icons/io5";
+import CircledNumber from "./CircledNumber";
 
 function NavBar() {
-  const { setLang, displayDirection, setDisplayDirection } =
+  const { setLang, displayDirection, setDisplayDirection, choices } =
     useContext(AppContext);
   const location = useLocation();
   return (
@@ -39,12 +40,21 @@ function NavBar() {
             <ClickableIcon>
               {location.pathname !== "/sepet" && (
                 <Link to="sepet">
-                  <FaShoppingCart color="#6B6B6B" size={40} />
+                  <div className="position-relative">
+                    {Object.keys(choices).length > 0 && (
+                      <CircledNumber
+                        num={Object.keys(choices).length}
+                        size={9}
+                        className="position-absolute top-0 end-0 fw-bold"
+                      />
+                    )}
+                    <IoCartOutline color="#6B6B6B" size={30} />
+                  </div>
                 </Link>
               )}
               {location.pathname === "/sepet" && (
                 <Link to="/">
-                  <FaHome color="#6B6B6B" size={40} />
+                  <IoHomeOutline color="#6B6B6B" size={27} />
                 </Link>
               )}
             </ClickableIcon>
@@ -56,13 +66,13 @@ function NavBar() {
                 {displayDirection === "horizontal" ? (
                   <CgArrowsHAlt
                     color="#6B6B6B"
-                    size={40}
+                    size={30}
                     onClick={() => setDisplayDirection("vertical")}
                   />
                 ) : (
                   <CgArrowsVAlt
                     color="#6B6B6B"
-                    size={40}
+                    size={30}
                     onClick={() => setDisplayDirection("horizontal")}
                   />
                 )}
