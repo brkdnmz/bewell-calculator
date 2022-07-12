@@ -38,8 +38,8 @@ function NavBar() {
 
           <CenteringCol>
             <ClickableIcon>
-              {location.pathname !== "/sepet" && (
-                <Link to="sepet">
+              {location.pathname !== "/cart" && (
+                <Link to="cart">
                   <div className="position-relative">
                     {Object.keys(choices).length > 0 && (
                       <CircledNumber
@@ -52,7 +52,7 @@ function NavBar() {
                   </div>
                 </Link>
               )}
-              {location.pathname === "/sepet" && (
+              {location.pathname === "/cart" && (
                 <Link to="/">
                   <IoHomeOutline color="#6B6B6B" size={27} />
                 </Link>
