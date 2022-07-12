@@ -7,11 +7,11 @@ import { AppContext } from "./App";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { CgArrowsHAlt, CgArrowsVAlt } from "react-icons/cg";
-import ClickableIcon from "./ClickableIcon";
-import CenteringCol from "./CenteringCol";
+import ClickableIcon from "./util/ClickableIcon";
+import CenteringCol from "./util/CenteringCol";
 import { Link, useLocation } from "react-router-dom";
 import { IoCartOutline, IoHomeOutline } from "react-icons/io5";
-import CircledNumber from "./CircledNumber";
+import CircledNumber from "./util/CircledNumber";
 
 function NavBar() {
   const { setLang, displayDirection, setDisplayDirection, choices } =

@@ -1,8 +1,8 @@
 import React from "react";
 
-type PriceTagProps = {
+interface PriceTagProps {
   price: number;
-};
+}
 
 function PriceTag({ price }: PriceTagProps) {
   return (

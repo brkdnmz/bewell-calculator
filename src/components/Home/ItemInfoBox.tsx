@@ -3,26 +3,24 @@ import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import { Urun } from "../@types/urun";
-import { AppContext } from "./App";
+import { ItemType } from "../../@types/item";
+import { AppContext } from "../App";
 
-type UrunBilgiKutusuProps = {
-  urun: Urun;
-};
+interface ItemInfoBoxProps {
+  item: ItemType;
+}
 
-function UrunBilgiKutusu({ urun }: UrunBilgiKutusuProps) {
+function ItemInfoBox({ item }: ItemInfoBoxProps) {
   const { lang } = useContext(AppContext);
+  const [showInfoBox, setShowInfoBox] = React.useState(false);
 
-  const [bilgiKutusuShow, setBilgiKutusuShow] = React.useState(false);
+  const clickText =
+    lang === "tur" || !item.clickTextEn ? item.clickText : item.clickTextEn;
+  const info = lang === "tur" || !item.infoEn ? item.info : item.infoEn;
 
-  const tiklamaYazisi =
-    lang === "tur" || !urun.tiklamaYazisiEn
-      ? urun.tiklamaYazisi
-      : urun.tiklamaYazisiEn;
-  const bilgi = lang === "tur" || !urun.bilgiEn ? urun.bilgi : urun.bilgiEn;
   return (
     <>
-      {bilgi && (
+      {info && (
         <>
           <Row className="text-danger lh-1">
             <Col>
@@ -33,34 +31,30 @@ function UrunBilgiKutusu({ urun }: UrunBilgiKutusuProps) {
                   fontSize: ".75em",
                 }}
                 onClick={() => {
-                  setBilgiKutusuShow(true);
+                  setShowInfoBox(true);
                 }}
               >
-                {tiklamaYazisi}
+                {clickText}
               </span>
             </Col>
           </Row>
           <Modal
             scrollable
             // backdrop="static"
-            show={bilgiKutusuShow}
-            onHide={() => setBilgiKutusuShow(false)}
+            show={showInfoBox}
+            onHide={() => setShowInfoBox(false)}
             size="lg"
-            aria-labelledby="contained-modal-title-vcenter"
             centered
           >
             <Modal.Header closeButton>
-              <Modal.Title id="contained-modal-title-vcenter">
+              <Modal.Title>
                 {lang === "tur" ? "Bilgilendirme" : "Information"}
               </Modal.Title>
             </Modal.Header>
-            <Modal.Body style={{ whiteSpace: "pre-wrap" }}>{bilgi}</Modal.Body>
+            <Modal.Body style={{ whiteSpace: "pre-wrap" }}>{info}</Modal.Body>
             <Modal.Footer>
-              <Button
-                variant="danger"
-                onClick={() => setBilgiKutusuShow(false)}
-              >
-                {lang === "tur" ? "Anladım" : "Got It"}
+              <Button variant="danger" onClick={() => setShowInfoBox(false)}>
+                {lang === "tur" ? "Anladım" : "Got it"}
               </Button>
             </Modal.Footer>
           </Modal>
@@ -70,4 +64,4 @@ function UrunBilgiKutusu({ urun }: UrunBilgiKutusuProps) {
   );
 }
 
-export default UrunBilgiKutusu;
+export default ItemInfoBox;

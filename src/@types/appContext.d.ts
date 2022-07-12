@@ -1,10 +1,11 @@
 import Choices from "./choices";
-import { Urun } from "./urun";
+import { ItemData, ItemType } from "./item";
 
 export interface AppContextType {
+  itemData: ItemData;
+  itemById: { [key: number | string]: ItemType };
   choices: Choices;
   setChoices: any;
-  urunById: { [key: number | string]: Urun };
   lang: "en" | "tur";
   setLang: any;
   displayDirection: "horizontal" | "vertical";

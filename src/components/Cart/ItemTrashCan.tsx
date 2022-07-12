@@ -1,48 +1,48 @@
 import React, { useCallback, useContext, useEffect, useState } from "react";
 import { FaTrash } from "react-icons/fa";
-import ClickableIcon from "./ClickableIcon";
+import ClickableIcon from "../util/ClickableIcon";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
-import { Urun } from "../@types/urun";
-import { AppContext } from "./App";
-import Choices from "../@types/choices";
+import { ItemType } from "../../@types/item";
+import { AppContext } from "../App";
+import Choices from "../../@types/choices";
 
-type UrunCopKutusuProps =
+type ItemTrashCanProps =
   | {
-      urun: Urun;
-      tumUrunler?: false;
+      item: ItemType;
+      allItems?: false;
       size?: number;
       color?: string;
     }
   | {
-      urun?: Urun;
-      tumUrunler: true;
+      item?: ItemType;
+      allItems: true;
       size?: number;
       color?: string;
     };
 
-function UrunCopKutusu({
-  urun,
-  tumUrunler = false,
+function ItemTrashCan({
+  item,
+  allItems = false,
   size = 18,
   color = "#EA1F25",
-}: UrunCopKutusuProps) {
+}: ItemTrashCanProps) {
   const { lang, choices, setChoices } = useContext(AppContext);
   const [deleted, setDeleted] = useState(false);
-  const [uyariShow, setUyariShow] = useState(false);
+  const [showWarning, setShowWarning] = useState(false);
 
   const onDelete = useCallback(
     () =>
       setChoices((prevChoices: Choices) => {
         let updatedChoices = { ...prevChoices };
-        if (!tumUrunler) {
-          delete updatedChoices[urun!.id];
+        if (!allItems) {
+          delete updatedChoices[item!.id];
         } else {
           updatedChoices = {};
         }
         return updatedChoices;
       }),
-    [setChoices, tumUrunler, urun]
+    [setChoices, allItems, item]
   );
 
   useEffect(() => {
@@ -53,38 +53,37 @@ function UrunCopKutusu({
 
   return (
     <>
-      <ClickableIcon onClick={() => setUyariShow(true)}>
+      <ClickableIcon onClick={() => setShowWarning(true)}>
         <FaTrash size={size} color={color} />
       </ClickableIcon>
       <Modal
         scrollable
         backdrop="static"
-        show={uyariShow}
-        onHide={() => setUyariShow(false)}
+        show={showWarning}
+        onHide={() => setShowWarning(false)}
         size="lg"
-        aria-labelledby="contained-modal-title-vcenter"
         centered
       >
         <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vcenter">
+          <Modal.Title>
             {lang === "tur" ? "Emin misiniz?" : "Are you sure?"}
           </Modal.Title>
         </Modal.Header>
         <Modal.Body style={{ whiteSpace: "pre-wrap" }}>
-          {!tumUrunler && (
+          {!allItems && (
             <>
               {lang === "tur"
                 ? "Şu ürün sepetinizden çıkarılacak:"
                 : "The following item will be removed from the cart:"}
               <ul>
                 <li>
-                  {lang === "tur" || !urun!.isimEn ? urun!.isim : urun!.isimEn}
-                  {` (x${choices[urun!.id]})`}
+                  {lang === "tur" || !item!.nameEn ? item!.name : item!.nameEn}
+                  {` (x${choices[item!.id]})`}
                 </li>
               </ul>
             </>
           )}
-          {tumUrunler && (
+          {allItems && (
             <>
               {lang === "tur"
                 ? "Tüm ürünler sepetinizden çıkarılacak."
@@ -96,7 +95,7 @@ function UrunCopKutusu({
           <Button
             variant="secondary"
             style={{ backgroundColor: "#6b6b6b" }}
-            onClick={() => setUyariShow(false)}
+            onClick={() => setShowWarning(false)}
           >
             {lang === "tur" ? "İptal" : "Cancel"}
           </Button>
@@ -104,7 +103,7 @@ function UrunCopKutusu({
             variant="danger"
             onClick={() => {
               setDeleted(true);
-              setUyariShow(false);
+              setShowWarning(false);
             }}
           >
             {lang === "tur" ? "Sil" : "Delete"}
@@ -115,4 +114,4 @@ function UrunCopKutusu({
   );
 }
 
-export default UrunCopKutusu;
+export default ItemTrashCan;

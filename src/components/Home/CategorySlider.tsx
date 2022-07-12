@@ -1,39 +1,41 @@
 import React, { useContext, useState } from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import { AppContext } from "./App";
+import { AppContext } from "../App";
 
-type KategoriSliderProps = {
-  kategoriElems: JSX.Element[];
-};
+interface CategorySliderProps {
+  categoryElems: JSX.Element[];
+}
 
-function KategoriSlider({ kategoriElems }: KategoriSliderProps) {
+function CategorySlider({ categoryElems }: CategorySliderProps) {
   const { displayDirection } = useContext(AppContext);
   const [index, setIndex] = useState(0);
+
   const goNext = () => {
     setIndex((prevIndex) => prevIndex + 1);
   };
   const goPrev = () => {
     setIndex((prevIndex) => prevIndex - 1);
   };
+
   return (
     <Row className="gy-3">
       {displayDirection === "horizontal" && (
         <Col>
           {React.cloneElement(
-            kategoriElems[index],
+            categoryElems[index],
             {
               withLeftArrow: index > 0,
-              withRightArrow: index + 1 < kategoriElems.length,
+              withRightArrow: index + 1 < categoryElems.length,
               onLeftArrowClick: goPrev,
               onRightArrowClick: goNext,
             },
-            kategoriElems[index].props.children
+            categoryElems[index].props.children
           )}
         </Col>
       )}
       {displayDirection === "vertical" &&
-        kategoriElems.map((elem, i) => (
+        categoryElems.map((elem, i) => (
           <Col key={i} xs="12">
             {elem}
           </Col>
@@ -42,4 +44,4 @@ function KategoriSlider({ kategoriElems }: KategoriSliderProps) {
   );
 }
 
-export default KategoriSlider;
+export default CategorySlider;

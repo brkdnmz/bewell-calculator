@@ -2,20 +2,20 @@ import React, { useContext } from "react";
 import Col from "react-bootstrap/Col";
 import ListGroup from "react-bootstrap/ListGroup";
 import Row from "react-bootstrap/Row";
-import { AppContext } from "./App";
-import PriceTag from "./PriceTag";
-import UrunCopKutusu from "./UrunCopKutusu";
+import { AppContext } from "../App";
+import PriceTag from "../util/PriceTag";
+import ItemTrashCan from "./ItemTrashCan";
 
-function Sepet() {
-  const { lang, choices, urunById } = useContext(AppContext);
+function Cart() {
+  const { lang, choices, itemById } = useContext(AppContext);
 
   const sortedChoiceIds = Object.keys(choices);
-  const fiyat = (id: string) => urunById[id].fiyat * choices[id];
-  sortedChoiceIds.sort((a, b) => fiyat(a) - fiyat(b));
+  const priceOf = (id: string) => itemById[id].price * choices[id];
+  sortedChoiceIds.sort((a, b) => priceOf(a) - priceOf(b));
 
-  let toplamFiyat = 0;
+  let totalPrice = 0;
   for (const id of sortedChoiceIds) {
-    toplamFiyat += choices[id] * urunById[id].fiyat;
+    totalPrice += choices[id] * itemById[id].price;
   }
 
   return (
@@ -25,10 +25,10 @@ function Sepet() {
         className="text-center fst-italic fw-bold"
       >
         <Row>
-          <Col>{lang === "tur" ? "Seçilen Ürünler" : "Chosen Items"}</Col>
+          <Col>{lang === "tur" ? "Sepetim" : "My Cart"}</Col>
           {Object.keys(choices).length > 0 && (
             <Col xs="auto">
-              <UrunCopKutusu tumUrunler color={"#93151a"} size={22} />
+              <ItemTrashCan allItems color={"#93151a"} size={22} />
             </Col>
           )}
         </Row>
@@ -37,7 +37,7 @@ function Sepet() {
       {Object.keys(choices).length === 0 && (
         <ListGroup.Item className="fst-italic">
           {lang === "tur"
-            ? "Henüz bir seçim yapmadınız."
+            ? "Henüz bir ürün seçmediniz."
             : "You have not chosen any item yet."}
         </ListGroup.Item>
       )}
@@ -48,9 +48,9 @@ function Sepet() {
             <Col>
               <Row className="fw-bold">
                 <Col>
-                  {lang === "tur" || !urunById[id].isimEn
-                    ? urunById[id].isim
-                    : urunById[id].isimEn}
+                  {lang === "tur" || !itemById[id].nameEn
+                    ? itemById[id].name
+                    : itemById[id].nameEn}
                 </Col>
               </Row>
               <Row className="fst-italic">
@@ -62,12 +62,12 @@ function Sepet() {
             <Col xs="auto" className="text-end">
               <Row>
                 <Col>
-                  <PriceTag price={urunById[id].fiyat * choices[id]} />
+                  <PriceTag price={priceOf(id)} />
                 </Col>
               </Row>
               <Row>
                 <Col className="d-flex justify-content-end">
-                  <UrunCopKutusu urun={urunById[id]} />
+                  <ItemTrashCan item={itemById[id]} />
                 </Col>
               </Row>
             </Col>
@@ -82,7 +82,7 @@ function Sepet() {
               <span className="d-inline fst-italic text-end pe-3">
                 {lang === "tur" ? "Toplam:" : "Total:"}
               </span>
-              <PriceTag price={toplamFiyat} />
+              <PriceTag price={totalPrice} />
             </Col>
           </Row>
         </ListGroup.Item>
@@ -91,4 +91,4 @@ function Sepet() {
   );
 }
 
-export default Sepet;
+export default Cart;

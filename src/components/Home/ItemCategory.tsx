@@ -1,33 +1,34 @@
 import React, { useContext } from "react";
 import ListGroup from "react-bootstrap/ListGroup";
-import { Kategori } from "../@types/urun";
-import { AppContext } from "./App";
+import { Category } from "../../@types/item";
+import { AppContext } from "../App";
 import Row from "react-bootstrap/Row";
-import ClickableIcon from "./ClickableIcon";
+import ClickableIcon from "../util/ClickableIcon";
 import {
   HiOutlineArrowNarrowLeft,
   HiOutlineArrowNarrowRight,
 } from "react-icons/hi";
-import CenteringCol from "./CenteringCol";
+import CenteringCol from "../util/CenteringCol";
 
-export type UrunKategorisiProps = {
-  kategori: Kategori;
+export interface ItemCategoryProps {
+  category: Category;
   children: React.ReactNode[];
   withLeftArrow?: boolean;
   withRightArrow?: boolean;
   onLeftArrowClick?: MouseEvent;
   onRightArrowClick?: MouseEvent;
-};
+}
 
-function UrunKategorisi({
-  kategori,
+function ItemCategory({
+  category,
   children,
   withLeftArrow = false,
   withRightArrow = false,
   onLeftArrowClick = undefined,
   onRightArrowClick = undefined,
-}: UrunKategorisiProps) {
+}: ItemCategoryProps) {
   const { lang } = useContext(AppContext);
+
   return (
     <ListGroup>
       <ListGroup.Item
@@ -53,7 +54,7 @@ function UrunKategorisi({
 
           <CenteringCol>
             <div className="d-inline text-center">
-              {lang === "tur" ? kategori.baslik : kategori.baslikEn}
+              {lang === "tur" ? category.title : category.titleEn}
             </div>
           </CenteringCol>
 
@@ -77,4 +78,4 @@ function UrunKategorisi({
   );
 }
 
-export default UrunKategorisi;
+export default ItemCategory;

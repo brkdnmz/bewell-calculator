@@ -4,11 +4,9 @@ import Col from "react-bootstrap/Col";
 function CenteringCol(props: any) {
   return (
     <Col
-      {...props}
+      {...props} //props.children will also be passed
       className="d-flex justify-content-center align-items-center"
-    >
-      {/*{props.children}*/}
-    </Col>
+    />
   );
 }
 

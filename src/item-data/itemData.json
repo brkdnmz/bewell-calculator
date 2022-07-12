@@ -1,0 +1,346 @@
+{
+  "kampanya": {
+    "title": "Kampanyalar",
+    "titleEn": "Special Offers",
+    "items": {
+      "allOn6": {
+        "id": 0,
+        "name": "All-On-6",
+        "nameEn": "All-On-6",
+        "detail": "6 Evoss + 12-14 Local Porcelain + Otel/Transfer/Rehberlik + Geçici Protez",
+        "detailEn": "6 Evoss + 12-14 Local Porcelain + Hotel/Transfer/Guidance + Temporary Prosthesis",
+        "price": 2999,
+        "atMost": 2
+      },
+      "hollywoodSmile": {
+        "id": 1,
+        "name": "Hollywood Smile",
+        "nameEn": "Hollywood Smile",
+        "detail": "24-28 Local Zirconium (Tüm Ağız) + Otel/Transfer/Rehberlik + Geçici Protez",
+        "detailEn": "24-28 Local Zirconium (Whole Mouth) + Hotel/Transfer/Guidance + Temporary Prosthesis",
+        "price": 3999,
+        "atMost": 1
+      }
+    }
+  },
+  "otel": {
+    "title": "Otel (Oda & Kahvaltı) / Transfer / Rehberlik",
+    "titleEn": "Hotel (Bed & Breakfast) / Transfer / Guidance",
+    "items": {
+      "tekKisi": {
+        "id": 2,
+        "name": "Tek Kişi Gecelik",
+        "nameEn": "Single Person (1 Night)",
+        "price": 70,
+        "atMost": 18
+      },
+      "ikiKisi": {
+        "id": 3,
+        "name": "2 Kişi Gecelik",
+        "nameEn": "2-Person (1 Night)",
+        "price": 95,
+        "atMost": 18
+      },
+      "ikiBuyukBirCocuk": {
+        "id": 4,
+        "name": "2 + 1 (6-12 Yaş Arası) Gecelik",
+        "nameEn": "2 + 1 (Ages 6-12) (1 Night)",
+        "price": 105,
+        "atMost": 18
+      },
+      "eslikciFarki": {
+        "id": 36,
+        "name": "Eşlikçi Günlük Konaklama Farkı",
+        "nameEn": "Companion Daily Accomodation Difference",
+        "price": 25,
+        "atMost": 18
+      }
+    }
+  },
+  "implantlar": {
+    "title": "İmplantlar",
+    "titleEn": "Implants",
+    "items": {
+      "straumann": {
+        "id": 5,
+        "name": "Straumann",
+        "nameEn": "Straumann",
+        "price": 750,
+        "atMost": 12
+      },
+      "bego": {
+        "id": 6,
+        "name": "Bego",
+        "nameEn": "Bego",
+        "price": 600,
+        "atMost": 12
+      },
+      "megagen": {
+        "id": 7,
+        "name": "Megagen",
+        "nameEn": "Megagen",
+        "price": 440,
+        "atMost": 12
+      },
+      "evoss": {
+        "id": 8,
+        "name": "Evoss",
+        "nameEn": "Evoss",
+        "price": 320,
+        "atMost": 12
+      }
+    }
+  },
+  "kaplamalar": {
+    "title": "Kaplamalar",
+    "titleEn": "Overlays",
+    "items": {
+      "kurarayPorcelain": {
+        "id": 9,
+        "name": "BEWELL Kuraray Porcelain Crown/Veneer",
+        "nameEn": "BEWELL Kuraray Porcelain Crown/Veneer",
+        "price": 110,
+        "atMost": 28
+      },
+      "vitaPorcelain": {
+        "id": 10,
+        "name": "BEWELL Vita Porcelain Crown/Veneer",
+        "nameEn": "BEWELL Vita Porcelain Crown/Veneer",
+        "price": 95,
+        "atMost": 28
+      },
+      "localPorcelain": {
+        "id": 11,
+        "name": "BEWELL Local Porcelain Crown/Veneer",
+        "nameEn": "BEWELL Local Porcelain Crown/Veneer",
+        "price": 85,
+        "atMost": 28
+      },
+      "katanaZirconium": {
+        "id": 12,
+        "name": "BEWELL Katana Zirconium Crown/Veneer",
+        "nameEn": "BEWELL Katana Zirconium Crown/Veneer",
+        "price": 195,
+        "atMost": 28,
+        "clickText": "Müşterilere ekonomik kaplama önerisi için tıklayınız.",
+        "clickTextEn": "Click here for an affordable recommendation for customers.",
+        "info": "Özellikle estetik amaçlı istenen zirkonyum kaplamalarda tüm dişlerin zirkonyumla kaplanması yerine sadece ön üst 8 diş ve ön alt 10 diş kaplaması önerilirse bu hem estetiği sağlar, hem müşterinin bütçesini rahatlatır; böylelikle toplamda 18 diş kaplanır ve geri kalan dişlere de porselen uygulanır.",
+        "infoEn": "When the customer wants zirconium overlay for aesthetic purposes, it is better for the customer to apply zirconium overlay not on all teeth but only on 8 anterior upper and 10 anterior lower teeth (18 zirconium in total) and apply porcelain to all other teeth. Because it is enough to provide good appearance. Besides, it is more affordable."
+      },
+      "vitaZirconium": {
+        "id": 13,
+        "name": "BEWELL Vita Zirconium Crown/Veneer",
+        "nameEn": "BEWELL Vita Zirconium Crown/Veneer",
+        "price": 170,
+        "atMost": 28,
+        "clickText": "Müşterilere ekonomik kaplama önerisi için tıklayınız.",
+        "clickTextEn": "Click here for an affordable recommendation for customers.",
+        "info": "Özellikle estetik amaçlı istenen zirkonyum kaplamalarda tüm dişlerin zirkonyumla kaplanması yerine sadece ön üst 8 diş ve ön alt 10 diş kaplaması önerilirse bu hem estetiği sağlar, hem müşterinin bütçesini rahatlatır; böylelikle toplamda 18 diş kaplanır ve geri kalan dişlere de porselen uygulanır.",
+        "infoEn": "When the customer wants zirconium overlay for aesthetic purposes, it is better for the customer to apply zirconium overlay not on all teeth but only on 8 anterior upper and 10 anterior lower teeth (18 zirconium in total) and apply porcelain to all other teeth. Because it is enough to provide good appearance. Besides, it is more affordable."
+      },
+      "localZirconium": {
+        "id": 14,
+        "name": "BEWELL Local Zirconium Crown/Veneer",
+        "nameEn": "BEWELL Local Zirconium Crown/Veneer",
+        "price": 150,
+        "atMost": 28,
+        "clickText": "Müşterilere ekonomik kaplama önerisi için tıklayınız.",
+        "clickTextEn": "Click here for an affordable recommendation for customers.",
+        "info": "Özellikle estetik amaçlı istenen zirkonyum kaplamalarda tüm dişlerin zirkonyumla kaplanması yerine sadece ön üst 8 diş ve ön alt 10 diş kaplaması önerilirse bu hem estetiği sağlar, hem müşterinin bütçesini rahatlatır; böylelikle toplamda 18 diş kaplanır ve geri kalan dişlere de porselen uygulanır.",
+        "infoEn": "When the customer wants zirconium overlay for aesthetic purposes, it is better for the customer to apply zirconium overlay not on all teeth but only on 8 anterior upper and 10 anterior lower teeth (18 zirconium in total) and apply porcelain to all other teeth. Because it is enough to provide good appearance. Besides, it is more affordable."
+      },
+      "monolithicZirconium": {
+        "id": 15,
+        "name": "BEWELL Monolithic Zirconium Crown/Veneer",
+        "nameEn": "BEWELL Monolithic Zirconium Crown/Veneer",
+        "price": 200,
+        "atMost": 28,
+        "clickText": "Müşterilere ekonomik kaplama önerisi için tıklayınız.",
+        "clickTextEn": "Click here for an affordable recommendation for customers.",
+        "info": "Özellikle estetik amaçlı istenen zirkonyum kaplamalarda tüm dişlerin zirkonyumla kaplanması yerine sadece ön üst 8 diş ve ön alt 10 diş kaplaması önerilirse bu hem estetiği sağlar, hem müşterinin bütçesini rahatlatır; böylelikle toplamda 18 diş kaplanır ve geri kalan dişlere de porselen uygulanır.",
+        "infoEn": "When the customer wants zirconium overlay for aesthetic purposes, it is better for the customer to apply zirconium overlay not on all teeth but only on 8 anterior upper and 10 anterior lower teeth (18 zirconium in total) and apply porcelain to all other teeth. Because it is enough to provide good appearance. Besides, it is more affordable."
+      },
+      "emax": {
+        "id": 16,
+        "name": "BEWELL E-Max Veneer",
+        "nameEn": "BEWELL E-Max Veneer",
+        "price": 210,
+        "atMost": 28
+      },
+      "laminat": {
+        "id": 17,
+        "name": "BEWELL Laminat Veneer",
+        "nameEn": "BEWELL Laminate Veneer",
+        "price": 210,
+        "atMost": 28
+      }
+    }
+  },
+  "dis": {
+    "title": "Diş Tedavileri",
+    "titleEn": "Dental Treatments",
+    "items": {
+      "disCekimi": {
+        "id": 18,
+        "name": "Diş Çekimi",
+        "nameEn": "Tooth Extraction",
+        "price": 35,
+        "atMost": 28
+      },
+      "disCekimiGomulu": {
+        "id": 35,
+        "name": "Diş Çekimi (Gömülü)",
+        "nameEn": "Tooth Extraction (Embedded)",
+        "price": 120,
+        "atMost": 28
+      },
+      "dolgu": {
+        "id": 19,
+        "name": "Dolgu",
+        "nameEn": "Filling",
+        "price": 35,
+        "atMost": 10
+      },
+      "kanalTedavisi": {
+        "id": 20,
+        "name": "Kanal Tedavisi",
+        "nameEn": "Root Canal Treatment",
+        "price": 95,
+        "atMost": 10
+      },
+      "beyazlatma": {
+        "id": 21,
+        "name": "Beyazlatma",
+        "nameEn": "Whitening",
+        "price": 250,
+        "atMost": 1
+      },
+      "rekonstruksiyon": {
+        "id": 22,
+        "name": "Diş Eti Cerrahi Rekonstrüksiyon",
+        "nameEn": "Gum Tissue Graft Surgery",
+        "price": 250,
+        "atMost": 1
+      },
+      "acikSinus": {
+        "id": 23,
+        "name": "Tek Taraflı Açık Sinüs Lifting",
+        "nameEn": "Open Sinus Lifting (Single Side)",
+        "detail": "Cerrah Yapar — Cerrah Ücreti Dahil",
+        "detailEn": "Surgical — Surgeon Fee Included",
+        "price": 650,
+        "atMost": 2,
+        "clickText": "[ÖNEMLİ!] Mutlaka tıklayınız.",
+        "clickTextEn": "[IMPORTANT!] Be sure to click.",
+        "info": "Açık sinüs lifting sadece üst çene ile ilgili bir durumdur.\n\nX-Ray'i olmayan ve üst çenesine implant takılacak her hasta için açık sinüs lifting durumuna açık kapı bırakılmalıdır.\n\nBir hastada açık sinüs lifting yapılacaksa mutlaka bunu ve devamındaki tüm implantların takılmasını cerrah yapar.\n\nAçık sinüs lifting yapılacaksa kesinlikle kemik tozu gereksinimi olacaktır.\n\nKemik tozu kullanıldığı zaman hastanın 2. ziyareti en az 6 ay sonradır.\n\nAçık sinüs lifting yoksa implant takılmasını diş doktoru yapar."
+      },
+      "kapaliSinus": {
+        "id": 24,
+        "name": "Tek Taraflı Kapalı Sinüs Lifting",
+        "nameEn": "Closed Sinus Lifting (Single Side)",
+        "detail": "Cerraha Gerek Yok",
+        "detailEn": "No Surgeon Needed",
+        "price": 300,
+        "atMost": 2
+      },
+      "xRaysizPaket": {
+        "id": 25,
+        "name": "X-Ray'i Olmayan Müşteriye Çıkabilecek En Pahalı Ek Tedavi Paketi",
+        "nameEn": "Most Expensive Additional Treatment Package for Customers Who Did Not Provide X-Ray",
+        "price": 1999,
+        "atMost": 1,
+        "clickText": "Paket içeriği için tıklayınız.",
+        "clickTextEn": "Click here for the package contents.",
+        "info": "Açık Sinüs Lifting (2 Taraflı)\n\nKemik Tozu (3 cc.)\n\nDiş Eti Cerrahi Rekonstrüksiyon\n\nAugmentasyon",
+        "infoEn": "Open Sinus Lifting (Both Sides)\n\nBone Meal (3 cc.)\n\nGum Tissue Graft Surgery\n\nAugmentation"
+      }
+    }
+  },
+  "implantPaketi": {
+    "title": "İmplant Paketleri",
+    "titleEn": "Implant Packages",
+    "items": {
+      "allOn6": {
+        "id": 26,
+        "name": "All-On-6",
+        "nameEn": "All-On-6",
+        "detail": "Evoss + Local Porcelain",
+        "detailEn": "Evoss + Local Porcelain",
+        "price": 3999,
+        "atMost": 2
+      },
+      "allOn4": {
+        "id": 27,
+        "name": "All-On-4",
+        "nameEn": "All-On-4",
+        "detail": "Evoss + Local Porcelain",
+        "detailEn": "Evoss + Local Porcelain",
+        "price": 3799,
+        "atMost": 2
+      },
+      "kemikTozu1cc": {
+        "id": 28,
+        "name": "Kemik Tozu",
+        "nameEn": "Bone Meal",
+        "detail": "1 cc.",
+        "detailEn": "1 cc.",
+        "price": 150,
+        "atMost": 1
+      },
+      "kemikTozu2cc": {
+        "id": 29,
+        "name": "Kemik Tozu",
+        "nameEn": "Bone Meal",
+        "detail": "2 cc.",
+        "detailEn": "2 cc.",
+        "price": 280,
+        "atMost": 1
+      },
+      "kemikTozu3cc": {
+        "id": 30,
+        "name": "Kemik Tozu",
+        "nameEn": "Bone Meal",
+        "detail": "3 cc.",
+        "detailEn": "3 cc.",
+        "price": 400,
+        "atMost": 1
+      },
+      "augmentasyon": {
+        "id": 31,
+        "name": "Augmentasyon",
+        "nameEn": "Augmentation",
+        "detail": "Çeneden Çeneye Kemik Ekleme",
+        "detailEn": "Bone Graft (Jaw to Jaw)",
+        "price": 500,
+        "atMost": 1
+      }
+    }
+  },
+  "protezler": {
+    "title": "Protezler",
+    "titleEn": "Protheses",
+    "items": {
+      "implantSonrasiGeciciProtez": {
+        "id": 32,
+        "name": "İmplant Sonrası Geçici Protez",
+        "nameEn": "Temporary Prothesis (Post-Implant)",
+        "price": 250,
+        "atMost": 1
+      },
+      "kaplamaSonrasiGeciciProtez": {
+        "id": 33,
+        "name": "Kaplama Sonrası Geçici Protez",
+        "nameEn": "Temporary Prothesis (Post-Overlay)",
+        "price": 150,
+        "atMost": 1
+      },
+      "protezDamak": {
+        "id": 34,
+        "name": "Protez Damak",
+        "nameEn": "Denture",
+        "price": 950,
+        "atMost": 1
+      }
+    }
+  }
+}
