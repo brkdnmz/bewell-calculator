@@ -26,9 +26,11 @@ function Sepet() {
       >
         <Row>
           <Col>{lang === "tur" ? "Seçilen Ürünler" : "Chosen Items"}</Col>
-          <Col xs="auto">
-            <UrunCopKutusu tumUrunler color={"#93151a"} size={22} />
-          </Col>
+          {Object.keys(choices).length > 0 && (
+            <Col xs="auto">
+              <UrunCopKutusu tumUrunler color={"#93151a"} size={22} />
+            </Col>
+          )}
         </Row>
       </ListGroup.Item>
 

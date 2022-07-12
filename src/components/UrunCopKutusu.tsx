@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useCallback, useContext, useEffect, useState } from "react";
 import { FaTrash } from "react-icons/fa";
 import ClickableIcon from "./ClickableIcon";
 import Modal from "react-bootstrap/Modal";
@@ -31,30 +31,30 @@ function UrunCopKutusu({
   const [deleted, setDeleted] = useState(false);
   const [uyariShow, setUyariShow] = useState(false);
 
+  const onDelete = useCallback(
+    () =>
+      setChoices((prevChoices: Choices) => {
+        let updatedChoices = { ...prevChoices };
+        if (!tumUrunler) {
+          delete updatedChoices[urun!.id];
+        } else {
+          updatedChoices = {};
+        }
+        return updatedChoices;
+      }),
+    [setChoices, tumUrunler, urun]
+  );
+
   useEffect(() => {
     if (!deleted) return;
-    const timeout = setTimeout(
-      () =>
-        setChoices((prevChoices: Choices) => {
-          let updatedChoices = { ...prevChoices };
-          if (!tumUrunler) {
-            delete updatedChoices[urun!.id];
-          } else {
-            updatedChoices = {};
-          }
-          return updatedChoices;
-        }),
-      150
-    );
+    const timeout = setTimeout(onDelete, 150);
     return () => clearTimeout(timeout);
-  }, [deleted]);
+  }, [deleted, onDelete]);
 
   return (
     <>
       <ClickableIcon onClick={() => setUyariShow(true)}>
-        <span>
-          <FaTrash size={size} color={color} />
-        </span>
+        <FaTrash size={size} color={color} />
       </ClickableIcon>
       <Modal
         scrollable
