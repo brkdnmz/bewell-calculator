@@ -3,22 +3,23 @@ import React from "react";
 interface CircledNumberProps {
   num: number;
   size?: number;
-  className: string;
+  className?: string;
 }
 
-function CircledNumber({ num, size = 10, className }: CircledNumberProps) {
+function CircledNumber({ num, size = 10, className = "" }: CircledNumberProps) {
   return (
     <div
-      className={className}
+      className={
+        className + " d-flex justify-content-center align-items-center"
+      }
       style={{
         borderRadius: "50%",
         width: size + "px",
         height: size + "px",
         padding: size / 4 + "px",
+        fontSize: size + "px",
         background: "#EA1F25",
         color: "white",
-        textAlign: "center",
-        fontSize: size * 0.65 + "px",
         boxSizing: "unset",
       }}
     >
