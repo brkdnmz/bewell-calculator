@@ -36,9 +36,7 @@ function Cart() {
 
       {Object.keys(choices).length === 0 && (
         <ListGroup.Item className="fst-italic">
-          {lang === "tur"
-            ? "Henüz bir ürün seçmediniz."
-            : "You have not chosen any item yet."}
+          {lang === "tur" ? "Sepetiniz boş." : "Your cart is empty."}
         </ListGroup.Item>
       )}
 
