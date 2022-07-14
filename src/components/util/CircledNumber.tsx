@@ -10,7 +10,7 @@ interface CircledNumberProps {
 function CircledNumber({ num, size = 10, className }: CircledNumberProps) {
   return (
     <span
-      className={"text-centert " + className}
+      className={"text-center " + className}
       style={{
         borderRadius: "80%",
         fontSize: size + "px",
