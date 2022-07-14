@@ -1,14 +1,14 @@
-import React, { useContext, useState } from "react";
+import React, {useContext, useState} from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import { AppContext } from "../App";
+import {AppContext} from "../App";
 
 interface CategorySliderProps {
   categoryElems: JSX.Element[];
 }
 
-function CategorySlider({ categoryElems }: CategorySliderProps) {
-  const { displayDirection } = useContext(AppContext);
+function CategorySlider({categoryElems}: CategorySliderProps) {
+  const {displayDirection} = useContext(AppContext);
   const [index, setIndex] = useState(0);
 
   const goNext = () => {

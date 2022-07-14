@@ -12,10 +12,12 @@ function CircledNumber({ num, size = 10, className }: CircledNumberProps) {
     <span
       className={"text-center " + className}
       style={{
-        borderRadius: "80%",
+        border: "1px solid white",
+        borderRadius: "50%",
         fontSize: size + "px",
         width: "1.5em",
-        lineHeight: "1.5em",
+        height: "1.5em",
+        lineHeight: "1.2em",
         background: "#EA1F25",
         color: "white",
       }}

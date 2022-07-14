@@ -5,6 +5,7 @@ import Row from "react-bootstrap/Row";
 import { AppContext } from "../App";
 import PriceTag from "../util/PriceTag";
 import ItemTrashCan from "./ItemTrashCan";
+import CenteringCol from "../util/CenteringCol";
 
 function Cart() {
   const { lang, choices, itemById } = useContext(AppContext);
@@ -27,9 +28,9 @@ function Cart() {
         <Row>
           <Col>{lang === "tur" ? "Sepetim" : "My Cart"}</Col>
           {Object.keys(choices).length > 0 && (
-            <Col xs="auto">
+            <CenteringCol xs="auto">
               <ItemTrashCan allItems color={"#93151a"} size={22} />
-            </Col>
+            </CenteringCol>
           )}
         </Row>
       </ListGroup.Item>

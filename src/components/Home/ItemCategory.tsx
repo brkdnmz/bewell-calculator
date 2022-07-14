@@ -35,7 +35,7 @@ function ItemCategory({
         className="fst-italic fw-bold"
         style={{
           background:
-            "linear-gradient(254deg, rgba(107,107,107,1) 20%, rgba(234,31,37,1) 100%)",
+            "linear-gradient(254deg, rgb(107,107,107) 20%, rgb(234,31,37) 100%)",
           color: "white",
         }}
       >

@@ -17,6 +17,7 @@ function NavBar() {
   const { setLang, displayDirection, toggleDisplayDirection, choices } =
     useContext(AppContext);
   const location = useLocation();
+
   return (
     <Row
       className="justify-content-center position-sticky top-0 pt-1 px-1"
@@ -61,6 +62,7 @@ function NavBar() {
           <CenteringCol>
             {location.pathname === "/" && (
               <motion.div
+                className="d-flex"
                 initial={{
                   rotate:
                     (displayDirection === "horizontal" ? "90" : "0") + "deg",

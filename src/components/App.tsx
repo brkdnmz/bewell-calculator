@@ -81,8 +81,11 @@ function App() {
                 }}
               >
                 <Routes location={location}>
-                  <Route index element={<Home />} />
-                  <Route path="cart" element={<Cart />} />
+                  <Route index element={<Home key={location.pathname} />} />
+                  <Route
+                    path="cart"
+                    element={<Cart key={location.pathname} />}
+                  />
                 </Routes>
               </motion.div>
             </AnimatePresence>
