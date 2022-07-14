@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useCallback, useContext } from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import CategorySlider from "./CategorySlider";
@@ -10,20 +10,23 @@ import { AppContext } from "../App";
 function Home() {
   const { itemData, itemById } = useContext(AppContext);
 
-  const getSortedCategory = (category: string): ItemType[] => {
-    const items = itemData[category].items;
-    const itemIds = Object.keys(items).map((item) => items[item].id);
-    itemIds.sort((a, b) => itemById[a].price - itemById[b].price);
+  const getSortedCategory = useCallback(
+    (category: string): ItemType[] => {
+      const items = itemData[category].items;
+      const itemIds = Object.keys(items).map((item) => items[item].id);
+      itemIds.sort((a, b) => itemById[a].price - itemById[b].price);
 
-    const sortedCategory: ItemType[] = [];
-    itemIds.forEach((id) => {
-      sortedCategory.push(itemById[id]);
-    });
+      const sortedCategory: ItemType[] = [];
+      itemIds.forEach((id) => {
+        sortedCategory.push(itemById[id]);
+      });
 
-    return sortedCategory;
-  };
+      return sortedCategory;
+    },
+    [itemById, itemData]
+  );
 
-  const prepareCategoryElems = (): JSX.Element[] => {
+  const prepareCategoryElems = useCallback((): JSX.Element[] => {
     return Object.keys(itemData).map((category, i) => (
       <ItemCategory key={i} category={itemData[category]}>
         {getSortedCategory(category).map((item) => (
@@ -31,7 +34,7 @@ function Home() {
         ))}
       </ItemCategory>
     ));
-  };
+  }, [getSortedCategory, itemData]);
 
   return (
     <>

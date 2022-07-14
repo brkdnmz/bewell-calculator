@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 interface CircledNumberProps {
   num: number;
@@ -9,7 +10,7 @@ interface CircledNumberProps {
 function CircledNumber({ num, size = 10, className }: CircledNumberProps) {
   return (
     <span
-      className={"text-center " + className}
+      className={"text-centert " + className}
       style={{
         borderRadius: "80%",
         fontSize: size + "px",
@@ -19,7 +20,15 @@ function CircledNumber({ num, size = 10, className }: CircledNumberProps) {
         color: "white",
       }}
     >
-      {num}
+      <motion.span
+        key={num}
+        initial={{ fontSize: 1.5 * size + "px" }}
+        animate={{
+          fontSize: size + "px",
+        }}
+      >
+        {num}
+      </motion.span>
     </span>
   );
 }
