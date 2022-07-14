@@ -3,16 +3,17 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import React, { createContext, useState } from "react";
 import _itemData from "../item-data/itemData.json";
 import AppContextType from "../@types/appContext";
-import { ItemType, ItemData } from "../@types/item";
+import { ItemData, ItemType } from "../@types/item";
 import Choices from "../@types/choices";
 import Home from "./Home/Home";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import Cart from "./Cart/Cart";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import NavBar from "./NavBar";
 import Col from "react-bootstrap/Col";
 import Logo from "./Logo";
+import { AnimatePresence, motion } from "framer-motion";
 
 const itemData: ItemData = _itemData;
 
@@ -34,7 +35,7 @@ export const AppContext = createContext<AppContextType>({
   lang: "tur",
   setLang: null,
   displayDirection: "vertical",
-  setDisplayDirection: null,
+  toggleDisplayDirection: null,
 });
 
 function App() {
@@ -44,6 +45,13 @@ function App() {
     "vertical" | "horizontal"
   >("vertical");
 
+  const toggleDisplayDirection = () =>
+    setDisplayDirection((prev) =>
+      prev === "horizontal" ? "vertical" : "horizontal"
+    );
+
+  const location = useLocation();
+
   const context = {
     itemData,
     itemById,
@@ -52,20 +60,32 @@ function App() {
     lang,
     setLang,
     displayDirection,
-    setDisplayDirection,
+    toggleDisplayDirection,
   };
 
   return (
     <AppContext.Provider value={context}>
       <Container fluid>
+        <NavBar />
         <Row className="justify-content-center mb-3">
-          <NavBar />
           <Col sm={10} xs={11}>
             <Logo />
-            <Routes>
-              <Route index element={<Home />} />
-              <Route path="cart" element={<Cart />} />
-            </Routes>
+            <AnimatePresence exitBeforeEnter>
+              <motion.div
+                key={location.pathname}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{
+                  duration: 0.25,
+                }}
+              >
+                <Routes location={location}>
+                  <Route index element={<Home />} />
+                  <Route path="cart" element={<Cart />} />
+                </Routes>
+              </motion.div>
+            </AnimatePresence>
           </Col>
         </Row>
       </Container>

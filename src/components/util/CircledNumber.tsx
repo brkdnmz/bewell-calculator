@@ -6,25 +6,21 @@ interface CircledNumberProps {
   className?: string;
 }
 
-function CircledNumber({ num, size = 10, className = "" }: CircledNumberProps) {
+function CircledNumber({ num, size = 10, className }: CircledNumberProps) {
   return (
-    <div
-      className={
-        className + " d-flex justify-content-center align-items-center"
-      }
+    <span
+      className={"text-center " + className}
       style={{
-        borderRadius: "50%",
-        width: size + "px",
-        height: size + "px",
-        padding: size / 4 + "px",
+        borderRadius: "80%",
         fontSize: size + "px",
+        width: "1.5em",
+        lineHeight: "1.5em",
         background: "#EA1F25",
         color: "white",
-        boxSizing: "unset",
       }}
     >
       {num}
-    </div>
+    </span>
   );
 }
 

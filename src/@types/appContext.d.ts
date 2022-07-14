@@ -9,7 +9,7 @@ export interface AppContextType {
   lang: "en" | "tur";
   setLang: any;
   displayDirection: "horizontal" | "vertical";
-  setDisplayDirection: any;
+  toggleDisplayDirection: any;
 }
 
 export default AppContextType;
