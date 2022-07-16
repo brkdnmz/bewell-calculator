@@ -44,17 +44,19 @@ function CategorySlider() {
 
   const categoryElems = useMemo((): ReactElement<ItemCategoryProps>[] => {
     return Object.keys(itemData).map((category) => (
-      <ItemCategory key={category} category={itemData[category]}>
-        {getSortedCategory(category).map((item) => (
-          <Item key={item.id} item={item} />
-        ))}
-      </ItemCategory>
+      <Col key={category} xs="12">
+        <ItemCategory category={itemData[category]}>
+          {getSortedCategory(category).map((item) => (
+            <Item key={item.id} item={item} />
+          ))}
+        </ItemCategory>
+      </Col>
     ));
   }, [getSortedCategory, itemData]);
 
   return (
     <Row className="gy-3">
-      {displayDirection === "horizontal" && (
+      {displayDirection === "horizontal" ? (
         <Col>
           {React.cloneElement(categoryElems[index], {
             withLeftArrow: index > 0,
@@ -63,13 +65,10 @@ function CategorySlider() {
             onRightArrowClick: goNext,
           })}
         </Col>
+      ) : (
+        // displayDirection === "vertical"
+        categoryElems
       )}
-      {displayDirection === "vertical" &&
-        categoryElems.map((elem, i) => (
-          <Col key={i} xs="12">
-            {elem}
-          </Col>
-        ))}
     </Row>
   );
 }

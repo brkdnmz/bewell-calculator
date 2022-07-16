@@ -11,7 +11,8 @@ import CenteringCol from "./util/CenteringCol";
 import { Link, useLocation } from "react-router-dom";
 import { IoCartOutline, IoHomeOutline } from "react-icons/io5";
 import CircledNumber from "./util/CircledNumber";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
+import AnimatedOpacity from "./util/AnimatedOpacity";
 
 function NavBar() {
   const { setLang, displayDirection, toggleDisplayDirection, choices } =
@@ -37,46 +38,56 @@ function NavBar() {
 
           <CenteringCol>
             <ClickableIcon>
-              {location.pathname !== "/cart" && (
-                <Link to="cart">
-                  <div className="position-relative">
-                    {Object.keys(choices).length > 0 && (
-                      <CircledNumber
-                        num={Object.keys(choices).length}
-                        size={9}
-                        className="position-absolute top-0 end-0 fw-bold"
-                      />
-                    )}
-                    <IoCartOutline color="#6B6B6B" size={30} />
-                  </div>
-                </Link>
-              )}
-              {location.pathname === "/cart" && (
-                <Link to="/">
-                  <IoHomeOutline color="#6B6B6B" size={27} />
-                </Link>
-              )}
+              <AnimatePresence exitBeforeEnter>
+                <AnimatedOpacity key={location.pathname}>
+                  {location.pathname !== "/cart" && (
+                    <Link to="cart">
+                      <div className="position-relative">
+                        {Object.keys(choices).length > 0 && (
+                          <CircledNumber
+                            num={Object.keys(choices).length}
+                            size={9}
+                            className="position-absolute top-0 end-0 fw-bold"
+                          />
+                        )}
+                        <IoCartOutline color="#6B6B6B" size={30} />
+                      </div>
+                    </Link>
+                  )}
+                  {location.pathname === "/cart" && (
+                    <Link to="/">
+                      <IoHomeOutline color="#6B6B6B" size={27} />
+                    </Link>
+                  )}
+                </AnimatedOpacity>
+              </AnimatePresence>
             </ClickableIcon>
           </CenteringCol>
 
           <CenteringCol>
-            {location.pathname === "/" && (
-              <motion.div
-                className="d-flex"
-                initial={{
-                  rotate:
-                    (displayDirection === "horizontal" ? "90" : "0") + "deg",
-                }}
-                animate={{
-                  rotate:
-                    (displayDirection === "horizontal" ? "90" : "0") + "deg",
-                }}
-              >
-                <ClickableIcon onClick={() => toggleDisplayDirection()}>
-                  <CgArrowsVAlt color="#6B6B6B" size={30} />
-                </ClickableIcon>
-              </motion.div>
-            )}
+            <AnimatePresence exitBeforeEnter>
+              <AnimatedOpacity key={location.pathname}>
+                {location.pathname === "/" && (
+                  <motion.div
+                    className="d-flex"
+                    initial={{
+                      rotate:
+                        (displayDirection === "horizontal" ? "90" : "0") +
+                        "deg",
+                    }}
+                    animate={{
+                      rotate:
+                        (displayDirection === "horizontal" ? "90" : "0") +
+                        "deg",
+                    }}
+                  >
+                    <ClickableIcon onClick={() => toggleDisplayDirection()}>
+                      <CgArrowsVAlt color="#6B6B6B" size={30} />
+                    </ClickableIcon>
+                  </motion.div>
+                )}
+              </AnimatedOpacity>
+            </AnimatePresence>
           </CenteringCol>
 
           <CenteringCol xs="auto">

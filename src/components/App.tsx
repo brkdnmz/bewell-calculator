@@ -10,8 +10,9 @@ import Container from "react-bootstrap/Container";
 import NavBar from "./NavBar";
 import Col from "react-bootstrap/Col";
 import Logo from "./Logo";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import AppContextProvider from "../context/AppContext";
+import AnimatedOpacity from "./util/AnimatedOpacity";
 
 function App() {
   const [choices, setChoices] = useState<Choices>({});
@@ -44,15 +45,7 @@ function App() {
           <Col sm={10} xs={11}>
             <Logo />
             <AnimatePresence exitBeforeEnter>
-              <motion.div
-                key={location.pathname}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{
-                  duration: 0.25,
-                }}
-              >
+              <AnimatedOpacity key={location.pathname}>
                 <Routes location={location}>
                   <Route index element={<Home key={location.pathname} />} />
                   <Route
@@ -60,7 +53,7 @@ function App() {
                     element={<Cart key={location.pathname} />}
                   />
                 </Routes>
-              </motion.div>
+              </AnimatedOpacity>
             </AnimatePresence>
           </Col>
         </Row>
