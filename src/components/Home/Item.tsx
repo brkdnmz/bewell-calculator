@@ -1,11 +1,11 @@
 import React, { ChangeEvent, useContext } from "react";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import { AppContext } from "../App";
+import { AppContext } from "../../context/AppContext";
 import PriceTag from "../util/PriceTag";
 import ItemInfoBox from "./ItemInfoBox";
-import { ItemType } from "../../@types/item";
-import Choices from "../../@types/choices";
+import { ItemType } from "../../types/item";
+import Choices from "../../types/choices";
 import CenteringCol from "../util/CenteringCol";
 
 interface ItemProps {
@@ -13,8 +13,7 @@ interface ItemProps {
 }
 
 function Item({ item }: ItemProps) {
-  const { lang } = useContext(AppContext);
-  const { choices, setChoices } = useContext(AppContext);
+  const { lang, choices, setChoices } = useContext(AppContext);
 
   const onSelect = (e: ChangeEvent<HTMLSelectElement>) => {
     const target = e.target;

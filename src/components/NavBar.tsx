@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import icon from "../img/bewell.png";
 import turFlag from "../img/tr.svg";
 import enFlag from "../img/gb.svg";
-import { AppContext } from "./App";
+import { AppContext } from "../context/AppContext";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { CgArrowsVAlt } from "react-icons/cg";

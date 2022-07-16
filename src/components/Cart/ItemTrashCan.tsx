@@ -3,9 +3,9 @@ import { FaTrash } from "react-icons/fa";
 import ClickableIcon from "../util/ClickableIcon";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
-import { ItemType } from "../../@types/item";
-import { AppContext } from "../App";
-import Choices from "../../@types/choices";
+import { ItemType } from "../../types/item";
+import { AppContext } from "../../context/AppContext";
+import Choices from "../../types/choices";
 
 type ItemTrashCanProps =
   | {

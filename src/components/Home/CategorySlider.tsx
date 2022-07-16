@@ -1,14 +1,22 @@
-import React, {useContext, useState} from "react";
+import React, {
+  ReactElement,
+  useCallback,
+  useContext,
+  useMemo,
+  useState,
+} from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import {AppContext} from "../App";
+import { AppContext } from "../../context/AppContext";
+import ItemCategory, { ItemCategoryProps } from "./ItemCategory";
+import DataContext from "../../context/DataContext";
+import { ItemType } from "../../types/item";
+import Item from "./Item";
 
-interface CategorySliderProps {
-  categoryElems: JSX.Element[];
-}
+function CategorySlider() {
+  const { displayDirection } = useContext(AppContext);
+  const { itemData, itemById } = useContext(DataContext);
 
-function CategorySlider({categoryElems}: CategorySliderProps) {
-  const {displayDirection} = useContext(AppContext);
   const [index, setIndex] = useState(0);
 
   const goNext = () => {
@@ -18,20 +26,42 @@ function CategorySlider({categoryElems}: CategorySliderProps) {
     setIndex((prevIndex) => prevIndex - 1);
   };
 
+  const getSortedCategory = useCallback(
+    (category: string): ItemType[] => {
+      const items = itemData[category].items;
+      const itemIds = Object.keys(items).map((item) => items[item].id);
+      itemIds.sort((a, b) => itemById[a].price - itemById[b].price);
+
+      const sortedCategory: ItemType[] = [];
+      itemIds.forEach((id) => {
+        sortedCategory.push(itemById[id]);
+      });
+
+      return sortedCategory;
+    },
+    [itemById, itemData]
+  );
+
+  const categoryElems = useMemo((): ReactElement<ItemCategoryProps>[] => {
+    return Object.keys(itemData).map((category) => (
+      <ItemCategory key={category} category={itemData[category]}>
+        {getSortedCategory(category).map((item) => (
+          <Item key={item.id} item={item} />
+        ))}
+      </ItemCategory>
+    ));
+  }, [getSortedCategory, itemData]);
+
   return (
     <Row className="gy-3">
       {displayDirection === "horizontal" && (
         <Col>
-          {React.cloneElement(
-            categoryElems[index],
-            {
-              withLeftArrow: index > 0,
-              withRightArrow: index + 1 < categoryElems.length,
-              onLeftArrowClick: goPrev,
-              onRightArrowClick: goNext,
-            },
-            categoryElems[index].props.children
-          )}
+          {React.cloneElement(categoryElems[index], {
+            withLeftArrow: index > 0,
+            withRightArrow: index + 1 < categoryElems.length,
+            onLeftArrowClick: goPrev,
+            onRightArrowClick: goNext,
+          })}
         </Col>
       )}
       {displayDirection === "vertical" &&

@@ -2,13 +2,15 @@ import React, { useContext } from "react";
 import Col from "react-bootstrap/Col";
 import ListGroup from "react-bootstrap/ListGroup";
 import Row from "react-bootstrap/Row";
-import { AppContext } from "../App";
+import { AppContext } from "../../context/AppContext";
 import PriceTag from "../util/PriceTag";
 import ItemTrashCan from "./ItemTrashCan";
 import CenteringCol from "../util/CenteringCol";
+import DataContext from "../../context/DataContext";
 
 function Cart() {
-  const { lang, choices, itemById } = useContext(AppContext);
+  const { lang, choices } = useContext(AppContext);
+  const { itemById } = useContext(DataContext);
 
   const sortedChoiceIds = Object.keys(choices);
   const priceOf = (id: string) => itemById[id].price * choices[id];

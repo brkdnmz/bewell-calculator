@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import ListGroup from "react-bootstrap/ListGroup";
-import { Category } from "../../@types/item";
-import { AppContext } from "../App";
+import { Category } from "../../types/item";
+import { AppContext } from "../../context/AppContext";
 import Row from "react-bootstrap/Row";
 import ClickableIcon from "../util/ClickableIcon";
 import {
@@ -15,8 +15,8 @@ export interface ItemCategoryProps {
   children: React.ReactNode[];
   withLeftArrow?: boolean;
   withRightArrow?: boolean;
-  onLeftArrowClick?: MouseEvent;
-  onRightArrowClick?: MouseEvent;
+  onLeftArrowClick?: any;
+  onRightArrowClick?: any;
 }
 
 function ItemCategory({

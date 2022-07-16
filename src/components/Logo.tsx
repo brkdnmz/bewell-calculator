@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import icon from "../img/bewell.png";
 import Row from "react-bootstrap/Row";
-import { AppContext } from "./App";
+import { AppContext } from "../context/AppContext";
 import GradientText from "./util/GradientText";
 
 function Logo() {
