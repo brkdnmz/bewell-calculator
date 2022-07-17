@@ -35,6 +35,7 @@ function ItemCategory({
         style={{
           background:
             "linear-gradient(254deg, rgb(107,107,107) 20%, rgb(234,31,37) 100%)",
+          backgroundClip: "padding-box",
           color: "white",
         }}
       >
