@@ -43,13 +43,11 @@ function CategorySlider() {
 
   const categoryElems = useMemo((): ReactElement<ItemCategoryProps>[] => {
     return Object.keys(itemData).map((category) => (
-      <Col key={category} xs="12">
-        <ItemCategory category={itemData[category]}>
-          {getSortedCategory(category).map((item) => (
-            <Item key={item.id} item={item} />
-          ))}
-        </ItemCategory>
-      </Col>
+      <ItemCategory category={itemData[category]}>
+        {getSortedCategory(category).map((item) => (
+          <Item key={item.id} item={item} />
+        ))}
+      </ItemCategory>
     ));
   }, [getSortedCategory, itemData]);
 
@@ -66,7 +64,13 @@ function CategorySlider() {
         </Col>
       ) : (
         // displayDirection === "vertical"
-        categoryElems
+        <>
+          {categoryElems.map((elem, i) => (
+            <Col key={i} xs={12}>
+              {elem}
+            </Col>
+          ))}
+        </>
       )}
     </Row>
   );
