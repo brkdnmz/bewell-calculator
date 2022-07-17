@@ -1,11 +1,10 @@
 import React, { useCallback, useContext, useEffect, useState } from "react";
 import { FaTrash } from "react-icons/fa";
-import ClickableIcon from "../util/ClickableIcon";
+import { ClickableIcon } from "../util";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
-import { ItemType } from "../../types/item";
-import { AppContext } from "../../context/AppContext";
-import Choices from "../../types/choices";
+import { Choices, ItemType } from "../../types";
+import { AppContext } from "../../context";
 
 type ItemTrashCanProps =
   | {

@@ -3,8 +3,8 @@ import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import { ItemType } from "../../types/item";
-import { AppContext } from "../../context/AppContext";
+import { ItemType } from "../../types";
+import { AppContext } from "../../context";
 
 interface ItemInfoBoxProps {
   item: ItemType;

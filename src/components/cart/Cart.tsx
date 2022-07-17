@@ -2,11 +2,9 @@ import React, { useContext } from "react";
 import Col from "react-bootstrap/Col";
 import ListGroup from "react-bootstrap/ListGroup";
 import Row from "react-bootstrap/Row";
-import { AppContext } from "../../context/AppContext";
-import PriceTag from "../util/PriceTag";
+import { AppContext, DataContext } from "../../context";
+import { CenteringCol, PriceTag } from "../util";
 import ItemTrashCan from "./ItemTrashCan";
-import CenteringCol from "../util/CenteringCol";
-import DataContext from "../../context/DataContext";
 
 function Cart() {
   const { lang, choices } = useContext(AppContext);

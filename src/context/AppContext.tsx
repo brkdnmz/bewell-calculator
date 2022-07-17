@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import AppContextType from "../types/appContext";
+import { AppContextType } from "../types";
 
 export const AppContext = createContext<AppContextType>({
   choices: {},
@@ -10,8 +10,6 @@ export const AppContext = createContext<AppContextType>({
   toggleDisplayDirection: null,
 });
 
-function AppContextProvider({ value, children }: any) {
+export function AppContextProvider({ value, children }: any) {
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 }
-
-export default AppContextProvider;

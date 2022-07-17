@@ -1,17 +1,17 @@
 import "../styles/App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState } from "react";
-import Choices from "../types/choices";
-import Home from "./Home/Home";
+import { Choices } from "../types";
+import { Home } from "./home";
 import { Route, Routes, useLocation } from "react-router-dom";
-import Cart from "./Cart/Cart";
+import Cart from "./cart/Cart";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
-import NavBar from "./NavBar";
 import Col from "react-bootstrap/Col";
+import NavBar from "./NavBar";
 import Logo from "./Logo";
 import { AnimatePresence } from "framer-motion";
-import AppContextProvider from "../context/AppContext";
+import { AppContextProvider } from "../context";
 import AnimatedOpacity from "./util/AnimatedOpacity";
 
 function App() {

@@ -7,10 +7,9 @@ import React, {
 } from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import { AppContext } from "../../context/AppContext";
+import { AppContext, DataContext } from "../../context";
 import ItemCategory, { ItemCategoryProps } from "./ItemCategory";
-import DataContext from "../../context/DataContext";
-import { ItemType } from "../../types/item";
+import { ItemType } from "../../types";
 import Item from "./Item";
 
 function CategorySlider() {

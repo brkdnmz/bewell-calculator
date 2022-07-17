@@ -1,14 +1,13 @@
 import React, { useContext } from "react";
 import ListGroup from "react-bootstrap/ListGroup";
-import { Category } from "../../types/item";
-import { AppContext } from "../../context/AppContext";
+import { Category } from "../../types";
+import { AppContext } from "../../context";
 import Row from "react-bootstrap/Row";
-import ClickableIcon from "../util/ClickableIcon";
+import { CenteringCol, ClickableIcon } from "../util";
 import {
   HiOutlineArrowNarrowLeft,
   HiOutlineArrowNarrowRight,
 } from "react-icons/hi";
-import CenteringCol from "../util/CenteringCol";
 
 export interface ItemCategoryProps {
   category: Category;

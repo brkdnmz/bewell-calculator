@@ -1,12 +1,10 @@
 import React, { ChangeEvent, useContext } from "react";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import { AppContext } from "../../context/AppContext";
-import PriceTag from "../util/PriceTag";
+import { AppContext } from "../../context";
+import { CenteringCol, PriceTag } from "../util";
 import ItemInfoBox from "./ItemInfoBox";
-import { ItemType } from "../../types/item";
-import Choices from "../../types/choices";
-import CenteringCol from "../util/CenteringCol";
+import { Choices, ItemType } from "../../types";
 
 interface ItemProps {
   item: ItemType;

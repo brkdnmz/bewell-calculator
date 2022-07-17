@@ -1,7 +1,6 @@
-import { ItemData, ItemType } from "../types/item";
+import { DataContextType, ItemData, ItemType } from "../types";
 import _itemData from "../item-data/itemData.json";
 import { createContext } from "react";
-import DataContextType from "../types/dataContext";
 
 const itemData: ItemData = _itemData;
 
@@ -15,9 +14,7 @@ for (const category in itemData) {
   }
 }
 
-const DataContext = createContext<DataContextType>({
+export const DataContext = createContext<DataContextType>({
   itemData: itemData,
   itemById: itemById,
 });
-
-export default DataContext;
