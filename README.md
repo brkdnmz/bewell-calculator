@@ -1,4 +1,4 @@
-https://bewellcalculator.netlify.app/
+https://metadental-calculator.netlify.app/
 
 # Getting Started with Create React App
 
